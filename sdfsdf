@@ -1,0 +1,60 @@
+[33mcommit 12705583f2f0e004d2be986bd54412a81a5b4fa8[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Igor Shah <zombee1992@gmail.com>
+Date:   Mon Dec 27 19:24:55 2021 +0300
+
+    test megre master
+
+[33mcommit b7eae364a054f2c630304410add4e90b396a2653[m
+Author: Igor Shah <zombee1992@gmail.com>
+Date:   Mon Dec 27 19:19:13 2021 +0300
+
+    edit by ivan
+
+[33mcommit d875a733bd56368d2be8a6bf9b680a9a589744ec[m
+Author: Igor Shah <zombee1992@gmail.com>
+Date:   Mon Dec 27 19:17:14 2021 +0300
+
+    petr edit
+
+[33mcommit 37dddbd1bdc3d731cb7d5765ae04510d9e7243fc[m
+Author: Igor Shah <zombee1992@gmail.com>
+Date:   Mon Dec 27 18:51:00 2021 +0300
+
+    edit readme step 5
+
+[33mcommit d1b5844ccef338b5b2aa0800e3bd1b1aef76ac11[m
+Merge: a5dff5a e71524c
+Author: Igor Shah <zombee1992@gmail.com>
+Date:   Mon Dec 27 18:36:30 2021 +0300
+
+    Merge branch 'develop'
+
+[33mcommit a5dff5ac1505e2bf8110ba5dbf172f1952760901[m
+Author: Igor Shah <zombee1992@gmail.com>
+Date:   Mon Dec 27 18:22:28 2021 +0300
+
+    create index_test on master
+
+[33mcommit e71524cc97456854011a16f28d99d797ccfbaa16[m
+Author: Igor Shah <zombee1992@gmail.com>
+Date:   Mon Dec 27 17:59:51 2021 +0300
+
+    create new file in new branch
+
+[33mcommit 57b5e16831b7aec238690a5bb5379e4e1fee7401[m
+Author: Igor Shah <zombee1992@gmail.com>
+Date:   Mon Dec 27 17:46:34 2021 +0300
+
+    edit fie step3
+
+[33mcommit 8f751cb230c2ca5cd14cc3ce5b61585b3edbf653[m
+Author: Igor Shah <zombee1992@gmail.com>
+Date:   Mon Dec 27 17:03:13 2021 +0300
+
+    change newfile step 2
+
+[33mcommit b75137995ceec35f190378686c22216425eda822[m
+Author: Igor Shah <zombee1992@gmail.com>
+Date:   Mon Dec 27 16:59:20 2021 +0300
+
+    new commit step one
