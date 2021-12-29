@@ -8,9 +8,22 @@
 * Age: 25
 * My goad is to become full stack web developer and develop in this area. I have desire to get new knowledge.
 #  
-## Skills:
+## SKILLS:
 * Language 'C' (for microcontrollers PIC)
 * HTML/CSS basics
-* General knowledge  object oriented programming (Python)
+* JS and Python basics
+* General knowledge  object oriented programming
+# 
+## EXPERIENCE:
+* Development and support software for electronic product accounting system ('C')
+#
+## EDUCATION
+* P.O.Sukhoi State Technical University of Gomel (2013 - 2017)
+* RSSchool stage 0 (Just now)
+#
+## LANGUAGES
+* Russian - native
+* English - A2+
+
 
 
