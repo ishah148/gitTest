@@ -3,6 +3,7 @@
 * Email: zombee1992@gmail.com
 * Phone: +375(25) 904-17-36
 * Skype: shahigor1
+* Discord: IgorShah(ishah148)
 #
 ## ABOUT MYSELF:
 * Age: 25
