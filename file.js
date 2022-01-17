@@ -259,3 +259,11 @@ function finalGrade (exam, projects) {
       return 0;
    }
  }
+let a = '123456789'
+function splitString(str){
+    str.split('').map(index => console.log(str[index-1]));
+    // return str.split('-').join('');
+}
+splitString('12345')
+// console.log(a.split('').join(''));
+// console.log(typeof(a[5]));
