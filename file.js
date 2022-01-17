@@ -259,11 +259,18 @@ function finalGrade (exam, projects) {
       return 0;
    }
  }
-let a = '123456789'
+let a = [1,2,3,4,5,6,7,8,9];
 function splitString(str){
     str.split('').map(index => console.log(str[index-1]));
     // return str.split('-').join('');
 }
-splitString('12345')
+// splitString('12345')
 // console.log(a.split('').join(''));
 // console.log(typeof(a[5]));
+// let b = a.split('').map((item,index,array) =>{
+//     return item;
+// })
+function filterRange(arr, a, b){
+    arr.map(item.filter(item => item >= a && item <= b ? item : ''));
+}
+filterRange(a,1,4);
