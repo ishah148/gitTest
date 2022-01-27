@@ -113,3 +113,36 @@ console.log('--->');
 console.log(tmp);
 console.log('--->');
 console.log('555');
+
+console.log('123')
+const A = { a: 10, b: 20, c: 30 }
+const B = { a: 3, c: 6, d: 3 }
+const C = {'andry':'11', 'boil':'12','colya':'13'}
+console.log(A);
+console.log(B);
+arr = [-1, 2, 3, -9];
+for(item in A){
+  console.log(item);
+}
+console.log(Object.entries(A))
+let tmp = Object.entries(A);
+console.log('---one---');
+tmp.map((item,index) => console.log(item,index))
+console.log('---two---');
+console.log('--->');
+console.log(tmp);
+console.log('<---');
+console.log(tmp[0][1]);
+let tmp1 = tmp;
+let tmp2 = Object.entries(B);
+console.log(tmp2);
+console.log('reduce')
+
+console.log('reduce end');
+console.log('test');
+names(tmp1,tmp2);
+function names( ...args){
+  args.reduce((a,b,c,d) => console.log('a',a,'\nb',b,'\nc',c,'\nd',d));
+}
+// console.log(Object.values(A))
+
