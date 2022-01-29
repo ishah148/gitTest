@@ -347,15 +347,102 @@ function isPowerOfTwo(n) {
 // isPowerOfTwo()
 
 List = [
-  {'4': 'dog' }, {'2': 'took'}, {'3': 'his'},
-  {'-2': 'Vatsan'}, {'5': 'for'}, {'6': 'a'}, {'12': 'spin'}
- ]
- console.log(Object.keys(List))
+  { '4': 'dog' }, { '2': 'took' }, { '3': 'his' },
+  { '-2': 'Vatsan' }, { '5': 'for' }, { '6': 'a' }, { '12': 'spin' }
+]
+console.log(Object.keys(List))
 
- let keys = Object.keys(List).sort((a, b) => List[b] - List[a])
+let keys = Object.keys(List).sort((a, b) => List[b] - List[a])
+res = ''
+function sentence(List) {
+  return List
+            .sort((a, b) => {
+              key1 = Object.keys(a);
+              key2 = Object.keys(b);
+              return key1[0] - key2[0]
+              })
+            .map(item => Object.values(item)[0]).join(' ')
 
-List.forEach((item,index) => {
-      // console.log(item,index)
-      // console.log(Object.keys(item))
-      
-});
+}
+console.log(sentence([
+  { '4': 'dog' }, { '2': 'took' }, { '3': 'his' },
+  { '-2': 'Vatsan' }, { '5': 'for' }, { '6': 'a' }, { '12': 'spin' }
+])
+)
+// function sentence(List) {
+//   return List.sort((item1, item2) => {
+//     let key1 = +Object.keys(item1)[0];
+//     let key2 = +Object.keys(item2)[0];
+//     return key1 - key2;
+//   }).reduce((res, item) => { return res + ' ' + Object.values(item)[0] }, '').trim()
+// }
+
+
+function vowelOne(s){
+  return Array.from(s).map( (item) => {
+    return 'aeiouAEIOU'.includes(item)?1:0;
+  }).join('');
+}
+
+// console.log(vowelOne( "vowelOne" ))
+
+
+
+function killer(suspectInfo, dead) {
+  let bingo = 0;
+  for(suspect in suspectInfo) {
+    //let values = Object.values(suspect);
+    console.log("suspect",suspect)
+    for(let man of suspectInfo[suspect]){
+      console.log("man ==",man)
+      console.log("suspectInfo ===",suspectInfo)
+      dead.includes(man)?bingo++:bingo;
+    }
+    if(bingo == dead.length){
+      return suspect;
+    } else {
+      bingo = 0;
+    }
+  }
+}
+
+// function killer(suspectInfo, dead) {
+//   //your code here...
+//   for (let name in suspectInfo) {
+//     if (dead.every(deadPerson => suspectInfo[name].includes(deadPerson))) {
+//       return name;
+//     }
+//   }
+// }
+// [12, 5, 8, 130, 44].every(elem => elem >= 10);   // false
+// [12, 54, 18, 130, 44].every(elem => elem >= 10); // true
+// a = killer({'James': ['Jacob', 'Bill', 'Lucas'], 'Johnny': ['David', 'Kyle', 'Lucas'], 'Peter': ['Lucy', 'Kyle']},['Lucas', 'Bill'])
+
+
+function dataReverse(data) {
+  let norm = [];
+  console.log('data.length',data.length)
+  while(data.length){
+    console.log('data.splice(0,8)',data.splice(0,8))
+    norm.push(data.splice(0,8));
+    
+  }
+  console.log("norm",norm)
+  // norm.reverse();
+  // return norm.reduce(function(result,item){
+  //   return result.concat(item);
+  // },[])
+}
+
+console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]))
+
+// function dataReverse(data) {
+//   let norm = [];
+//   while(data.length){
+//     norm.push(data.splice(0,8));
+//   }
+//   norm.reverse();
+//   return norm.reduce(function(result,item){
+//     return result.concat(item);
+//   },[])
+// }
