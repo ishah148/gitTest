@@ -1,148 +1,361 @@
-function get(num,str,obj) {
-    return str;
-  }
-  let a = get;
- /*
- console.log(Array.from('foo'));
+function get(num, str, obj) {
+  return str;
+}
+/*
+console.log(Array.from('foo'));
 // expected output: Array ["f", "o", "o"]
 
 console.log(Array.from([1, 2, 3], x => x + x));
 // expected output: Array [2, 4, 6]
 */
-var ArrowFunc = function(arr) {
-    return arr.map( x => String.fromCharCode(x) ).join(''); //Complete this function
-  }
+var ArrowFunc = function (arr) {
+  return arr.map(x => String.fromCharCode(x)).join(''); //Complete this function
+}
 
-  function mergeArrays(arr1, arr2) {
-  
-    let arr3 = arr1.concat(arr2).sort((a,b)=>a-b);
-    
-    let result = new Set(arr3);
-    
-    return Array.from(result);
-    
-  }
+function mergeArrays(arr1, arr2) {
 
+  let arr3 = arr1.concat(arr2).sort((a, b) => a - b);
 
+  let result = new Set(arr3);
 
+  return Array.from(result);
 
+}
 
+function colourAssociation(array) {
+  let res = [];
 
-
-
-
-
-
-
-
-
-  function colourAssociation(array) {
-    let res = [];
-     
-     res = array.map( function(item) { 
-       let obj = {}; 
-       obj.item[0] = item[1];
-       return obj;
-     });
-     return res;
-     }
+  res = array.map(function (item) {
+    let obj = {};
+    obj.item[0] = item[1];
+    return obj;
+  });
+  return res;
+}
 
 
-  //  console.log(colourAssociation([["white", "goodness"],["blue", "tranquility"]]));
+//  console.log(colourAssociation([["white", "goodness"],["blue", "tranquility"]]));
 
-  function add(num1, num2) {
-    num1 = Array.from(num1.toString());
-    num2 = Array.from(num2.toString());
-    let result = [];
-    if (num1.length > num2.length) {
-      for (let i = num2.length; i < num1.length; i++) {
-        num2.unshift(0);
-      }
+function add(num1, num2) {
+  num1 = Array.from(num1.toString());
+  num2 = Array.from(num2.toString());
+  let result = [];
+  if (num1.length > num2.length) {
+    for (let i = num2.length; i < num1.length; i++) {
+      num2.unshift(0);
     }
-    if (num2.length > num1.length) {
-      for (let i = num1.length; i < num2.length; i++) {
-        num1.unshift(0);
-      }
+  }
+  if (num2.length > num1.length) {
+    for (let i = num1.length; i < num2.length; i++) {
+      num1.unshift(0);
     }
-  
-    for(let i = 0;i < num1.length;i++){
-      result[i] = +num1[i]+(+num2[i]);
-    }
-    console.log(result.join(''));
-    return +result.join('');
   }
 
-  // let func = function(array) {
-  //   return Object.fromEntries(array);
-  // }
-  
-  // // prices = { banana: 1, orange: 2, meat: 4 }
-  
-  // console.log(func([
-  //   ["white", "goodness"],
-  //    ["blue", "tranquility"],
-  //   ]));
-
-  function colourAssociation(array) {
-    return array.map( function(item) { 
-           return Object.fromEntries([item]);
-     });
-   }
-   
-   console.log(colourAssociation([["white", "goodness"], ["blue", "tranquility"]])
-   );
-   function combine() {
-    // Your code here
+  for (let i = 0; i < num1.length; i++) {
+    result[i] = +num1[i] + (+num2[i]);
   }
+  console.log(result.join(''));
+  return +result.join('');
+}
+
+// let func = function(array) {
+//   return Object.fromEntries(array);
+// }
+
+// // prices = { banana: 1, orange: 2, meat: 4 }
+
+// console.log(func([
+//   ["white", "goodness"],
+//    ["blue", "tranquility"],
+//   ]));
+
+function colourAssociation(array) {
+  return array.map(function (item) {
+    return Object.fromEntries([item]);
+  });
+}
+
+function combine() {
+  // Your code here
+}
+let tmp;
 console.log(123);
 const A = { a: 10, b: 20, c: 30 }
-const B = { a: 3, c: 6, d: 3 }
-const C = {'andry':'11', 'boil':'12','colya':'13'}
-console.log(A);
-console.log(B);
-arr = [-1, 2, 3, -9];
-for(item in A){
-  console.log(item);
+const B = { a: 3, c: 6, d: 3, }
+const C = { 'andry': '11', 'boil': '12', 'colya': '13' }
+let a = [1, 2, 3, 4, 5]
+// const b = [[6], [7], [8], [9]]
+// a.push(b)
+console.log(a)
+// const Obj = {};
+function MyConstuctor(name, value) {
+  this.name = name;
+  this.value = value;
 }
-console.log(Object.entries(A))
-let tmp = Object.entries(A);
-console.log('---one---');
-tmp.map((item,index) => console.log(index))
-console.log('---two---');
-console.log('--->');
-console.log(tmp);
-console.log('--->');
-console.log('555');
-
-console.log('123')
-const A = { a: 10, b: 20, c: 30 }
-const B = { a: 3, c: 6, d: 3 }
-const C = {'andry':'11', 'boil':'12','colya':'13'}
-console.log(A);
-console.log(B);
-arr = [-1, 2, 3, -9];
-for(item in A){
-  console.log(item);
+function addValue(name, value) {
+  return {
+    name,
+    value,
+  };
 }
-console.log(Object.entries(A))
-let tmp = Object.entries(A);
-console.log('---one---');
-tmp.map((item,index) => console.log(item,index))
-console.log('---two---');
-console.log('--->');
-console.log(tmp);
-console.log('<---');
-console.log(tmp[0][1]);
-let tmp1 = tmp;
-let tmp2 = Object.entries(B);
-console.log(tmp2);
-console.log('reduce')
+let Obj = addValue('ivan', 547)
+let Obj2 = { a: 22 }
+let Obj3 = Object.assign(Obj, Obj2)
+console.log('Obj = ', Obj)
+console.log('Obj2 = ', Obj2)
+console.log('Obj3 = ', Obj3)
+new MyConstuctor('ivan', '45')
+MyConstuctor('igor', 2232)
+console.log('----------------------------')
 
-console.log('reduce end');
-console.log('test');
-names(tmp1,tmp2);
-function names( ...args){
-  args.reduce((a,b,c,d) => console.log('a',a,'\nb',b,'\nc',c,'\nd',d));
+// const arrayOfObjects = [
+//   {
+//     Name: "Apple", Type: "Fruit"
+//   },
+//   {
+//     Name: "Carrot", Type: "Vegetable"
+//   },
+//   {
+//     Name: "Carrot", Type: "Vegetable"
+//   },
+//   {
+//     Name: "Carrot", Type: "Vegetable"
+//   },
+//   {
+//     Name: "Apple",  Type: "Fruit"
+//   },
+//   {
+//     Name: "Apple",  Type: "Fruit"
+//   },
+//   {
+//     Name: "Carrot", Type: "Vegetable"
+//   }
+// ];
+
+
+// const result = arrayOfObjects.reduce((a, {Name, Type}) => {
+//   a[Name] = a[Name] || {Name, Type, times: 0};
+//   a[Name].times += 1;
+//   return a;
+// }, {})
+
+// console.log(Object.values(result));
+// console.log('-------------------------------')
+
+
+// const result = [...arrayOfObjects.reduce((r, o) => {
+
+//   const key = o.Name + '-' + o.Type;
+
+//   const item = r.get(key) || Object.assign({}, o, {
+// times: 0
+//   });
+
+//   item.times += 1;
+
+//   return r.set(key, item);
+// }, new Map).values()];
+
+// console.log(Object.values(result));
+
+console.log('Object.keys(A) = ', Object.keys(A))
+console.log([A, B])
+let H = [A, B].reduce((prev, item) => {
+  // console.log(Object.keys(item));
+  // console.log(Object.values(item));
+  // console.log('reduce ---',(Object.values(item).filter((item)=>item > 5)))
+  return prev.concat((Object.values(item).filter((item) => item > 5)))
 }
-// console.log(Object.values(A))
+  , [])
 
+// Object.values(A).map( (item)=> {
+//   if(item > 19){
+//     console.log('>5')
+//   }
+//   } )
+console.log('test1-', [].concat([4, 5, 6]))
+
+H = [A, B].reduce((prev, item) => {
+  let keys = Object.keys(item);
+
+  for (let key of keys) {
+
+    if (prev[key])
+      prev[key] += item[key];
+    else
+      prev[key] = item[key];
+  }
+  return prev;
+}, {});
+
+// console.log('H ko=ikya= ', H)
+
+function nbDig(n, d) {
+  let res = 0;
+  let arr = [];
+  for (let i = 0; i <= n; i++) {
+    arr[i] = i ** 2;
+  }
+  let tmp = arr.toString();
+  n = arr.toString().length;
+  for (let i = 0; i < n; i++) {
+    if (tmp[i] == d) {
+      res++;
+    }
+  }
+  return res
+}
+// console.log('nbD ===',nbDig(2000000, 1))
+
+// function findMissing(arr1, arr2) {
+//   arr2.sort( (a,b) => a-b)
+//   arr1.sort( (a,b) => a-b)
+//   for(let i = 0; i < arr1.length;i++){
+//     if(arr1[i] !== arr2[i]){
+
+//       // console.log(arr1[i])
+//       return arr1[i]
+//     }
+//   }
+// }
+function findMissing(arr1, arr2) {
+  const reducer = (accumulator, currentValue) => accumulator + currentValue
+  console.log(arr1.reduce(reducer, 0))
+  console.log(arr2.reduce(reducer, 0))
+  return arr1.reduce(reducer, 0) - arr2.reduce(reducer, 0);
+}
+delete b;
+// console.log('find', findMissing([4, 3, 3, 61, 8, 8], [8, 61, 8, 3, 4]))
+// a = [2, 9, 13, 10, 5, 2, 9, 5]
+// let b = a.reduce((max, item, index, array) => {
+//   let sliceReducer = array.slice(index, index + 3).reduce((res, i) => res + i)
+//   if (sliceReducer > max) max = sliceReducer
+//   console.log("sliceReducer === ", sliceReducer)
+//   console.log(max, item, index, array)
+//   return max
+// }, a.slice(0, 3).reduce((a, b) => a + b))
+// console.log(a)
+
+// a = [0, 1, 2, 3, 4].reduce(function(previousValue, currentValue) {
+//   return previousValue + currentValue;
+// });
+// console.log(a)
+
+// let sliceReducer = a.slice(0, 3).reduce((res, item) => res + item)
+// tmp = 0
+
+
+function maxTriSum(numbers) {
+  return Array.from(new Set(numbers)).sort((a, b) => a - b).slice(-3).reduce((a, b) => a + b);
+}
+
+
+for (let i = 0; i < a.length; i++) {
+  // max = max.concat
+}
+function maxTriSum(numbers) {
+  return numbers.reduce((max, item, index, array) => {
+    let sliceReducer = array.slice(index, index + 3).reduce((res, i) => res + i)
+    console.log("sliceReducer", index, " === ", sliceReducer)
+    if (index > array.length - 2) return max
+    console.log('2 :   ', max, item, index, array)
+    if (sliceReducer > max) max = sliceReducer
+    return max
+  }, numbers.slice(0, 3).reduce((a, b) => a + b))
+}
+// console.log("maxTriSum(a) === ", maxTriSum([3,2,6,8,2,3]))
+function myLanguages(obj) {
+  let res = [];
+  let val = Object.values(obj)
+  let keys = Object.keys(obj).sort((a, b) => obj[b] - obj[a]) // !!!!!!!!!!!!!!! Сортировка
+  for (i of keys) {
+    if (obj[i] >= 60) res.push(i);
+
+  }
+  return res;
+}
+// console.log('melang',myLanguages({"Hindi" : 60, "Greek" : 71, "Dutch" : 93}))
+
+//(myLanguages({"Java" : 10, "Ruby" : 80, "Python" : 65}), ["Ruby", "Python"])
+//    (myLanguages({"Hindi" : 60, "Greek" : 71, "Dutch" : 93}), ["Dutch", "Greek", "Hindi"])
+//    (myLanguages({"C++" : 50, "ASM" : 10, "Haskell" : 20}), [])
+// let test2 = a.reduce( (prev, item) =>{
+//   // prev.push(Object.values)    
+//   console.log(Object.values(a))
+
+// },[] )
+// console.log('test2      = ',test2)
+
+// for (i of keys) {
+//   if (a[i] > 60) res.push(i);
+//   return res;
+// }
+// console.log(res)
+
+
+function nicknameGenerator(names) {
+  listSogl = ["a", "e", "i", "o", "u"]
+  if (names.length < 4) return "Error: Name too short"
+  else if (listSogl.includes(names[2])) return names.slice(0, 4)
+  else return names.slice(0, 3)
+
+}
+// console.log(nicknameGenerator("Jimmy"), "Jim");
+
+
+function sortMyString(S) {
+  b = Array.from(S)
+  return b.reduce((res, item, index) => {
+    if (index % 2 === 0) res += item;
+    return res
+  }, '') + ' ' +
+    b.reduce((res, item, index) => {
+      if (index % 2 === 1) res += item;
+      return res
+    }, '')
+}
+
+
+
+console.log('111111111', sortMyString("CodeWars"))
+//, "CdWr oeas");
+console.log('222222222', sortMyString("YCOLUE'VREER"))
+//, "YOU'RE CLEVER");   
+
+// a = "CodeWars";
+// b = Array.from(a)
+// c = 
+// b.reduce((res, item, index) => {
+//   if (index % 2 === 0) res += item;
+//     return res
+// }, '') 
+// +' '+
+// b.reduce((res, item, index) => {
+//   if (index % 2 === 1) res += item;
+//     return res
+// }, '')
+// console.log(c)
+
+function isPowerOfTwo(n) {
+  let res = []
+  for (let i = 0; i < 30; i++) {
+    res.push(2 ** i)
+  }
+  if (res.includes(n)) return true
+  else return false
+}
+// isPowerOfTwo()
+
+List = [
+  {'4': 'dog' }, {'2': 'took'}, {'3': 'his'},
+  {'-2': 'Vatsan'}, {'5': 'for'}, {'6': 'a'}, {'12': 'spin'}
+ ]
+ console.log(Object.keys(List))
+
+ let keys = Object.keys(List).sort((a, b) => List[b] - List[a])
+
+List.forEach((item,index) => {
+      // console.log(item,index)
+      // console.log(Object.keys(item))
+      
+});
