@@ -446,3 +446,44 @@ console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0
 //     return result.concat(item);
 //   },[])
 // }
+
+strCount({
+  first:  "1",
+  second: "2",
+  third:  false,
+  fourth: ["anytime",2,3,4],
+  fifth:  null,
+  sixth:  undefined,
+  seventh:{}
+})
+
+
+// i = 'first'
+// strCount['fourth'].reduce((res, item) => {
+//   if (typeof (item) === 'string') {
+//     res++;
+//   }
+//   return res;
+// }, 0)
+
+
+function strCount(strCount) {
+  // Your code here
+console.log('strCount === ', strCount)
+  result = 0;
+  for (i in strCount) {
+//     console.log('strCount[i] === ', strCount[i])
+    if (strCount[i] != null) {
+      result += Array.from(strCount[i]).
+        reduce((res, item) => {
+          if (typeof (item) === 'string') {
+            res++;
+          }
+          // console.log('res ===',res)
+          return res;
+        }, 0)
+    }
+  }
+  console.log('result ====',result)
+  return result;
+}
