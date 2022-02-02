@@ -356,12 +356,12 @@ let keys = Object.keys(List).sort((a, b) => List[b] - List[a])
 res = ''
 function sentence(List) {
   return List
-            .sort((a, b) => {
-              key1 = Object.keys(a);
-              key2 = Object.keys(b);
-              return key1[0] - key2[0]
-              })
-            .map(item => Object.values(item)[0]).join(' ')
+    .sort((a, b) => {
+      key1 = Object.keys(a);
+      key2 = Object.keys(b);
+      return key1[0] - key2[0]
+    })
+    .map(item => Object.values(item)[0]).join(' ')
 
 }
 console.log(sentence([
@@ -378,9 +378,9 @@ console.log(sentence([
 // }
 
 
-function vowelOne(s){
-  return Array.from(s).map( (item) => {
-    return 'aeiouAEIOU'.includes(item)?1:0;
+function vowelOne(s) {
+  return Array.from(s).map((item) => {
+    return 'aeiouAEIOU'.includes(item) ? 1 : 0;
   }).join('');
 }
 
@@ -390,15 +390,15 @@ function vowelOne(s){
 
 function killer(suspectInfo, dead) {
   let bingo = 0;
-  for(suspect in suspectInfo) {
+  for (suspect in suspectInfo) {
     //let values = Object.values(suspect);
-    console.log("suspect",suspect)
-    for(let man of suspectInfo[suspect]){
-      console.log("man ==",man)
-      console.log("suspectInfo ===",suspectInfo)
-      dead.includes(man)?bingo++:bingo;
+    console.log("suspect", suspect)
+    for (let man of suspectInfo[suspect]) {
+      console.log("man ==", man)
+      console.log("suspectInfo ===", suspectInfo)
+      dead.includes(man) ? bingo++ : bingo;
     }
-    if(bingo == dead.length){
+    if (bingo == dead.length) {
       return suspect;
     } else {
       bingo = 0;
@@ -421,20 +421,20 @@ function killer(suspectInfo, dead) {
 
 function dataReverse(data) {
   let norm = [];
-  console.log('data.length',data.length)
-  while(data.length){
-    console.log('data.splice(0,8)',data.splice(0,8))
-    norm.push(data.splice(0,8));
-    
+  console.log('data.length', data.length)
+  while (data.length) {
+    console.log('data.splice(0,8)', data.splice(0, 8))
+    norm.push(data.splice(0, 8));
+
   }
-  console.log("norm",norm)
+  console.log("norm", norm)
   // norm.reverse();
   // return norm.reduce(function(result,item){
   //   return result.concat(item);
   // },[])
 }
 
-console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]))
+console.log(dataReverse([1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0]))
 
 // function dataReverse(data) {
 //   let norm = [];
@@ -447,17 +447,17 @@ console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0
 //   },[])
 // }
 
-strCount({
-  first:  "1",
-  second: "2",
-  third:  false,
-  fourth: ["anytime",2,3,4],
-  fifth:  null,
-  sixth:  undefined,
-  seventh:{}
-})
+// strCount({
+//   first: "1",
+//   second: "2",
+//   third: false,
+//   fourth: ["anytime", 2, 3, 4],
+//   fifth: null,
+//   sixth: undefined,
+//   seventh: {}
+// })
 
-
+// strCount === ['strin', 'strin', 'strin', 'strin']
 // i = 'first'
 // strCount['fourth'].reduce((res, item) => {
 //   if (typeof (item) === 'string') {
@@ -467,23 +467,84 @@ strCount({
 // }, 0)
 
 
-function strCount(strCount) {
-  // Your code here
-console.log('strCount === ', strCount)
-  result = 0;
-  for (i in strCount) {
-//     console.log('strCount[i] === ', strCount[i])
-    if (strCount[i] != null) {
-      result += Array.from(strCount[i]).
-        reduce((res, item) => {
-          if (typeof (item) === 'string') {
-            res++;
-          }
-          // console.log('res ===',res)
-          return res;
-        }, 0)
-    }
+// function strCount(obj) {
+//   // Your code here
+// console.log('strCount === ', obj)
+//   result = 0;
+//   for (i in obj) {
+// //     console.log('strCount[i] === ', strCount[i])
+//     if (obj[i] != null) {
+//       result += Array.from(obj[i]).
+//         reduce((res, item) => {
+//           if (typeof (item) === 'string') {
+//             res++;
+//           }
+//           // console.log('res ===',res)
+//           return res;
+//         }, 0)
+//     }
+//   }
+//   console.log('result ====',result)
+//   return result;
+// }
+
+// function strCount(obj){
+//     console.log(Object.values(obj))
+//     console.log(Object.entries(obj))
+// }
+
+// =============== Recursion ===============
+
+// function strCount(obj) {
+//   let res = 0;
+//   for(i in obj) {
+//     if (typeof obj[i] == 'object') res += strCount(obj[i]);
+//     if (typeof obj[i] == 'string') res += 1
+//   }
+//   return res;
+// }
+
+// function strCount(obj) {
+//   let res = 0;
+//   for (i in obj) {
+//     if(typeof obj[i] == 'null'){
+//         return
+//     }
+
+//     if (typeof obj[i] == 'object') {
+//       res += strCount(obj[i]);
+//       }
+//     if (typeof obj[i] == 'string'){ 
+//       res += 1
+//       }
+//   }
+//   return res;
+// }
+
+// function strCount(obj) {
+//   let res = 0;
+//   for(let i in obj) {
+//     if (typeof obj[i] == 'null') res
+//     if (typeof obj[i] == 'object') res += strCount(obj[i]);
+//     if (typeof obj[i] == 'string') res += 1
+//   }
+//   return res;
+// }
+function likes(names) {
+  if(names.length == 0){
+    return 'no one likes this'
   }
-  console.log('result ====',result)
-  return result;
+  if(names.length == 1){
+    return names[0] + ' likes this'
+  }
+  if(names.length == 2){
+    return names[0] + ' and ' + names[1] + ' like this'
+  }
+  if(names.length == 3){
+    return names[0] + ', '+ names[1] +' '+ names[2] + ' like this'
+    
+  }else return names[0] + names[1] + ' and ' + (names.length - 2) + ' others like this';
+  
 }
+
+console.clear();
