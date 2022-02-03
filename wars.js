@@ -531,20 +531,57 @@ console.log(dataReverse([1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 //   return res;
 // }
 function likes(names) {
-  if(names.length == 0){
+  if (names.length == 0) {
     return 'no one likes this'
   }
-  if(names.length == 1){
+  if (names.length == 1) {
     return names[0] + ' likes this'
   }
-  if(names.length == 2){
+  if (names.length == 2) {
     return names[0] + ' and ' + names[1] + ' like this'
   }
-  if(names.length == 3){
-    return names[0] + ', '+ names[1] +' '+ names[2] + ' like this'
-    
-  }else return names[0] + names[1] + ' and ' + (names.length - 2) + ' others like this';
-  
+  if (names.length == 3) {
+    return names[0] + ', ' + names[1] + ' ' + names[2] + ' like this'
+
+  } else return names[0] + names[1] + ' and ' + (names.length - 2) + ' others like this';
+
 }
 
 console.clear();
+
+// ===============  ===============c
+
+function toWeirdCase(a) {
+  a = a.split(' ')
+  result = []
+
+  for (item of a) {
+    console.log("item === ",item)
+    result.push(item
+      .split('')
+      .map((item, index) => index % 2 == 0 ? item.toUpperCase() : item.toLowerCase())
+      .join('')
+      .toString()
+    )
+  }
+  return result.join(' ')
+}
+
+
+
+// toWeirdCase("String");//=> returns "StRiNg"
+// toWeirdCase("Weird string case");//=> returns "WeIrD StRiNg CaSe"
+// a = "Weird string case"
+// result = []
+// a = 'Srting'
+// for (item of a) {
+//   result.push(item
+//     .split('')
+//     .map((item, index) => index % 2 == 0 ? item.toUpperCase() : item.toLowerCase())
+//     .join('')
+//     .toString()
+//   )
+// }
+// result.join('')
+
+// ===============  ===============
