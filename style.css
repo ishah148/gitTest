@@ -25,10 +25,28 @@ html {
     position: relative;
     font-size: 0;
     overflow: hidden;
+    display: flex;
   }
-  
+   /* =============== Button =============== */
+.play-pause{
+  width: 100px;
+  height: 100px;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);;
+  position: absolute;
+  z-index: 1;
+  transition-duration: 3s;
+}
+.button-play{
+  width: 100px;
+  height: 100px;
+}
+body > div > div > img{
+  transition: all 3s ease 3s;
+}
+
   /* This css is only applied when fullscreen is active. */
-  .player:fullscreen {
+  /* .player:fullscreen {
     max-width: none;
     width: 100%;
   }
@@ -154,4 +172,4 @@ html {
     background: #ffc600;
     cursor: pointer;
   }
-  
+   */
