@@ -34,17 +34,51 @@ html {
   top: calc(50% - 50px);
   left: calc(50% - 50px);;
   position: absolute;
-  z-index: 1;
+  /* z-index: 1; */
   transition-duration: 3s;
 }
 .button-play{
   width: 100px;
   height: 100px;
 }
-body > div > div > img{
+.button-play{
   transition: all 3s ease 3s;
 }
 
+.control-panel{
+    display: flex;
+    position: absolute;
+    background-color: red;
+    height: 40px;
+    width:100%; 
+    bottom: 0;
+    display: none;
+}
+button.control-panel-play{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(16, 235, 82);
+    border: none;
+}
+.start{
+    /* width: 40px;
+    height: 40px; */
+}
+.rewind {
+    width: 70%;
+    height: 40px;
+    background-color: darkgreen;
+}
+.volume {
+    width: 20%;
+    height: 40px;
+    background-color: burlywood;
+}
+.fullscreen {
+    background-color: yellow;
+    width: 40px;
+    height: 40px;
+}
   /* This css is only applied when fullscreen is active. */
   /* .player:fullscreen {
     max-width: none;
@@ -124,7 +158,7 @@ body > div > div > img{
   
   /* unholy css to style input type="range" */
   
-  input[type=range] {
+  /* input[type=range] {
     -webkit-appearance: none;
     background:transparent;
     width: 100%;
@@ -171,5 +205,4 @@ body > div > div > img{
     border-radius: 50px;
     background: #ffc600;
     cursor: pointer;
-  }
-   */
+  } */

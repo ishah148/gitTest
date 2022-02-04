@@ -19,13 +19,21 @@ const videoPlayer = document.querySelector('video.player__video')
 const play = document.querySelector('.play-pause')
 const buttonPlay = document.querySelector('.button-play')
 const imgButton = document.querySelector("body > div > div > img")
-
+const controlPanel = document.querySelector('.control-panel')
+const controlStart = document.querySelector('.control-start')
 videoPlayer.autoplay = false;
 
 // imgButton.addEventListener('click', playPause)
 play.addEventListener('click', playPause)
 // buttonPlay.addEventListener('click', playPause)
 videoPlayer.addEventListener('click', playPause)
+controlStart.addEventListener('click',playPause)
+
+play.addEventListener('mouseover',() => controlPanel.style.display = 'flex')
+videoPlayer.addEventListener('mouseover',() => controlPanel.style.display = 'flex')
+controlPanel.addEventListener('mouseover',() => controlPanel.style.display = 'flex')
+videoPlayer.addEventListener('mouseout',() => controlPanel.style.display = 'none')
+controlPanel.addEventListener('mouseout',() => controlPanel.style.display = 'none')
 
 
 
@@ -33,18 +41,28 @@ function playPause() {
   console.log('enter')
   if (videoPlayer.paused) {
     console.log('play')
+
+    // controlStart.src = 'svg/pause.svg' 
     buttonPlay.src = 'svg/play.svg'
     document.querySelector('.player').style.opacity = '1'
+    
     videoPlayer.play()
     setTimeout(() => {
       imgButton.style.display = 'none'
-      }, 2000);
+      controlStart.style.display = 'none'
+
+      }, 100);
       return;
   } else {
     console.log('pause')
     imgButton.style.display = ''
+    controlPanel.style.display = 'flex'
+
+
     videoPlayer.pause()
     buttonPlay.src = 'svg/pause.svg'
+    // controlStart.src = 'svg/play.svg'
+
     document.querySelector('.player').style.opacity = '0.7'
       return;
   }
