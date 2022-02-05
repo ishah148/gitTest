@@ -1,92 +1,173 @@
 html {
-    box-sizing: border-box;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    display:flex;
-    background:#7A419B;
-    min-height:100vh;
-    background: linear-gradient(135deg, #7c1599 0%,#921099 48%,#7e4ae8 100%);
-    background-size:cover;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .player {
-    max-width:750px;
-    border:5px solid rgba(0,0,0,0.2);
-    box-shadow:0 0 20px rgba(0,0,0,0.2);
-    position: relative;
-    font-size: 0;
-    overflow: hidden;
-    display: flex;
-  }
-   /* =============== Button =============== */
-.play-pause{
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background: #7A419B;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #7c1599 0%, #921099 48%, #7e4ae8 100%);
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+}
+
+.player {
+  max-width: 750px;
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  font-size: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+/* =============== Button =============== */
+.play-pause {
   width: 100px;
   height: 100px;
   top: calc(50% - 50px);
-  left: calc(50% - 50px);;
+  left: calc(50% - 50px);
+  ;
   position: absolute;
   /* z-index: 1; */
   transition-duration: 3s;
 }
-.button-play{
+
+.button-play {
   width: 100px;
   height: 100px;
 }
-.button-play{
+
+.button-play {
   transition: all 3s ease 3s;
 }
 
-.control-panel{
-    display: flex;
-    position: absolute;
-    background-color: red;
-    height: 40px;
-    width:100%; 
-    bottom: 0;
-    display: none;
+.control-panel {
+  display: flex;
+  position: absolute;
+  background-color: red;
+  height: 40px;
+  width: 100%;
+  bottom: 0;
+  display: none;
+  /* opacity: 0.5; */
 }
-button.control-panel-play{
-    width: 40px;
-    height: 40px;
-    background-color: rgb(16, 235, 82);
-    border: none;
+
+button.control-panel-play {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(16, 235, 82);
+  /* opacity: 0.4; */
+  border: none;
 }
-.start{
-    /* width: 40px;
+
+.start {
+  /* width: 40px;
     height: 40px; */
 }
+
 .rewind {
-    width: 70%;
-    height: 40px;
-    background-color: darkgreen;
-    display: flex;
+  width: 70%;
+  height: 40px;
+  background-color: darkgreen;
+  display: flex;
+  align-items: center;
 }
-.rewind-range{
-    width: 100%;
-}
+
+
 /* input[type = range]{ */
 
+.rewind-range {
+  /* background: linear-gradient(to right, #ff0404 0%, #e40606 40%, #fff 40%, #fff 100%); */
+  border: solid 2px gold;
+  border-radius: 8px;
+  height: 7px;
+  width: 100%;
+  outline: none;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+}
+
+.rewind-range::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  cursor: ew-resize;
+  background: #434343;
+  cursor: pointer;
+}
+
+.time {
+  width: 60px;
+  background-color: cornflowerblue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+
+}
+
+.time span,
+.time p {
+  font-size: 12px;
+}
+
 .volume {
-    width: 20%;
-    height: 40px;
-    background-color: burlywood;
+  width: 20%;
+  height: 40px;
+  background-color: burlywood;
 }
+
 .fullscreen {
-    background-color: yellow;
-    width: 40px;
-    height: 40px;
+  background-color: yellow;
+  width: 40px;
+  height: 40px;
 }
-  /* This css is only applied when fullscreen is active. */
-  /* .player:fullscreen {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* This css is only applied when fullscreen is active. */
+/* .player:fullscreen {
     max-width: none;
     width: 100%;
   }
@@ -163,8 +244,8 @@ button.control-panel-play{
   }
   
   /* unholy css to style input type="range" */
-  
-  /* input[type=range] {
+
+/* input[type=range] {
     -webkit-appearance: none;
     background:transparent;
     width: 100%;

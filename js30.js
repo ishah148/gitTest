@@ -28,14 +28,35 @@ play.addEventListener('click', playPause)
 // buttonPlay.addEventListener('click', playPause)
 videoPlayer.addEventListener('click', playPause)
 controlStart.addEventListener('click', playPause)
+const progress = document.querySelector('.rewind-range');
+play.addEventListener('mouseover', () => controlPanel.style.display = 'flex')
+videoPlayer.addEventListener('mouseover', () => controlPanel.style.display = 'flex')
+controlPanel.addEventListener('mouseover', () => controlPanel.style.display = 'flex')
+videoPlayer.addEventListener('mouseout', () => controlPanel.style.display = 'none')
+controlPanel.addEventListener('mouseout', () => controlPanel.style.display = 'none')
+setInterval(() => {
+    document.querySelector('.current-time').innerHTML = Math.floor(videoPlayer.currentTime)
+    document.querySelector('.duration-time').innerHTML = Math.floor(videoPlayer.duration)
+    
+}, 200);
+document.querySelector('.current-time').innerHTML = videoPlayer.currentTime
 
-// play.addEventListener('mouseover', () => controlPanel.style.display = 'flex')
-// videoPlayer.addEventListener('mouseover', () => controlPanel.style.display = 'flex')
-// controlPanel.addEventListener('mouseover', () => controlPanel.style.display = 'flex')
-// videoPlayer.addEventListener('mouseout', () => controlPanel.style.display = 'none')
-// controlPanel.addEventListener('mouseout', () => controlPanel.style.display = 'none')
 
 
+progress.addEventListener('input', function () {
+    const value = this.value;
+    this.style.background = `linear-gradient(to right, gold 0%, gold ${value}%, #fff ${value}%, white 100%)`
+    videoPlayer.currentTime = value / 100 * videoPlayer.duration
+    progress.value = value
+    // document.querySelector('.current-time').innerHTML = videoPlayer.currentTime
+    // document.querySelector('.duration-time').innerHTML = videoPlayer.duration
+    console.log(document.querySelector('.current-time').innerHTML)
+    console.log(value)
+})
+
+
+
+firstSrylesInit();
 
 function playPause() {
     console.log('enter')
@@ -46,10 +67,15 @@ function playPause() {
         stylePause();
         return;
     }
-
+    
 }
 
-function stylePause(){
+
+function firstSrylesInit() {
+    progress.value = 0
+}
+
+function stylePause() {
     console.log('pause')
     imgButton.style.display = ''
     controlPanel.style.display = 'flex'
@@ -59,7 +85,7 @@ function stylePause(){
     controlStart.src = '/svg/play.svg'
     document.querySelector('.player').style.opacity = '0.7'
 }
-function stylePlay(){
+function stylePlay() {
     console.log('play')
     controlStart.src = '/svg/pause.svg'
     buttonPlay.src = 'svg/play.svg'
