@@ -68,7 +68,13 @@ button.control-panel-play{
     width: 70%;
     height: 40px;
     background-color: darkgreen;
+    display: flex;
 }
+.rewind-range{
+    width: 100%;
+}
+/* input[type = range]{ */
+
 .volume {
     width: 20%;
     height: 40px;

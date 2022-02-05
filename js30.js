@@ -27,49 +27,50 @@ videoPlayer.autoplay = false;
 play.addEventListener('click', playPause)
 // buttonPlay.addEventListener('click', playPause)
 videoPlayer.addEventListener('click', playPause)
-controlStart.addEventListener('click',playPause)
+controlStart.addEventListener('click', playPause)
 
-play.addEventListener('mouseover',() => controlPanel.style.display = 'flex')
-videoPlayer.addEventListener('mouseover',() => controlPanel.style.display = 'flex')
-controlPanel.addEventListener('mouseover',() => controlPanel.style.display = 'flex')
-videoPlayer.addEventListener('mouseout',() => controlPanel.style.display = 'none')
-controlPanel.addEventListener('mouseout',() => controlPanel.style.display = 'none')
+// play.addEventListener('mouseover', () => controlPanel.style.display = 'flex')
+// videoPlayer.addEventListener('mouseover', () => controlPanel.style.display = 'flex')
+// controlPanel.addEventListener('mouseover', () => controlPanel.style.display = 'flex')
+// videoPlayer.addEventListener('mouseout', () => controlPanel.style.display = 'none')
+// controlPanel.addEventListener('mouseout', () => controlPanel.style.display = 'none')
 
 
 
 function playPause() {
-  console.log('enter')
-  if (videoPlayer.paused) {
-    console.log('play')
+    console.log('enter')
+    if (videoPlayer.paused) {
+        stylePlay();
+        return;
+    } else {
+        stylePause();
+        return;
+    }
 
-    // controlStart.src = 'svg/pause.svg' 
-    buttonPlay.src = 'svg/play.svg'
-    document.querySelector('.player').style.opacity = '1'
-    
-    videoPlayer.play()
-    setTimeout(() => {
-      imgButton.style.display = 'none'
-      controlStart.style.display = 'none'
+}
 
-      }, 100);
-      return;
-  } else {
+function stylePause(){
     console.log('pause')
     imgButton.style.display = ''
     controlPanel.style.display = 'flex'
-
-
+    controlStart.style.display = ''
     videoPlayer.pause()
     buttonPlay.src = 'svg/pause.svg'
-    // controlStart.src = 'svg/play.svg'
-
+    controlStart.src = '/svg/play.svg'
     document.querySelector('.player').style.opacity = '0.7'
-      return;
-  }
-  
-  }
-
-
+}
+function stylePlay(){
+    console.log('play')
+    controlStart.src = '/svg/pause.svg'
+    buttonPlay.src = 'svg/play.svg'
+    document.querySelector('.player').style.opacity = '1'
+    videoPlayer.play()
+    setTimeout(() => {
+        imgButton.style.display = 'none'
+        controlStart.style.display = 'none'
+        controlStart.style.display = ''
+    }, 100);
+}
 
 
 
