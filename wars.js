@@ -556,7 +556,7 @@ function toWeirdCase(a) {
   result = []
 
   for (item of a) {
-    console.log("item === ",item)
+    console.log("item === ", item)
     result.push(item
       .split('')
       .map((item, index) => index % 2 == 0 ? item.toUpperCase() : item.toLowerCase())
@@ -585,19 +585,76 @@ function toWeirdCase(a) {
 // result.join('')
 
 // ===============  dec to bin===============
-Number(1234).toString(2).split('').reduce( (res,i) => i === '1'?res+=1:res,0)
+Number(1234).toString(2).split('').reduce((res, i) => i === '1' ? res += 1 : res, 0)
 
-var whatTimeIsIt = function(angle) {
-  if(angle === 0) angle = 360
-  if(angle > 360) angle-=360
-  let min = Math.round((angle/30 - Math.trunc(angle/30))*30*2)
-  console.log('min =',min)
-  console.log((angle/30 - Math.trunc(angle/30))*30*2)
-  let hour = Math.floor(angle/30)
+var whatTimeIsIt = function (angle) {
+  if (angle === 0) angle = 360
+  if (angle > 360) angle -= 360
+  let min = Math.round((angle / 30 - Math.trunc(angle / 30)) * 30 * 2)
+  console.log('min =', min)
+  console.log((angle / 30 - Math.trunc(angle / 30)) * 30 * 2)
+  let hour = Math.floor(angle / 30)
   // let min = (angle/30 - Math.trunc(angle/30))*30*2
-  min = min >=10?min:`0${min}`
-  console.log('min =',min)
-  hour = hour >=10?hour:`0${hour}`
+  min = min >= 10 ? min : `0${min}`
+  console.log('min =', min)
+  hour = hour >= 10 ? hour : `0${hour}`
   console.log('hour =', hour)
   return `${hour}:${min}`
 }
+a = ['ABC', 65]
+function temp() {
+  let x = a[0].split('').reduce((res, item) => {
+    if (item.charCodeAt() == a[1]) return res = 1
+    return res
+  }, 0)
+  console.log(x)
+}
+
+a = [['AAA', 65], ['ABC', 65], ['ABC', 65]]
+// a = [['ABC', 65], ['HGR', 74], ['BYHT', 74]]
+let win = 2
+function bingo(a, win) {
+
+  let result = 0
+  for (let i in a) {
+    result = result + a[i][0].split('').reduce((res, item) => {
+      if (item.charCodeAt() == a[i][1]) return res = 1
+      return res
+    }, 0)
+  }
+  return result >= win ? 'Winner!' : 'Loser!'
+}
+// console.log(bingo([['HGTYRE', 74], ['BE', 66], ['JKTY', 74]], 3))
+// console.log(bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 1))
+// console.log(bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 2))
+
+
+// function bingo(ticket, win){
+//   if(ticket.filter(a => a[0].split('').some(b => b.charCodeAt(0) == a[1])).length >= win)
+//   {
+//     return "Winner!";
+//   }
+//   return "Loser!";
+// }
+console.log(randomInteger(1,1000))
+
+function randomInteger(min, max) {
+  // получить случайное число от (min-0.5) до (max+0.5)
+  let rand = min - 0.5 + Math.random() * (max - min + 1);
+  return Math.round(rand);
+}
+
+
+function getCard() {
+  // Start your coding here...
+  result = []
+  b = [['B',1,15],['I',16,30],['N',31,45],['G',46,60],['O',61,75]]
+  for(let i in b){
+    for(let k = 0;k<5;k++){
+      result.push(`${b[i][0]}${randomInteger(b[i][1],b[i][2])}`)
+    }
+  }
+  result.splice(10, 1)
+  return result
+}
+  
