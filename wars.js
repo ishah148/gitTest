@@ -556,7 +556,7 @@ function toWeirdCase(a) {
   result = []
 
   for (item of a) {
-    console.log("item === ",item)
+    console.log("item === ", item)
     result.push(item
       .split('')
       .map((item, index) => index % 2 == 0 ? item.toUpperCase() : item.toLowerCase())
@@ -585,19 +585,66 @@ function toWeirdCase(a) {
 // result.join('')
 
 // ===============  dec to bin===============
-Number(1234).toString(2).split('').reduce( (res,i) => i === '1'?res+=1:res,0)
+Number(1234).toString(2).split('').reduce((res, i) => i === '1' ? res += 1 : res, 0)
 
-var whatTimeIsIt = function(angle) {
-  if(angle === 0) angle = 360
-  if(angle > 360) angle-=360
-  let min = Math.round((angle/30 - Math.trunc(angle/30))*30*2)
-  console.log('min =',min)
-  console.log((angle/30 - Math.trunc(angle/30))*30*2)
-  let hour = Math.floor(angle/30)
+var whatTimeIsIt = function (angle) {
+  if (angle === 0) angle = 360
+  if (angle > 360) angle -= 360
+  let min = Math.floor((angle % 30) * 2);
+  console.log('min =', min)
+  console.log((angle / 30 - Math.trunc(angle / 30)) * 30 * 2)
+  let hour = Math.floor(angle / 30)
   // let min = (angle/30 - Math.trunc(angle/30))*30*2
-  min = min >=10?min:`0${min}`
-  console.log('min =',min)
-  hour = hour >=10?hour:`0${hour}`
+  min = min >= 10 ? min : `0${min}`
+  console.log('min =', min)
+  hour = hour >= 10 ? hour : `0${hour}`
   console.log('hour =', hour)
   return `${hour}:${min}`
+}
+
+
+var whatTimeIsIt = function (angle) {
+  let hour = Math.floor(angle / 30);
+  hour = (hour == 0) ? "12" : (hour < 10) ? `0${hour}` : hour;
+  let min = Math.floor((angle % 30) * 2);
+  min = (min < 10) ? `0${min}` : min;
+  return `${hour}:${min}`;
+}
+
+
+function isPrime(num) {
+  let end = Math.ceil(num ** (1 / 2)) + 10;
+  if (num < 0) return false
+  if ([0, 1, 4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20, 21, 22].includes(num)) return false
+  if ([2, 3, 5, 7, 11, 13, 17, 19, 23].includes(num)) return true
+  for (i = 2; i < end; i++) {
+    if (num % i === 0) {
+      return false
+    }
+  }
+  return true
+}
+// working solution
+// function rgb(r, g, b) {
+//   console.log('r,g,b ===',r,g,b)
+//   if(+r < 0) r = 0
+//   if(+g < 0) g = 0
+//   if(+b < 0) b = 0
+//   if(+r > 255) r = 255
+//   if(+g > 255) g = 255
+//   if(+b > 255) b = 255
+//   // n.toString(16)
+//   r = r.toString(16).toUpperCase().padStart(2, '0')
+//   console.log(r)
+//   g = g.toString(16).toUpperCase().padStart(2, '0')
+//   console.log(g)
+//   b = b.toString(16).toUpperCase().padStart(2, '0')
+//   console.log(b)
+//   return `${r}${g}${b}`
+// }
+function rgb(...args) {
+  let a = args.map(item => item > 255 ? item = 0 : item < 0 ? item = 0 : item)
+  a.toString(16).toUpperCase().padStart(2,'0')
+  // console.log(args)
+  return a.map( item => item.toString(16).toUpperCase().padStart(2,'0')).join('')
 }
