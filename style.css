@@ -1,18 +1,12 @@
-:root{
-    --column:column;
+header {
+  background-color: red;
+  width: 500px;
 }
-.container{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    align-content: flex-start;
-     
-    border: 1px solid #0000ff;
-    height: 100px;
+
+header .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
 }
-.container div{
-    min-width: 100px;
-    border: 1px solid red;
-}
+/*# sourceMappingURL=style.css.map */
