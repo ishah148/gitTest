@@ -3,10 +3,14 @@ header {
   width: 500px;
 }
 
-header .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 20px;
+.wrapper {
+  color: aquamarine;
+  width: 100vh;
+  display: -ms-grid;
+  display: grid;
+}
+
+.wrapper .table {
+  width: 150px;
 }
 /*# sourceMappingURL=style.css.map */
