@@ -1,12 +1,23 @@
-header{
+header {
     background-color: red;
     width: 500px;
 }
-.wrapper{
-    color: aquamarine;
-    width: 100vh;
+.wrapper {
     display: grid;
-    .table{
-        width: 150px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 20px;
+    gap: 130px 20px;
+    grid-template-areas:
+        ". . ."
+        ". . ."
+        ". . .";
+    .table {
+        width: 300px;
+        height: 300px;
+    }
+    .testimg {
+        width: inherit;
+        height: inherit;
     }
 }
