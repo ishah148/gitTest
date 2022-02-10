@@ -657,4 +657,75 @@ function getCard() {
   result.splice(10, 1)
   return result
 }
+console.clear()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function convert(input, source, target) {
+   let DECIMAL =  '0123456789';
+  let baseS = source.length;
+  let baseT = target.length;
+  let res = [];
+
+  let dec = input.split('').reverse().reduce( (res,item,index) =>{
+    return res + item*Math.pow(baseS,index);
+
+  },0);
+  console.log(dec)
+
+  if(dec<=baseT){
+    return '' + target[dec];
+  }
+  if(target= DECIMAL){
+
+  }
+
+  while(dec){
+    res.push(target[dec%baseT]);
+    dec = Math.floor(dec/baseT);
+  }
+
+  return res.reverse().join('');
   
+}
+
+var Alphabet = {
+  BINARY:        '01',
+  OCTAL:         '01234567',
+  DECIMAL:       '0123456789',
+  HEXA_DECIMAL:  '0123456789abcdef',
+  ALPHA_LOWER:   'abcdefghijklmnopqrstuvwxyz',
+  ALPHA_UPPER:   'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  ALPHA:         'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  ALPHA_NUMERIC: '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+};
+
+
+// describe('example tests', function() {
+//   var bin = Alphabet.BINARY, oct = Alphabet.OCTAL, dec = Alphabet.DECIMAL, hex = Alphabet.HEXA_DECIMAL,
+//       allow = Alphabet.ALPHA_LOWER, alup = Alphabet.ALPHA_UPPER, alpha = Alphabet.ALPHA, alnum = Alphabet.ALPHA_NUMERIC;
+  
+//   it('should convert between numeral systems', function() {
+//     Test.assertEquals(convert("15", dec, bin), '1111', '"15" dec -> bin');
+//     Test.assertEquals(convert("15", dec, oct), '17', '"15" dec -> oct');
+//     Test.assertEquals(convert("1010", bin, dec), '10', '"1010" bin -> dec');
+//     Test.assertEquals(convert("1010", bin, hex), 'a', '"1010" bin -> hex');
+//   });
+
+
+// 1001101.11012 = 1·2**6+0·2**5+0·2**4+1·2**3+1·2**2+0·2**1+1·2**0 =
+
+
+
+console.log(convert("1010", Alphabet.BINARY, Alphabet.DECIMAL))
