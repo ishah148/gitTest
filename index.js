@@ -24,6 +24,8 @@ const requestTest = 'https://api.unsplash.com/photos/?client_id=SouHY7Uul-OxoMl3
 
 //cd3f65717cbbf12fee2f4b6eac20629e apikey kinopoisk
 
+temp = '<div class="table"><img src="" alt="img" class="testimg"><div class="description-wrapper"><p class="title"></p><p class="year"></p><svg class="rating-svg"><use xlink:href="assets/svg/rating.svg#rating"></use></svg><p class="rating"></p></div></div>'
+
 const requestUrlPopular = 'https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=1'
 const requestSearch = (searchByName) =>'https://api.themoviedb.org/3/search/movie?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&query='+searchByName+'&page=1&include_adult=false';
 // function requestSearch
@@ -78,6 +80,7 @@ getFilm(requestUrlPopular).then( data => {
         if(i > document.querySelectorAll('.wrapper img').length - 1) return
         document.querySelectorAll('.wrapper img')[i].src = imgLink + data.results[i].poster_path
         document.querySelectorAll('.wrapper img')[i].alt = data.results[i].title
+        document.querySelectorAll('.table .title')[i].innerHTML = data.results[i].title + '<div class = "hello">'
     }
 })
 // getFilm.then( data => console.log(data))
