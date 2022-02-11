@@ -7,78 +7,108 @@ const requestTest = 'https://api.unsplash.com/photos/?client_id=SouHY7Uul-OxoMl3
 //b485f3e1
 // http://www.omdbapi.com/?s=green&y=&plot=&apikey=b485f3e1 searth with name: green, year:empty, plit:none, apikey:b485f3e1
 //http://www.omdbapi.com/?t=terminator%202&y=&plot=full&apikey=b485f3e1
+
+// =============== api tmdb ===============
+// =============== some examples===============
+//api tmdb
+// f5978d3a7a7427ea73c7d60edf76ed30
+//https://api.themoviedb.org/3/movie/550?api_key=f5978d3a7a7427ea73c7d60edf76ed30
+//https://api.themoviedb.org/3/search/movie?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&query=1984&page=1&include_adult=false
+//search 1984 by name
+// Path to photo is link + ID of film
+// =============== popular ===============
+// https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=1
+// =============== img link ===============
+// https://www.themoviedb.org/t/p/w220_and_h330_face/
+// ===============    end      ===============
+
+//cd3f65717cbbf12fee2f4b6eac20629e apikey kinopoisk
+
+const requestUrlPopular = 'https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=1'
+const requestSearch = (searchByName) =>'https://api.themoviedb.org/3/search/movie?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&query='+searchByName+'&page=1&include_adult=false';
+// function requestSearch
+const imgLink = 'https://www.themoviedb.org/t/p/w220_and_h330_face'
+
+
+
+
+
+
 console.log('step 1');
 let a;
 let b;
-function getData2(url) {
-    
+getData(requestUrlPopular)
+
+function getData(url) {
+
     fetch(url)
         .then((res) => res.json())
         .then((data) => {
-            b = data
-            // data.results[0].urls.small_s3
+            // console.log(data);
+            console.log('----------')
+            // a = data.filter((item, index) => index < 9)
+            a = data
+            console.log(data)
             for (i in data.results) {
-                console.log('2--------2')
+                if(i > document.querySelectorAll('.wrapper img').length - 1) return
                 console.log(i)
-                console.log(data.results[i].urls.small_s3)
-                document.querySelectorAll('.wrapper img')[i].src = data.results[i].urls.small_s3
-                // console.log(data)
-                console.log('end2---------end2')
+                console.log(data.results[i].id)
+                document.querySelectorAll('.wrapper img')[i].src = imgLink + data.results[i].poster_path
+                document.querySelectorAll('.wrapper img')[i].alt = data.results[i].title
             }
         })
-        .catch( i => console.log('i ====',i))
+        .catch( i => console.log('errror',i))
     }
+
+
+
+// async function getFilm()
+
+
+
+
+
+
+    // =============== get photos flowers ===============
+    // function getData2(url) {
+        
+        //     fetch(url)
+        //         .then((res) => res.json())
+        //         .then((data) => {
+//             b = data
+//             // data.results[0].urls.small_s3
+//             for (i in data.results) {
+    //                 console.log('2--------2')
+    //                 console.log(i)
+    //                 console.log(data.results[i].urls.small_s3)
+    //                 document.querySelectorAll('.wrapper img')[i].src = data.results[i].urls.small_s3
+    //                 // console.log(data)
+    //                 console.log('end2---------end2')
+    //             }
+    //         })
+    //         .catch( i => console.log('i ====',i))
+    //     }
+    // =============== end get photos flowers ===============
     
+    
+    
+    // =============== ===============
     // getData2(requestURL3)
-    function getTest(url) {
-        console.log('enter')
-        fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-            b = data
-            console.log(data)
-        })
-        // .catch( i => console.log('i ====',i))
-    }
+    // function getTest(url) {
+        //     console.log('enter')
+        //     fetch(url)
+        //     .then((res) => res.json())
+        //     .then((data) => {
+    //         b = data
+    //         console.log(data)
+    //     })
+    //     // .catch( i => console.log('i ====',i))
+    // }
         
 
-    getTest(requestTest)
+    // getTest(requestTest)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function getData(url) {
-    
-        fetch(url)
-            .then((res) => res.json())
-            .then((data) => {
-                // console.log(data);
-                console.log('----------')
-                a = data.filter((item, index) => index < 9)
-                for (i in a) {
-                    console.log(i)
-                    console.log(a[i].url)
-                    // document.querySelectorAll('.wrapper img')[i].src = a[i].url
-                    // document.querySelectorAll('.wrapper img')[i].alt = a[i].title
-                }
-            })
-            .catch( i => console.log('errror',i))
-        }
-    
     // function sendRequest(method, url, body = null) {
         //   const headers = {
             //     'Content-Type': 'application/json'
