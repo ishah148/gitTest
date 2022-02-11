@@ -37,7 +37,7 @@ const imgLink = 'https://www.themoviedb.org/t/p/w220_and_h330_face'
 console.log('step 1');
 let a;
 let b;
-getData(requestUrlPopular)
+// getData(requestUrlPopular)
 
 function getData(url) {
 
@@ -61,10 +61,26 @@ function getData(url) {
     }
 
 
+getFilm(requestUrlPopular)
 
-// async function getFilm(){
-
-// }
+async function getFilm(url){
+    try {
+    const response = await fetch(url)
+    const data = await response.json()
+    // return Promise.resolve(data)
+    return data
+    } catch(err){
+    console.log(err)
+}
+}
+getFilm(requestUrlPopular).then( data => {
+    for (i in data.results) {
+        if(i > document.querySelectorAll('.wrapper img').length - 1) return
+        document.querySelectorAll('.wrapper img')[i].src = imgLink + data.results[i].poster_path
+        document.querySelectorAll('.wrapper img')[i].alt = data.results[i].title
+    }
+})
+// getFilm.then( data => console.log(data))
 
 
 
