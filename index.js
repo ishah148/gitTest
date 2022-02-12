@@ -27,28 +27,24 @@ const requestTest = 'https://api.unsplash.com/photos/?client_id=SouHY7Uul-OxoMl3
 temp = '<div class="table"><img src="" alt="img" class="testimg"><div class="description-wrapper"><p class="title"></p><p class="year"></p><svg class="rating-svg"><use xlink:href="assets/svg/rating.svg#rating"></use></svg><p class="rating"></p></div></div>'
 let numberOfPage = 1
 const requestUrlPopular = 'https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=1'
-const requestUrlPopularPage = `https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=${numberOfPage}`
+const requestUrlPopularPage = `https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=`
 const requestSearch = (searchByName) =>'https://api.themoviedb.org/3/search/movie?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&query='+searchByName+'&page=1&include_adult=false';
 // function requestSearch
 const imgLink = 'https://www.themoviedb.org/t/p/w220_and_h330_face'
 
-
-
-
-
-
-console.log('step 1');
 let a;
 let b;
 // getData(requestUrlPopular)
 
 getFilmResult(requestUrlPopularPage)
+
 function getFilmResult(url) {
     // getFilm(requestUrlPopular)
     // getFilm(requestUrlPopular2)
-    let dataFilm
+    // let dataFilm
     async function getFilm(url){
         try {
+            console.log('get1')
             const response = await fetch(url)
             const data = await response.json()
             // return Promise.resolve(data)
@@ -59,6 +55,7 @@ function getFilmResult(url) {
     }
     }
     getFilm(url).then( data => {
+        console.log('get2')
 
         // console.log(data.results.length)
         for(i in data.results){
@@ -68,7 +65,10 @@ function getFilmResult(url) {
         }
     })
 
+    
     getFilm(url).then( data => {
+        console.log('get3')
+        
         for (i in data.results) {
             if(i > document.querySelectorAll('.wrapper img').length - 1) return
             document.querySelectorAll('.wrapper img')[i].src = imgLink + data.results[i].poster_path
@@ -80,8 +80,26 @@ function getFilmResult(url) {
 
 }
 
+function removeFilms() {
+    document.querySelectorAll('.wrapper *').forEach( i => i.remove())
+}
 function plusPage(){
     numberOfPage += 1
-    alert(numberOfPage)
-    getFilmResult(requestUrlPopularPage)
+    removeFilms()
+    document.querySelector('nav .current p').innerHTML = numberOfPage
+    getFilmResult(`${requestUrlPopularPage}${numberOfPage}`)
+}
+function minusPage(){
+    numberOfPage -= 1
+    if(numberOfPage === 0) {
+        console.log(numberOfPage);
+        numberOfPage = 1;
+        return;
+    }
+    removeFilms()
+    document.querySelector('nav .current p').innerHTML = numberOfPage
+    getFilmResult(`${requestUrlPopularPage}${numberOfPage}`)
+}
+function search(){
+    
 }

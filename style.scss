@@ -2,6 +2,7 @@ body * {
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
         "Helvetica Neue", sans-serif;
+    font-size: 18px;
 }
 body {
     margin: auto;
@@ -10,20 +11,59 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    // background: wheat;
     background: #e1e2e1;
     max-width: 1920px;
 }
 header {
-    // background-color: azure;
-    // background: black;
     background: rgb(179, 195, 74);
     background: linear-gradient(55deg, rgba(179, 195, 74, 1) 0%, rgba(111, 195, 74, 1) 100%);
     width: inherit;
-    color: aliceblue;
-    // width: 1200px;
-    text-align: center;
+    max-width: inherit;
+    min-width: 440px;
+    opacity: 0.75;
     height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+        h1  {
+            color: aliceblue;
+            text-align: center;
+            font-style: italic;
+            font-size: 25px;
+        }
+    .search-wrapper {
+        position: relative;
+        form {
+            width: 300px;
+            background: transparent;
+            border: 1px solid black;
+            height: 42px;
+        }
+        input,
+        button {
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+        input {
+            width: 100%;
+            height: 42px;
+        }
+        button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 42px;
+            width: 42px;
+            background-image: url(assets/png/search.png);
+            background-size: 20px;
+            background-position-x: 50%;
+            background-position-y: 50%;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+    }
 }
 .wrapper {
     display: flex;
@@ -34,7 +74,7 @@ header {
     padding: 20px;
     .table {
         width: 300px;
-        height: 550px;
+        height: 530px;
         // background: red;
         background: #f5f5f6;
 
@@ -44,6 +84,7 @@ header {
             // height: inherit;
         }
         .description-wrapper {
+            padding: 0 10px 10px;
             display: flex;
             align-items: center;
             justify-content: space-evenly;
@@ -68,6 +109,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-top: 5px;
     svg {
         width: 25px;
         height: 25px;
@@ -76,14 +118,16 @@ nav {
         }
         cursor: pointer;
     }
-    .prev,.next {
+    .prev,
+    .next {
         border: none;
         background: transparent;
     }
     .current {
+        margin-bottom: 5px;
         p {
             font-weight: 700;
-            font-size: larger;
+            font-size: 25px;
         }
         &:hover {
             opacity: 0.5;
