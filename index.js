@@ -27,6 +27,7 @@ const requestTest = 'https://api.unsplash.com/photos/?client_id=SouHY7Uul-OxoMl3
 temp = '<div class="table"><img src="" alt="img" class="testimg"><div class="description-wrapper"><p class="title"></p><p class="year"></p><svg class="rating-svg"><use xlink:href="assets/svg/rating.svg#rating"></use></svg><p class="rating"></p></div></div>'
 
 const requestUrlPopular = 'https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=1'
+const requestUrlPopular2 = 'https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=2'
 const requestSearch = (searchByName) =>'https://api.themoviedb.org/3/search/movie?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&query='+searchByName+'&page=1&include_adult=false';
 // function requestSearch
 const imgLink = 'https://www.themoviedb.org/t/p/w220_and_h330_face'
@@ -41,46 +42,58 @@ let a;
 let b;
 // getData(requestUrlPopular)
 
-function getData(url) {
+// function getData(url) {
 
-    fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-            // console.log(data);
-            console.log('----------')
-            // a = data.filter((item, index) => index < 9)
-            a = data
-            console.log(data)
-            for (i in data.results) {
-                if(i > document.querySelectorAll('.wrapper img').length - 1) return
-                console.log(i)
-                console.log(data.results[i].id)
-                document.querySelectorAll('.wrapper img')[i].src = imgLink + data.results[i].poster_path
-                document.querySelectorAll('.wrapper img')[i].alt = data.results[i].title
-            }
-        })
-        .catch( i => console.log('errror',i))
-    }
+//     fetch(url)
+//         .then((res) => res.json())
+//         .then((data) => {
+//             // console.log(data);
+//             console.log('----------')
+//             // a = data.filter((item, index) => index < 9)
+//             a = data
+//             console.log(data)
+//             for (i in data.results) {
+//                 if(i > document.querySelectorAll('.wrapper img').length - 1) return
+//                 console.log(i)
+//                 console.log(data.results[i].id)
+//                 document.querySelectorAll('.wrapper img')[i].src = imgLink + data.results[i].poster_path
+//                 document.querySelectorAll('.wrapper img')[i].alt = data.results[i].title
+//             }
+//         })
+//         .catch( i => console.log('errror',i))
+//     }
 
-
+// getFilmResult
 getFilm(requestUrlPopular)
-
+// getFilm(requestUrlPopular2)
+let dataFilm
 async function getFilm(url){
     try {
-    const response = await fetch(url)
-    const data = await response.json()
-    // return Promise.resolve(data)
+        const response = await fetch(url)
+        const data = await response.json()
+        // return Promise.resolve(data)
+        console.log(data)
     return data
     } catch(err){
     console.log(err)
 }
 }
 getFilm(requestUrlPopular).then( data => {
+
+    // console.log(data.results.length)
+    for(i in data.results){
+        // if(i > data.results.length - 1) return
+        document.querySelector('.wrapper').insertAdjacentHTML('afterbegin', temp)
+
+    }
+})
+
+getFilm(requestUrlPopular).then( data => {
     for (i in data.results) {
         if(i > document.querySelectorAll('.wrapper img').length - 1) return
         document.querySelectorAll('.wrapper img')[i].src = imgLink + data.results[i].poster_path
         document.querySelectorAll('.wrapper img')[i].alt = data.results[i].title
-        document.querySelectorAll('.table .title')[i].innerHTML = data.results[i].title + '<div class = "hello">'
+        document.querySelectorAll('.table .title')[i].innerHTML = data.results[i].title
     }
 })
 // getFilm.then( data => console.log(data))
