@@ -31,9 +31,19 @@
 <!-- ===============  =============== -->
     </div>
     <nav>
-        <div class="prev"></div>
-        <div class="current"></div>
-        <div class="next"></div>
+        <button class="prev" onclick="minusPage()">
+            <svg class="prev-svg">
+                <use xlink:href="assets/svg/previous.svg#prev"></use>
+            </svg>
+        </button>
+        <div class="current">
+            <p> 1 </p>
+        </div>
+        <button class="next" onclick="plusPage()">
+            <svg class="next-svg">
+                <use xlink:href="assets/svg/next.svg#next"></use>
+            </svg>
+        </button>
     </nav>
     <script src="index.js"></script>
 </body>
