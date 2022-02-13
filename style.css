@@ -57,6 +57,9 @@ header h1 {
 
 header .search-wrapper {
   position: relative;
+  border: 2px solid black;
+  width: 350px;
+  border-radius: 50px;
 }
 
 header .search-wrapper form {

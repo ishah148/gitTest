@@ -24,7 +24,15 @@ const requestTest = 'https://api.unsplash.com/photos/?client_id=SouHY7Uul-OxoMl3
 
 //cd3f65717cbbf12fee2f4b6eac20629e apikey kinopoisk
 
-temp = '<div class="table"><img src="" alt="img" class="testimg"><div class="description-wrapper"><p class="title"></p><p class="year"></p><svg class="rating-svg"><use xlink:href="assets/svg/rating.svg#rating"></use></svg><p class="rating"></p></div></div>'
+// temp = '<div class="table"><img src="" alt="img" class="testimg"><div class="description-wrapper"><p class="title"></p><p class="year"></p><svg class="rating-svg"><use xlink:href="assets/svg/rating.svg#rating"></use></svg><p class="rating"></p></div></div>'
+temp = (`        <div class="table">
+<img src="" alt="img" class="testimg">
+<div class="description-wrapper">
+    <p class="title"></p>
+    <p class="year"></p>
+    <p class="rating"></p>
+</div>
+</div>`)
 let numberOfPage = 1;
 const requestUrlPopular =     'https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=1'
 const requestUrlPopularPage = `https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=`
@@ -53,6 +61,7 @@ function getFilmResult(url) {
         console.log(err)
     }
     }
+
     getFilm(url).then( data => {
         console.log('get2')
 
@@ -64,7 +73,6 @@ function getFilmResult(url) {
         }
     })
 
-    
     getFilm(url).then( data => {
         console.log('get3')
         
@@ -73,6 +81,7 @@ function getFilmResult(url) {
             document.querySelectorAll('.wrapper img')[i].src = imgLink + data.results[i].poster_path
             document.querySelectorAll('.wrapper img')[i].alt = data.results[i].title
             document.querySelectorAll('.table .title')[i].innerHTML = data.results[i].title
+            document.querySelectorAll('.table .rating')[i].innerHTML = data.results[i].vote_average
         }
     })
 // getFilm.then( data => console.log(data))
@@ -83,25 +92,33 @@ function removeFilms() {
     document.querySelectorAll('.wrapper *').forEach( i => i.remove())
 }
 function plusPage(){
-    // numberOfPage += 1
-    numberOfPage = 2
+    numberOfPage += 1
     removeFilms()
-    console.log('numberOfPage ====== ',numberOfPage)
-    // document.querySelector('nav .current p').innerHTML = numberOfPage
-    console.log(requestUrlPopularPage+numberOfPage)
-    // getFilmResult(`${requestUrlPopularPage}${numberOfPage}`)
-    getFilmResult(requestUrlPopularPage + 2)
+    document.querySelector('nav .current p').innerHTML = numberOfPage
+    getFilmResult(requestUrlPopularPage + numberOfPage)
 }
-// function minusPage(){
-//     numberOfPage -= 1
-//     if(numberOfPage === 0) {
-//         console.log(numberOfPage);
-//         numberOfPage = 1;
-//     }
-//     removeFilms()
-//     document.querySelector('nav .current p').innerHTML = numberOfPage
-//     getFilmResult(`${requestUrlPopularPage}${numberOfPage}`)
-// }
+function minusPage(){
+    numberOfPage -= 1
+    if(numberOfPage === 0) {
+        numberOfPage = 1;
+        return
+    }
+    removeFilms()
+    document.querySelector('nav .current p').innerHTML = numberOfPage
+    getFilmResult(`${requestUrlPopularPage}${numberOfPage}`)
+}
 // function search(){
     
 // }
+
+
+let form = document.getElementById('search-form');
+form.onsubmit = function() {
+    let value = form.text.value;
+    if (value == '') return false; // игнорируем отправку пустой формы
+    removeFilms()
+    getFilmResult(requestSearch(value))
+    console.log(value)
+    // complete(value);
+    return false;
+  };
