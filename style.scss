@@ -52,6 +52,11 @@ header {
         input {
             width: 100%;
             height: 42px;
+            padding-left: 20px;
+            &::placeholder{
+                font-size: 20px;
+                font-style: italic;
+            }
         }
         button {
             position: absolute;
@@ -90,12 +95,19 @@ header {
             padding: 0 10px 10px;
             display: flex;
             align-items: center;
-            justify-content: space-evenly;
+            justify-content: space-between;
             .rating-svg {
                 display: block;
             }
             p {
                 font-weight: 500;
+                text-align: center;
+            }
+            .rating{
+                border: 2px solid rgb(225,226,225);
+                width: 45px;
+                padding: 5px;
+                border-radius: 15px;
             }
             .rating-svg {
                 width: 25px;
