@@ -35,3 +35,7 @@ filmContent = (`        <div class="table">
     <p class="rating"></p>
 </div>
 </div>`)
+
+// document.querySelector("body > div > div:nth-child(2)").addEventListener('click', test)
+// document.querySelectorAll('.table').forEach(i => i.addEventListener('click', test))
+// document.querySelector('.wrapper').addEventListener('click', test)
