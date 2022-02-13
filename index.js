@@ -25,18 +25,17 @@ const requestTest = 'https://api.unsplash.com/photos/?client_id=SouHY7Uul-OxoMl3
 //cd3f65717cbbf12fee2f4b6eac20629e apikey kinopoisk
 
 temp = '<div class="table"><img src="" alt="img" class="testimg"><div class="description-wrapper"><p class="title"></p><p class="year"></p><svg class="rating-svg"><use xlink:href="assets/svg/rating.svg#rating"></use></svg><p class="rating"></p></div></div>'
-let numberOfPage = 1
-const requestUrlPopular = 'https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=1'
+let numberOfPage = 1;
+const requestUrlPopular =     'https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=1'
 const requestUrlPopularPage = `https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=`
 const requestSearch = (searchByName) =>'https://api.themoviedb.org/3/search/movie?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&query='+searchByName+'&page=1&include_adult=false';
 // function requestSearch
 const imgLink = 'https://www.themoviedb.org/t/p/w220_and_h330_face'
-
 let a;
 let b;
 // getData(requestUrlPopular)
-
-getFilmResult(requestUrlPopularPage)
+getFilmResult(requestUrlPopular)
+// getFilmResult(requestUrlPopularPage)
 
 function getFilmResult(url) {
     // getFilm(requestUrlPopular)
@@ -84,22 +83,25 @@ function removeFilms() {
     document.querySelectorAll('.wrapper *').forEach( i => i.remove())
 }
 function plusPage(){
-    numberOfPage += 1
+    // numberOfPage += 1
+    numberOfPage = 2
     removeFilms()
-    document.querySelector('nav .current p').innerHTML = numberOfPage
-    getFilmResult(`${requestUrlPopularPage}${numberOfPage}`)
+    console.log('numberOfPage ====== ',numberOfPage)
+    // document.querySelector('nav .current p').innerHTML = numberOfPage
+    console.log(requestUrlPopularPage+numberOfPage)
+    // getFilmResult(`${requestUrlPopularPage}${numberOfPage}`)
+    getFilmResult(requestUrlPopularPage + 2)
 }
-function minusPage(){
-    numberOfPage -= 1
-    if(numberOfPage === 0) {
-        console.log(numberOfPage);
-        numberOfPage = 1;
-        return;
-    }
-    removeFilms()
-    document.querySelector('nav .current p').innerHTML = numberOfPage
-    getFilmResult(`${requestUrlPopularPage}${numberOfPage}`)
-}
-function search(){
+// function minusPage(){
+//     numberOfPage -= 1
+//     if(numberOfPage === 0) {
+//         console.log(numberOfPage);
+//         numberOfPage = 1;
+//     }
+//     removeFilms()
+//     document.querySelector('nav .current p').innerHTML = numberOfPage
+//     getFilmResult(`${requestUrlPopularPage}${numberOfPage}`)
+// }
+// function search(){
     
-}
+// }
