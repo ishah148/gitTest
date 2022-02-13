@@ -137,6 +137,7 @@ header .search-wrapper button {
   width: 300px;
   height: 530px;
   background: #f5f5f6;
+  overflow: hidden;
 }
 
 .wrapper .table .testimg {
@@ -176,6 +177,12 @@ header .search-wrapper button {
 .wrapper .table .description-wrapper .rating-svg {
   width: 25px;
   height: 25px;
+}
+
+.wrapper .table .additional-data {
+  height: 100%;
+  width: 100%;
+  background: red;
 }
 
 nav {

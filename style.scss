@@ -85,7 +85,7 @@ header {
         height: 530px;
         // background: red;
         background: #f5f5f6;
-
+        overflow: hidden;
         .testimg {
             width: 300px;
             height: 450px;
@@ -114,6 +114,11 @@ header {
                 height: 25px;
             }
         }
+        .additional-data{
+            height: 100%;
+            width: 100%;
+            background: red;
+            }
     }
 }
 
