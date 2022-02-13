@@ -1,10 +1,3 @@
-body * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 18px;
-}
-
 body {
   margin: auto;
   width: 80vw;
@@ -25,7 +18,14 @@ body {
   max-width: 1920px;
 }
 
-header {
+body * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+}
+
+body header {
   background: #b3c34a;
   background: linear-gradient(55deg, #b3c34a 0%, #6fc34a 100%);
   width: inherit;
@@ -48,61 +48,61 @@ header {
           align-items: center;
 }
 
-header h1 {
+body header h1 {
   color: aliceblue;
   text-align: center;
   font-style: italic;
   font-size: 25px;
 }
 
-header .search-wrapper {
+body header .search-wrapper {
   position: relative;
   border: 2px solid black;
   width: 350px;
   border-radius: 50px;
 }
 
-header .search-wrapper form {
+body header .search-wrapper form {
   width: 300px;
   background: transparent;
   border: 1px solid black;
   height: 42px;
 }
 
-header .search-wrapper input,
-header .search-wrapper button {
+body header .search-wrapper input,
+body header .search-wrapper button {
   border: none;
   outline: none;
   background: transparent;
 }
 
-header .search-wrapper input {
+body header .search-wrapper input {
   width: 100%;
   height: 42px;
   padding-left: 20px;
 }
 
-header .search-wrapper input::-webkit-input-placeholder {
+body header .search-wrapper input::-webkit-input-placeholder {
   font-size: 20px;
   font-style: italic;
 }
 
-header .search-wrapper input:-ms-input-placeholder {
+body header .search-wrapper input:-ms-input-placeholder {
   font-size: 20px;
   font-style: italic;
 }
 
-header .search-wrapper input::-ms-input-placeholder {
+body header .search-wrapper input::-ms-input-placeholder {
   font-size: 20px;
   font-style: italic;
 }
 
-header .search-wrapper input::placeholder {
+body header .search-wrapper input::placeholder {
   font-size: 20px;
   font-style: italic;
 }
 
-header .search-wrapper button {
+body header .search-wrapper button {
   position: absolute;
   top: 0;
   right: 0;
@@ -116,7 +116,7 @@ header .search-wrapper button {
   cursor: pointer;
 }
 
-.wrapper {
+body .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -133,19 +133,20 @@ header .search-wrapper button {
   padding: 20px;
 }
 
-.wrapper .table {
+body .wrapper .table {
+  position: relative;
   width: 300px;
   height: 530px;
   background: #f5f5f6;
   overflow: hidden;
 }
 
-.wrapper .table .testimg {
+body .wrapper .table .testimg {
   width: 300px;
   height: 450px;
 }
 
-.wrapper .table .description-wrapper {
+body .wrapper .table .description-wrapper {
   padding: 0 10px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -158,34 +159,56 @@ header .search-wrapper button {
           justify-content: space-between;
 }
 
-.wrapper .table .description-wrapper .rating-svg {
+body .wrapper .table .description-wrapper .rating-svg {
   display: block;
 }
 
-.wrapper .table .description-wrapper p {
+body .wrapper .table .description-wrapper p {
   font-weight: 500;
   text-align: center;
 }
 
-.wrapper .table .description-wrapper .rating {
+body .wrapper .table .description-wrapper .rating {
   border: 2px solid #e1e2e1;
   width: 45px;
   padding: 5px;
   border-radius: 15px;
 }
 
-.wrapper .table .description-wrapper .rating-svg {
+body .wrapper .table .description-wrapper .rating-svg {
   width: 25px;
   height: 25px;
 }
 
-.wrapper .table .additional-data {
-  height: 100%;
+body .wrapper .table .additional-data {
+  position: absolute;
+  display: none;
+  padding: 15px 20px 15px;
+  bottom: 0;
+  height: 90%;
   width: 100%;
-  background: red;
+  background: #f5f5f6;
+  overflow: auto;
 }
 
-nav {
+body .wrapper .table .additional-data::-webkit-scrollbar {
+  width: 10px;
+}
+
+body .wrapper .table .additional-data::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #e1e2e1;
+}
+
+body .wrapper .table .additional-data p {
+  overflow: auto;
+}
+
+body .wrapper .table .additional-data.click {
+  display: block;
+}
+
+body nav {
   width: 200px;
   height: 50px;
   background: #f5f5f6;
@@ -200,33 +223,33 @@ nav {
   padding-top: 5px;
 }
 
-nav svg {
+body nav svg {
   width: 25px;
   height: 25px;
   cursor: pointer;
 }
 
-nav svg:hover {
+body nav svg:hover {
   opacity: 0.5;
 }
 
-nav .prev,
-nav .next {
+body nav .prev,
+body nav .next {
   border: none;
   background: transparent;
 }
 
-nav .current {
+body nav .current {
   margin-bottom: 5px;
   cursor: default;
 }
 
-nav .current p {
+body nav .current p {
   font-weight: 700;
   font-size: 25px;
 }
 
-nav .current:hover {
+body nav .current:hover {
   opacity: 0.5;
 }
 /*# sourceMappingURL=style.css.map */

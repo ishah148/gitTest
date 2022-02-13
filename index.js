@@ -9,18 +9,30 @@ filmContent = (`        <div class="table">
     <p class="title"></p>
     <p class="rating"></p>
 </div>
+<div class="additional-data">
+    <p class="description"></p>
+    <p class="year"></p>
+    </div>
 </div>`)
 
 let numberOfPage = 1;
-const requestUrlPopularPage = `https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=`
+const requestUrlPopularPage = `https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=`;
 const requestSearch = (searchByName) =>'https://api.themoviedb.org/3/search/movie?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&query='+searchByName+'&page=1&include_adult=false';
 
-const content =  document.querySelector('.table')
-const imgLink = 'https://www.themoviedb.org/t/p/w220_and_h330_face'
+const content =  document.querySelector('.table');
+const imgLink = 'https://www.themoviedb.org/t/p/w220_and_h330_face';
 let a;
 let b;
 
-// getFilmResult(requestUrlPopularPage)
+getFilmResult(requestUrlPopularPage);
+// document.querySelector("body > div > div:nth-child(2)").addEventListener('click', test)
+document.querySelectorAll('.table').forEach(i => i.addEventListener('click',test))
+// document.querySelector('.wrapper').addEventListener('click', test)
+function showDescription(){
+    a = this
+    a.children[2].classList.toggle('click')
+    // document.querySelector('.theme-wrapper').classList.toggle('is-light')
+}
 
 
 function getFilmResult(url) {
@@ -51,10 +63,13 @@ function getFilmResult(url) {
         
         for (i in data.results) {
             if(i > document.querySelectorAll('.wrapper img').length - 1) return
+            document.querySelectorAll('.table')[i].addEventListener('click', showDescription)
             document.querySelectorAll('.wrapper img')[i].src = imgLink + data.results[i].poster_path
             document.querySelectorAll('.wrapper img')[i].alt = data.results[i].title
             document.querySelectorAll('.table .title')[i].innerHTML = data.results[i].title
             document.querySelectorAll('.table .rating')[i].innerHTML = data.results[i].vote_average
+            document.querySelectorAll('.table .additional-data .description')[i].innerHTML = data.results[i].overview
+            document.querySelectorAll('.table .additional-data .year')[i].innerHTML = data.results[i].release_date
         }
     })
 
@@ -90,11 +105,5 @@ form.onsubmit = function() {
     // complete(value);
     return false;
   };
+
 //   content.addEventListener('click', showAdditionalData)
-  content.addEventListener('click', () =>{
-      console.log('click')
-  })
-  
-//   function showAdditionalData(){
-//    content.style.display = 'none'
-//   }
