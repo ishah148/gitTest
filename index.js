@@ -1,9 +1,16 @@
+//flags
+let numberOfPage = 1;
+let searchValue;
+let isSearch = false;
+
+
 const requestURL1 = 'https://api.icndb.com/jokes/random'
 const requestURL2 = 'https://jsonplaceholder.typicode.com/photos'
 const requestURL3 = 'https://api.unsplash.com/search/photos?query=spring&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo'
 const requestTest = 'https://api.unsplash.com/photos/?client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo'
 const requestUrlPopularPage = `https://api.themoviedb.org/3/movie/popular?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&page=`;
 const requestSearch = (searchByName) => 'https://api.themoviedb.org/3/search/movie?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&query=' + searchByName + '&page=1&include_adult=false';
+const requestSearch2 = (searchByName,numberOfPage) => 'https://api.themoviedb.org/3/search/movie?api_key=f5978d3a7a7427ea73c7d60edf76ed30&language=en-US&query=' + searchByName + '&page='+numberOfPage+'&include_adult=false';
 
 const content = document.querySelector('.table');
 const imgLink = 'https://www.themoviedb.org/t/p/w220_and_h330_face';
@@ -21,21 +28,20 @@ const filmContent = (`        <div class="table">
     </div>
 </div>`)
 
-let numberOfPage = 1;
-
 
 getFilmResult(requestUrlPopularPage);
 
-function showDescription() {
-    a = this
-    a.children[2].classList.toggle('click')
-}
+document.querySelector("body > header > h1").addEventListener('click',()=>{
+    isSearch = false;
+    removeFilms();
+    getFilmResult(requestUrlPopularPage);
+
+})
 
 function getFilmResult(url) {
     // pull data from API
     async function getFilm(url) {
         try {
-            console.log('get1')
             const response = await fetch(url)
             const data = await response.json()
             // return Promise.resolve(data)
@@ -49,7 +55,6 @@ function getFilmResult(url) {
     }
     // add html wrapper
     getFilm(url).then(data => {
-        console.log('get2')
         for (i in data.results) {
             document.querySelector('.wrapper').insertAdjacentHTML('afterbegin', filmContent)
 
@@ -71,15 +76,20 @@ function getFilmResult(url) {
     })
 
 }
+function showDescription() {
+    this.children[2].classList.toggle('click')
+}
 
 function removeFilms() {
     document.querySelectorAll('.wrapper *').forEach(i => i.remove())
 }
 function plusPage() {
+    if(document.querySelectorAll('.wrapper .table').length < 20) return
     numberOfPage += 1
     removeFilms()
     document.querySelector('nav .current p').innerHTML = numberOfPage
-    getFilmResult(requestUrlPopularPage + numberOfPage)
+    isSearch === false? getFilmResult(requestUrlPopularPage + numberOfPage):getFilmResult(requestSearch2(searchValue,numberOfPage))
+
 }
 function minusPage() {
     numberOfPage -= 1
@@ -89,26 +99,23 @@ function minusPage() {
     }
     removeFilms()
     document.querySelector('nav .current p').innerHTML = numberOfPage
-    getFilmResult(`${requestUrlPopularPage}${numberOfPage}`)
+    isSearch === false? getFilmResult(requestUrlPopularPage + numberOfPage):getFilmResult(requestSearch2(searchValue,numberOfPage))
+
+}
+
+function getSearchRequest() {
+
 }
 
 let form = document.getElementById('search-form');
 form.onsubmit = function () {
     let value = form.text.value;
+    searchValue = value;
+    numberOfPage = 1;
+    isSearch = true;
     if (value == '') return false; // игнорируем отправку пустой формы
     removeFilms()
     getFilmResult(requestSearch(value))
-    console.log(value)
-    // complete(value);
     return false;
 };
 
-getCourse('https://www.nbrb.by/api/exrates/rates/431') //  call
-let res;
-async function getCourse(url) {
-        const response = await fetch(url)
-        const data = await response.json()
-        console.log(data)
-        console.log(data.Cur_OfficialRate) // delete!
-        res = data.Cur_OfficialRate;
-}

@@ -30,8 +30,10 @@ body header {
   background: linear-gradient(55deg, #b3c34a 0%, #6fc34a 100%);
   width: inherit;
   max-width: inherit;
+  padding: 10px 25px 10px;
   min-width: 440px;
   opacity: 0.75;
+  border-radius: 5px;
   height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -40,9 +42,9 @@ body header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -53,6 +55,10 @@ body header h1 {
   text-align: center;
   font-style: italic;
   font-size: 25px;
+}
+
+body header h1:hover {
+  opacity: 0.6;
 }
 
 body header .search-wrapper {
@@ -182,13 +188,17 @@ body .wrapper .table .description-wrapper .rating-svg {
 
 body .wrapper .table .additional-data {
   position: absolute;
-  display: none;
+  opacity: 0.3;
   padding: 15px 20px 15px;
   bottom: 0;
   height: 90%;
   width: 100%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
   background: #f5f5f6;
   overflow: auto;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
 body .wrapper .table .additional-data::-webkit-scrollbar {
@@ -206,6 +216,13 @@ body .wrapper .table .additional-data p {
 
 body .wrapper .table .additional-data.click {
   display: block;
+  opacity: 0.85;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
 body nav {
@@ -251,5 +268,13 @@ body nav .current p {
 
 body nav .current:hover {
   opacity: 0.5;
+}
+
+body footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  gap: 20px;
 }
 /*# sourceMappingURL=style.css.map */
