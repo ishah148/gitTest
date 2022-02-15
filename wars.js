@@ -729,3 +729,16 @@ var Alphabet = {
 
 
 console.log(convert("1010", Alphabet.BINARY, Alphabet.DECIMAL))
+console.clear()
+
+// =============== TASKS ===============
+// const matrix = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+// ];
+function towelSort (matrix) {
+
+  return !matrix?[]:matrix.reduce( (res,item,index) => index%2===0?res.concat(item):res.concat(item.reverse()),[])
+}
+//matrix.reduce((res,i) =>{res.push(i.reverse());return res},[])
