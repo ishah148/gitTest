@@ -1,18 +1,28 @@
-:root{
-    --column:column;
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-.container{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    align-content: flex-start;
-     
-    border: 1px solid #0000ff;
-    height: 100px;
+
+body {
+  padding: 100px;
+  width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
 }
-.container div{
-    min-width: 100px;
-    border: 1px solid red;
+
+body #game {
+  margin: auto;
+  width: 1000px;
+  height: 700px;
+  background: rgba(128, 128, 128, 0.144);
 }
+
+body .test {
+  margin: auto;
+  width: 500px;
+  height: 500px;
+  background: #000;
+}
+/*# sourceMappingURL=style.css.map */

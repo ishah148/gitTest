@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 100px;
+    width: 1200px;
+    display: flex;
+    margin: auto;
+    #game{
+        margin: auto;
+        width: 800px;
+        height: 700px;
+        background: rgba(128, 128, 128, 0.144);
+    }
+    .test{
+        margin: auto;
+        width: 500px;
+        height: 500px;
+        background: #000;
+    }
+}
