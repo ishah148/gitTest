@@ -1,25 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.html">
-    <link rel="stylesheet" href="style.scss">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="index.js">
-    <!-- <link rel="stylesheet" href="assets/png/sheep.png"> -->
-
     <title>Document</title>
 </head>
+
 <body>
-    <canvas id="game" width="600px" height="600px"></canvas>
-    <!-- <div class="test"></div> -->
-    <div class="debug">
-        <p class="x"></p>
-        <p class="y"></p>
-        <p class="z"></p>
+    <header>
+        <h1>JS30-3.3: galaxy wars</h1>
+    </header>
+    <div class="canvas-wrapper">
+        <div class="game-process">
+            <div class="lives">
+                <svg class="process-svg">
+                    <use xlink:href="assets/svg/pause.svg#rocket"></use>
+                </svg>
+                <span></span>
+                <h1 class="lives-amount"></h1>
+            </div>
+            <div class="score">
+                <h2>Score:</h2>
+                <h2>0</h2>
+            </div>
+            <div class="level">
+                <h2>Level:</h2>
+                <h2>0</h2>
+            </div>
+
+        </div>
+        <canvas id="game" class='game' width="600px" height="600px"></canvas>
+        <!-- <div class="test"></div> -->
+        <div class="debug">
+            <p class="x"></p>
+            <p class="y"></p>
+            <p class="z"></p>
+            <p class="ax"></p>
+            <p class="ay"></p>
+        </div>
+        <div class="game-over-wrapper">
+            <div class="results-table">
+                <ol>
+
+                </ol>
+            </div>
+            <div class="play-game-wrapper">
+                <p class="result">Game over</p>
+                <p class="over-score">Score:200</p>
+                <button onclick="newGame()">
+                    <svg class="start-svg">
+                        <use xlink:href="assets/svg/pause.svg#play"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </div>
     <script src="index.js"></script>
+    <footer>
+        <p>©</p>
+        <p>2022</p>
+        <p class="link-git"><a class="link-git" href="https://github.com/ishah148">github</a></p>
+        <p class="footer-school"><a href="https://rs.school/">Rolling Scopes School</a></p>
+    </footer>
 </body>
+
 </html>
