@@ -636,7 +636,7 @@ function bingo(a, win) {
 //   }
 //   return "Loser!";
 // }
-console.log(randomInteger(1,1000))
+console.log(randomInteger(1, 1000))
 
 function randomInteger(min, max) {
   // получить случайное число от (min-0.5) до (max+0.5)
@@ -648,10 +648,10 @@ function randomInteger(min, max) {
 function getCard() {
   // Start your coding here...
   result = []
-  b = [['B',1,15],['I',16,30],['N',31,45],['G',46,60],['O',61,75]]
-  for(let i in b){
-    for(let k = 0;k<5;k++){
-      result.push(`${b[i][0]}${randomInteger(b[i][1],b[i][2])}`)
+  b = [['B', 1, 15], ['I', 16, 30], ['N', 31, 45], ['G', 46, 60], ['O', 61, 75]]
+  for (let i in b) {
+    for (let k = 0; k < 5; k++) {
+      result.push(`${b[i][0]}${randomInteger(b[i][1], b[i][2])}`)
     }
   }
   result.splice(10, 1)
@@ -673,41 +673,41 @@ console.clear()
 
 
 function convert(input, source, target) {
-   let DECIMAL =  '0123456789';
+  let DECIMAL = '0123456789';
   let baseS = source.length;
   let baseT = target.length;
   let res = [];
 
-  let dec = input.split('').reverse().reduce( (res,item,index) =>{
-    return res + item*Math.pow(baseS,index);
+  let dec = input.split('').reverse().reduce((res, item, index) => {
+    return res + item * Math.pow(baseS, index);
 
-  },0);
+  }, 0);
   console.log(dec)
 
-  if(dec<=baseT){
+  if (dec <= baseT) {
     return '' + target[dec];
   }
-  if(target= DECIMAL){
+  if (target = DECIMAL) {
 
   }
 
-  while(dec){
-    res.push(target[dec%baseT]);
-    dec = Math.floor(dec/baseT);
+  while (dec) {
+    res.push(target[dec % baseT]);
+    dec = Math.floor(dec / baseT);
   }
 
   return res.reverse().join('');
-  
+
 }
 
 var Alphabet = {
-  BINARY:        '01',
-  OCTAL:         '01234567',
-  DECIMAL:       '0123456789',
-  HEXA_DECIMAL:  '0123456789abcdef',
-  ALPHA_LOWER:   'abcdefghijklmnopqrstuvwxyz',
-  ALPHA_UPPER:   'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  ALPHA:         'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  BINARY: '01',
+  OCTAL: '01234567',
+  DECIMAL: '0123456789',
+  HEXA_DECIMAL: '0123456789abcdef',
+  ALPHA_LOWER: 'abcdefghijklmnopqrstuvwxyz',
+  ALPHA_UPPER: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  ALPHA: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
   ALPHA_NUMERIC: '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 };
 
@@ -715,7 +715,7 @@ var Alphabet = {
 // describe('example tests', function() {
 //   var bin = Alphabet.BINARY, oct = Alphabet.OCTAL, dec = Alphabet.DECIMAL, hex = Alphabet.HEXA_DECIMAL,
 //       allow = Alphabet.ALPHA_LOWER, alup = Alphabet.ALPHA_UPPER, alpha = Alphabet.ALPHA, alnum = Alphabet.ALPHA_NUMERIC;
-  
+
 //   it('should convert between numeral systems', function() {
 //     Test.assertEquals(convert("15", dec, bin), '1111', '"15" dec -> bin');
 //     Test.assertEquals(convert("15", dec, oct), '17', '"15" dec -> oct');
@@ -737,8 +737,80 @@ console.clear()
 //   [4, 5, 6],
 //   [7, 8, 9],
 // ];
-function towelSort (matrix) {
+function towelSort(matrix) {
 
-  return !matrix?[]:matrix.reduce( (res,item,index) => index%2===0?res.concat(item):res.concat(item.reverse()),[])
+  return !matrix ? [] : matrix.reduce((res, item, index) => index % 2 === 0 ? res.concat(item) : res.concat(item.reverse()), [])
 }
+
+// =============== MORSE DECODER ===============
+
 //matrix.reduce((res,i) =>{res.push(i.reverse());return res},[])
+console.clear()
+const MORSE_TABLE = {
+  '.-': 'a',
+  '-...': 'b',
+  '-.-.': 'c',
+  '-..': 'd',
+  '.': 'e',
+  '..-.': 'f',
+  '--.': 'g',
+  '....': 'h',
+  '..': 'i',
+  '.---': 'j',
+  '-.-': 'k',
+  '.-..': 'l',
+  '--': 'm',
+  '-.': 'n',
+  '---': 'o',
+  '.--.': 'p',
+  '--.-': 'q',
+  '.-.': 'r',
+  '...': 's',
+  '-': 't',
+  '..-': 'u',
+  '...-': 'v',
+  '.--': 'w',
+  '-..-': 'x',
+  '-.--': 'y',
+  '--..': 'z',
+  '.----': '1',
+  '..---': '2',
+  '...--': '3',
+  '....-': '4',
+  '.....': '5',
+  '-....': '6',
+  '--...': '7',
+  '---..': '8',
+  '----.': '9',
+  '-----': '0',
+};
+
+// // const expr = "00101010100000000010001011101000101110100000111111**********000010111100001111110000101110001011101000001 const expr = "0000101110000011111100101110100010111010000000101000000011100000111110**********00001010100011101110000011111100101111100000000010**********000010101000111011100010101010000011111100001111110010111010";11010";
+// const expr = "0000001100101010100000000010**********00111110110000101011000000101000111011100000111011**********00111010100000101110000011111100001011110000001110**********001010111000001111110011101011**********00101111110000101011000000111100101111100000101010**********0000111111001010101100000000100000101110**********000000001100101010100000000010**********0010111010000000101100111110100011101111**********000011101000001111110000111110";
+//                      the                                         quick                                                 brown                                                               fox                      
+
+function decode(expr) {
+  let tempDecWords = []
+  let tempResult = []
+  let newWord = ''
+  // write your solution here
+  expr.split('**********').forEach((item) => {
+    for (i = 0; i < item.length / 10; i++) {
+      tempDecWords[i] = item.slice(i * 10, i * 10 + 10)
+    }
+    tempDecWords.forEach((item, index) => {
+      for (let i = 0; i < 10; i += 2) {
+        tempResult.push(item.slice(i, i + 2) === '11' ? '-' : item.slice(i, i + 2) === '10' ? '.' : '')
+      }
+      newWord += MORSE_TABLE[tempResult.join('')]
+      tempResult = []
+      tempDecWords = []
+    });
+    newWord += ' '
+  })
+  return newWord.slice(0, -1) // result
+}
+
+
+
+console.log('should be const result = "the quick brown fox jumps over the lazy dog";')
