@@ -16,6 +16,7 @@
 * VS Code, Git
 ## EXPERIENCE:
 * Development and support software for electronic product accounting system ('C')
+* Successfully completed RS School course stage 0 
 ## EDUCATION
 * P.O.Sukhoi State Technical University of Gomel (2013 - 2017)
 * RSSchool stage 1 (In progress)
