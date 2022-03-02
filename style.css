@@ -142,16 +142,27 @@ main aside .contacts-wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 40px;
 }
 
 main aside .contacts-wrapper .icons-wrapper {
   width: 50px;
   height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
 
 main aside .contacts-wrapper .icons-wrapper .icon {
   width: 100%;
-  margin: .5em;
+  height: 100%;
+  position: absolute;
+}
+
+main aside .education-wrapper p,
+main aside .language-wrapper p {
+  margin-left: 15px;
 }
 
 main section {

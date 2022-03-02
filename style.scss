@@ -88,16 +88,28 @@ main {
             display: flex;
             flex-direction: row;
             align-items: center;
+            height: 40px;
             .icons-wrapper{
                 width: 50px;
                 height: 50px;
+                display: flex;
+                position: relative;
                 .icon {
-                    
                     width: 100%;
-                    margin: .5em;
+                    height: 100%;
+                    position:absolute;
+                    // fill: red;
                   }
             }
         }
+
+        .education-wrapper,
+        .language-wrapper{
+            p {
+                margin-left: 15px;
+            }
+        }
+
     }
 
     section {
