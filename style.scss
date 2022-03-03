@@ -1,11 +1,18 @@
 $breakpoint-tablet: 968px;
-$color1:#282828;
-$color2:#232426;
-$color3:#232426bb;
+$color3:#F5F5F6;
+// $color1:#98ee99;
+$color1:#E1E2E1;
+$color2:#338a3e;
+$grey:#E1E2E1;
+$grey-light:#F5F5F6;
+$dark:#338a3e;
+$light:#98ee99;
+$primary:#66bb6a;
+
 
 * {
     box-sizing: border-box;
-    color: aliceblue;
+    color: black;
 }
 
 body {
@@ -14,8 +21,11 @@ body {
     min-width: 670px;
     width: 100%;
     background: $color1;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-        "Helvetica Neue", sans-serif;
+    // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    //     "Helvetica Neue", sans-serif;
+    // font-family: 
+    // font-family: 'Roboto-Mono';
+    font-family: 'Roboto';
 }
 
 header {
@@ -25,13 +35,14 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: $color2;
+    background: $primary;
 
     .name-wrapper {
         display: flex;
         align-items: center;
         gap: 25px;
         h1 {
+            font-variant-caps: all-small-caps;
         }
         .header-photo {
             width: 60px;
@@ -72,7 +83,7 @@ main {
         flex-direction: column;
         padding: 10px;
         // background: rebeccapurple;
-        background: $color2;
+        background: $light;
         transition: all 0.5s;
         @media (max-width: $breakpoint-tablet) {
             transform: translate(-650px, 0px);
@@ -119,14 +130,43 @@ main {
     section {
         // width: 700px;
         font-size: 20px;
-        padding: 25px;
+        padding: 35px;
         flex: 5 1 350px;
         // height: 1000px;
         background: $color3;
+        .projects-wrapper{
+            display: flex;
+            padding: 20px;
+            
+            .project{
+                
+                width: 250px;
+                height: 200px;
+                background: grey;
+                opacity: 0.5;
+                position: relative;
+            }
+
+            .description-project{
+                position: absolute;
+                width: 250px;
+                height: 200px;
+                background: red;
+                transform: translate(0,100%);
+                transition: all 0.5s;
+                // display: none;
+                
+                &:hover{
+                    display: block;
+                    // transform: translate(0,-200px);
+                }
+            }
+        }
 
         .code-wrapper {
             overflow: hidden;
             border: 2px solid black;
+
             pre {
                 width: 20vw;
 
@@ -134,15 +174,19 @@ main {
                     .blue {
                         color: blue;
                     }
+
                     .purple {
                         color: rgb(211, 9, 211);
                     }
+
                     .yellow {
                         color: rgb(126, 126, 4);
                     }
+
                     .green {
                         color: green;
                     }
+
                 }
             }
         }
