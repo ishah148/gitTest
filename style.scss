@@ -254,82 +254,13 @@ main {
 
 footer {
     display: flex;
-    height: 70px;
-    background-color: black;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    height: 50px;
+    img{
+        width: 50px;
+    }
+    // background-color: black
 }
 
-// .wrapper {
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: wrap;
-//     justify-content: center;
-//     gap: 30px 20px;
-//     padding: 20px;
-//     .table {
-//         position: relative;
-//         // z-index: 1;
-//         width: 300px;
-//         height: 530px;
-//         // background: red;
-//         background: #f5f5f6;
-//         overflow: hidden;
-//         .testimg {
-//             width: 300px;
-//             height: 450px;
-//             // height: inherit;
-//         }
-//         .description-wrapper {
-//             padding: 0 10px 10px;
-//             display: flex;
-//             align-items: center;
-//             justify-content: space-between;
-//             .rating-svg {
-//                 display: block;
-//             }
-//             p {
-//                 font-weight: 500;
-//                 text-align: center;
-//             }
-//             .rating {
-//                 border: 2px solid rgb(225, 226, 225);
-//                 width: 45px;
-//                 padding: 5px;
-//                 border-radius: 15px;
-//             }
-//             .rating-svg {
-//                 width: 25px;
-//                 height: 25px;
-//             }
-//         }
-//         .additional-data {
-//             position: absolute;
-//             opacity: 0.3;
-//             padding: 15px 20px 15px;
-//             bottom: 0;
-//             height: 90%;
-//             width: 100%;
-//             transform: translateX(-100%);
-//             background: #f5f5f6;
-//             overflow: auto;
-//             transition: 0.6s;
-//             &::-webkit-scrollbar {
-//                 width: 10px;
-//             }
-//             &::-webkit-scrollbar-thumb {
-//                 border-radius: 10px;
-//                 background-color: #e1e2e1;
-//               }
-//             p {
-//                 overflow: auto;
-//             }
-
-//             &.click{
-//                 display: block;
-//                 opacity: 0.85;
-//                 transform: translateX(0);
-//                 transition: all;
-//                 transition: 0.6s;
-//             }
-//         }
-//     }
-// }
