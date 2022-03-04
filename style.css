@@ -141,7 +141,7 @@ main aside .photo-wrapper {
 
 main aside .photo-wrapper img {
   width: 100%;
-  opacity: 0.85;
+  opacity: 0.9;
   border-radius: 1%;
 }
 
@@ -194,15 +194,27 @@ main section .projects-wrapper {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 25px;
 }
 
 main section .projects-wrapper .project {
-  width: 450px;
-  height: 300px;
+  width: 350px;
+  height: 233px;
   background: grey;
   overflow: hidden;
   position: relative;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 968px) {
+  main section .projects-wrapper .project {
+    width: 550px;
+    height: calc(550px/1.5);
+  }
 }
 
 main section .projects-wrapper .project.game {
@@ -231,7 +243,7 @@ main section .projects-wrapper .project .description-project {
 main section .projects-wrapper .project .description-project.push {
   overflow: hidden;
   opacity: 0.9;
-  background: #66bb6a;
+  background: #e1e2e1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
   -webkit-transition: all 0.5s;
@@ -241,9 +253,52 @@ main section .projects-wrapper .project .description-project.push {
   display: flex;
 }
 
+main section .projects-wrapper .project .description-project .link-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 120px;
+  height: 70px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+main section .projects-wrapper .project .description-project .link-wrapper:hover {
+  opacity: 0.6;
+}
+
+main section .projects-wrapper .project .description-project .link-wrapper img {
+  width: 50px;
+  height: 50px;
+}
+
+main section .projects-wrapper .project .description-project .link-wrapper a {
+  font-size: 35px;
+  font-style: italic;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
 main section .code-wrapper {
   overflow: hidden;
   border: 2px solid black;
+}
+
+@media (max-width: 968px) and (min-width: 500px) {
+  main section .code-wrapper {
+    overflow: auto;
+  }
 }
 
 main section .code-wrapper pre {

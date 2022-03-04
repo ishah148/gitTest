@@ -1,4 +1,5 @@
 $breakpoint-tablet: 968px;
+$breakpoint-phone: 500px;
 $color3: #f5f5f6;
 // $color1:#98ee99;
 $color1: #e1e2e1;
@@ -104,7 +105,7 @@ main {
 
             img {
                 width: 100%;
-                opacity: 0.85;
+                opacity: 0.9;
                 border-radius: 1%;
             }
         }
@@ -146,13 +147,22 @@ main {
         .projects-wrapper {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap:25px;
             .project {
-                width: 450px;
-                height: 300px;
+                width: 350px;
+                height: 233px;
                 background: grey;
                 overflow: hidden;
                 position: relative;
+                transition: 0.3s ease;
+                
+
+                
+                @media (max-width: $breakpoint-tablet) {
+                    width: 550px;
+                    height: calc(550px/1.5);
+                }
 
                 &.game{
                     background:left 0% / 100% 100% no-repeat url(assets/png/game.png);
@@ -174,10 +184,38 @@ main {
                     &.push {
                         overflow: hidden;
                         opacity: 0.9;
-                        background: #66bb6a;
+                        background: $grey;
                         transform: translateY(0);
                         transition: all 0.5s;
                         display: flex;
+                    }
+
+                    .link-wrapper{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        position: absolute;
+                        width: 120px;
+                        height: 70px;
+                        margin: auto;
+                        top: 0; left: 0; bottom: 0; right: 0;
+                        &:hover{
+                            opacity: 0.6;
+                        }
+                        
+                        img{
+                            width: 50px;
+                            height: 50px;
+                        }
+                        a{
+                            font-size: 35px;
+                            font-style: italic;
+                            text-decoration: none;
+                            opacity: 0.85;
+                            p{
+                            }
+                        }
+                        
                     }
                 }
             }
@@ -186,7 +224,9 @@ main {
         .code-wrapper {
             overflow: hidden;
             border: 2px solid black;
-
+            @media (max-width: $breakpoint-tablet) and (min-width: $breakpoint-phone){
+                overflow: auto;
+            }
             pre {
                 width: 20vw;
 
