@@ -192,29 +192,30 @@ main section .projects-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 650px;
+  height: 400px;
+  margin: auto;
+  overflow: hidden;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 25px;
+  position: relative;
 }
 
 main section .projects-wrapper .project {
-  width: 350px;
-  height: 233px;
+  width: 650px;
+  height: 400px;
   background: grey;
   overflow: hidden;
   position: relative;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
-}
-
-@media (max-width: 968px) {
-  main section .projects-wrapper .project {
-    width: 550px;
-    height: calc(550px/1.5);
-  }
 }
 
 main section .projects-wrapper .project.game {
