@@ -163,13 +163,7 @@ main {
                 overflow: hidden;
                 position: relative;
                 transition: 0.3s ease;
-                // transform: translateX(-650px);
-
-                
-                // @media (max-width: $breakpoint-tablet) {
-                //     width: 550px;
-                //     height: calc(550px/1.5);
-                // }
+                transform: translateX(-650px);
 
 
                 &.game{
@@ -228,6 +222,14 @@ main {
                 }
             }
             
+            button{
+                width: 50px;
+                height: 100px;
+                position: absolute;
+                right: 700px;
+                background: black;
+
+            }
         }
 
         .code-wrapper {

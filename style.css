@@ -216,6 +216,8 @@ main section .projects-wrapper .project {
   position: relative;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
+  -webkit-transform: translateX(-650px);
+          transform: translateX(-650px);
 }
 
 main section .projects-wrapper .project.game {
@@ -289,6 +291,14 @@ main section .projects-wrapper .project .description-project .link-wrapper a {
   font-style: italic;
   text-decoration: none;
   opacity: 0.85;
+}
+
+main section .projects-wrapper button {
+  width: 50px;
+  height: 100px;
+  position: absolute;
+  right: 700px;
+  background: black;
 }
 
 main section .code-wrapper {
