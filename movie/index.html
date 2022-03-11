@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.js">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple:regular" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h1>TMDB API</h1>
+        <!-- <div class="exit"><img src="" alt=""></div> -->
+        <form id="search-form" class="search-wrapper">
+
+            <input name="text" type="text" autocomplete="off" placeholder="search....">
+
+            <button type="submit"></button>
+
+        </form>
+    </header>
+    <div class="wrapper">
+
+    </div>
+    <nav>
+        <button class="prev" onclick="minusPage()">
+            <svg class="prev-svg">
+                <use xlink:href="assets/svg/previous.svg#prev"></use>
+            </svg>
+        </button>
+        <div class="current">
+            <p> 1 </p>
+        </div>
+        <button class="next" onclick="plusPage()">
+            <svg class="next-svg">
+                <use xlink:href="assets/svg/next.svg#next"></use>
+            </svg>
+        </button>
+    </nav>
+    <footer>
+        <p>©</p>
+        <p>2022</p>
+        <p class="link-git"><a class="link-git" href="https://github.com/ishah148">github</a></p>
+        <p class="footer-school"><a href="https://rs.school/">Rolling Scopes School</a></p>
+    </footer>
+    <script src="index.js"></script>
+</body>
+
+</html>
