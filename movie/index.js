@@ -65,15 +65,12 @@ function sleep(milliseconds) {
 
 
 function createPageTables(data) {
-    sleep(5000)
-    console.log('enter to CPT')
     for (i in data.results) {
         document.querySelector('.wrapper').insertAdjacentHTML('afterbegin', filmContent)
     }
 }
 //     // // add content wrapper
 function showContent(data) {
-    console.log('enter to show')
     for (i in data.results) {
         if (i > document.querySelectorAll('.wrapper img').length - 1) return
         document.querySelectorAll('.table')[i].addEventListener('click', showDescription)
