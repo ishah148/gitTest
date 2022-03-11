@@ -1,0 +1,523 @@
+/* <========= HTML ===========> */
+html {
+  background: rgb(0, 0, 0);
+  scroll-behavior: smooth;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  width: 1440px;
+  margin: auto;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 40px;
+  color: white;
+}
+
+body * {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* <=============== BACKGROUND ===============> */
+.background {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(assets/img/background_girl.png);
+  background-repeat: no-repeat;
+  height: 910px;
+  width: 1440px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 1440px;
+  height: 90px;
+
+
+}
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1440px;
+  height: 90px;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  width: 500px;
+  height: 50px;
+  margin-left: auto;
+  padding-top: 4px;
+  justify-content: center;
+  flex-direction: row;
+
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+.background_nav_ul {
+  padding-left: 0px;
+  gap: 30px;
+}
+
+
+.button-wrapper {
+  width: 70px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+
+}
+.button-wrapper button {
+  line-height: 50px;
+}
+a, .link-anchor {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+.en,
+.ru {
+  background: transparent;
+  border: none;
+  color: white;
+  transition: 0.4s;
+}
+.slash {
+  display: block;
+  width: 8px;
+  margin-right: 8px;
+  margin-left: 9px;
+  font-weight: 700;
+}
+.ru:hover,
+.en:hover {
+  color: #BDAE82;
+}
+
+
+
+.hero {
+  width: 500px;
+  height: 330px;
+  margin-left: 80px;
+  margin-top: 160px;
+  margin-bottom: 330px;
+}
+.background_hero_description {
+  line-height: 40px;
+  margin-top: 0;
+  width: 470px;
+  height: 120px;
+  margin-bottom: 23px;
+}
+.background_hero_name {
+  margin-bottom: 10px;
+}
+.icon {
+  width: 50px;
+  height: 50px;
+}
+.hero_button {
+  background-color: #BDAE82;
+  width: 220px;
+  height: 55px;
+  color: black;
+  border-style: hidden;
+}
+.hero_button:hover {
+  opacity: 0.9;
+  color: white;
+}
+/*                                                                             */
+/* ################################### MAIN ###################################*/
+/*                                                                             */
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 1440px;
+  margin: auto;
+  background: black;
+}
+/* <=============== SKILLS ===============> */
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 75px;
+  width: 1440px;
+  height: 482px;
+}
+
+.skills-h2 {
+  display: flex;
+  justify-content: center;
+  width: 700px;
+  height: 80px;
+  margin: auto;
+}
+
+.skills-icon {
+  display: flex;
+  align-self: center;
+}
+
+.skills-tables {
+  display: flex;
+  width: 1400px;
+  height: 242px;
+  justify-content: center;
+  gap: 0 40px;
+  padding: 0 20px 0;
+  margin: 0 20px 0;
+}
+
+.skills-tables-description * {
+  margin: 0 auto 0;
+}
+
+.skills-tables-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  height: 240px;
+  padding: 0 20px 3px;
+}
+
+.skills-tables-description p {
+  width: 280px;
+  height: 72px;
+  font-size: 18px;
+  line-height: 36px;
+  text-align: center;
+}
+
+.skills-tables-description h3 {
+  width: 280px;
+  height: 40px;
+  margin: 50px auto 20px;
+  text-align: center;
+}
+
+/* ===============         =============== */
+/*=============== Portfolio ===============*/
+/* ===============         =============== */
+.portfolio {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 1440px;
+  height: 1500px;
+  padding-top: 100px;
+}
+
+.portfolio-h2-wrapper{
+  width: 700px;
+  height: 80px;
+  margin: 0 auto 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+.portfolio-buttons button {
+  width: 220px;
+  height: 55px;
+  background-color: black;
+  border-style: hidden;
+  color: #BDAE82;
+  border: 2px solid #BDAE82;
+  margin-bottom: 18px;
+
+}
+
+.portfolio-buttons>button:hover {
+  color: white;
+}
+
+#button-Autumm {
+  background-color: #BDAE82 !important;
+  color: black !important;
+}
+
+/*                                         */
+/* <===============PORTFOLIO-PHOTO ===============> */
+/*                                         */
+.portfolio-photo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: black;
+  width: 1400px;
+  height: 1145px;
+  gap: 10px 10px;
+}
+
+.portfolio-photo div img {
+  height: 560px;
+  width: 450px;
+
+}
+
+svg:hover {
+  opacity: 0.4;
+}
+
+/* <===============      VIDEO     ===============> */
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 1440px;
+  height: 945px;
+  padding: 100px 20px 0px;
+  background: black;
+  gap: 1px 1px;
+}
+
+.video-h2-wrapper{
+  width: 700px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.video-player {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.video-player img {
+  width: 1400px;
+  height: 705px;
+}
+
+.video-player-button {
+  position: absolute;
+}
+
+.video-player-button img {
+  width: 130px;
+  height: 130px;
+}
+
+.video-player-button img:hover {
+  opacity: 0.4;
+  color: #CCBA8D;
+}
+
+/*                                         */
+/* <=============== PRICE ===============> */
+/*                                         */
+.price {
+  display: flex;
+  width: 1440px;
+  height: 845px;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 20px 100px;
+  gap: 62px 0px;
+}
+.price-h2-wrapper{
+  width: 700px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.price-table-wrapper {
+  width: 1400px;
+  height: 505px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.price-table-content {
+  width: 450px;
+  height: 500px;
+  background: black;
+  border: 2px solid #BDAE82;
+  gap: 20px;
+  padding: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+
+.price-table-content-service {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 56px;
+  margin-bottom: 0px;
+}
+
+.price-table-content-price {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 48px;
+  color: #BDAE82;
+  margin: 0;
+}
+
+.price-table-content-description {
+  width: 364px;
+  height: 180px;
+  display: block;
+  text-align: center;
+  
+}
+
+.price-table-content button {
+  background-color: #BDAE82;
+  width: 220px;
+  height: 55px;
+  color: black;
+  border-style: hidden;
+  margin-top: 17px;
+  padding-top: 4px;
+}
+
+.price-table-content button:hover {
+  color: white;
+}
+
+/* ===============             =============== */
+/* <==============  CONTACTS   ===============>*/
+/* ===============             =============== */
+.contacts {
+  width: 1440px;
+  height: 700px;
+  padding-top: 60px;
+  padding-right: 20px;
+  background: rgb(0, 0, 0);
+  display: flex;
+  justify-content: flex-end;
+  background: url(assets/img/contacts.jpg);
+}
+
+.contacts-wrapper {
+  width: 450px;
+  height: 445px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* gap: 20px; */
+  padding-top: 10px;
+}
+
+.contacts-div-input_mail, .contacts-div-input_phone, .contacts-div-textarea {
+  width: 450px;
+  height: 50px;
+  background: none;
+  color: #BDAE82;
+  border: 2px solid #BDAE82;
+  padding: 5px 15px 5px;
+  resize: none;
+  outline: none;
+}
+.contacts-div-contact_me{
+  margin-bottom: 45px;
+  margin-top: 6px;
+}
+.contacts-div-textarea {
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+::placeholder {
+  font-family: inherit;
+  color: #bdae82;
+  font-size: 20px;
+}
+
+.contacts-div-button {
+  width: 220px;
+  height: 55px;
+  border-style: hidden;
+  color: black;
+  border: 2px solid #BDAE82;
+  background: #BDAE82;
+}
+
+.contacts-div-button:hover {
+  opacity: 0.4;
+}
+
+/* <==========  FOOTER ============> */
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 1440px;
+  height: 150px;
+  padding-right: 20px;
+  padding-left: 15px;
+  background: black;
+}
+
+.footer-year {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 182px;
+  height: 50px;
+  padding-left: 3px;
+  padding-right: 6px;
+  color: white;
+}
+
+.footer-year p {
+  padding: auto;
+  padding-bottom: 0px;
+}
+
+.footer-school {
+  width: 211px;
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  margin: 0;
+  padding-left: 2px;
+  margin-left: 3px;
+}
+
+.footer-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 188px;
+  height: 50px;
+  fill: white
+}
+
+.footer-icons svg:hover {
+  fill: #CCBA8D
+}

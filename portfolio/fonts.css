@@ -1,0 +1,106 @@
+/* <========= MAIN FONTS ==========> */
+
+:root{
+  --background-color-line: #BDAE82;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 120px;
+}
+
+h2 {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: #BDAE82;
+  text-align: center;
+}
+
+h3 {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+button, textarea {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 40px;
+}
+/* =============== LINES =============== */
+.line {
+  position: absolute;
+  padding: 0 20px;
+  background-color: black;
+}
+
+.line-before {
+  display: flex;
+  position: relative;
+  justify-content: center;
+
+}
+
+.line-before:before {
+  display: block;
+  width: 100%;
+  height: 2px;
+  content: '';
+  position: absolute;
+  /* border-bottom: 2px solid #BDAE82; debug */
+  /* background-color: #BDAE82; */
+  background-color: var(--background-color-line);
+  top: 20px;
+  color: #BDAE82;
+}
+.video-h2-wrapper.line-before::before{
+  top: 38px;
+}
+.price-h2-wrapper.line-before::before{
+  top: 38px;
+}
+/* ===============  =============== */
+footer {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 50px;
+}
+
+.nav-links :hover {
+  opacity: 0.6;
+  color: #dfcd99;
+}
+
+
+.footer-school a:hover {
+  opacity: 0.5;
+  color: #BDAE82;
+}
+
+.link-git a:hover {
+  opacity: 0.5;
+  color: #BDAE82 !important;
+}
+
+span {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 36px;
+}

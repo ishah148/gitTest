@@ -1,0 +1,92 @@
+.theme-wrapper{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    user-select: none;
+}
+
+.theme-wrapper .theme-pic-1{
+    width: 40px;
+    height: 40px;
+    fill: #fff;
+}
+.theme-wrapper .theme-pic-2{
+    width: 0;
+    height: 0;
+}
+
+.theme-wrapper.is-light{
+    fill: #BDAE82;
+}
+.theme-wrapper.is-light .theme-pic-1{
+    width: 0px;
+    height: 0px;
+}
+.theme-wrapper.is-light .theme-pic-2{
+    width: 40px;
+    height: 40px;
+}
+
+/* svg.theme-wrapper.is-light>.theme-pic{
+    fill: red;
+} */
+
+/* html,main,.skills, .portfolio,.portfolio-photo, .video, .price, .contacts, footer,.portfolio-buttons button{
+    background-color: #fff;
+} */
+html.is-light,
+main.is-light,
+.skills.is-light,
+.portfolio.is-light,
+.portfolio-photo.is-light,
+.video.is-light, 
+.price.is-light,
+.contacts.is-light,
+footer.is-light,
+.portfolio-buttons button.is-light {
+    background-color: #fff;
+}
+main.is-light *{
+    color: #000;
+}
+.contacts-div-contact_me.is-light{
+    color: #BDAE82;
+}
+.portfolio-buttons>button:hover.is-light,
+.line-before:before,.line.is-light {
+    color: black;
+}
+.line.is-light{
+    background-color: #fff;
+}
+.price-table-content.is-light{
+    background-color: #fff;
+}
+/* .background{
+    /* background-image: ; */
+    /* filter: blur(1px); */
+    /* background: url(assets/img/background_girl.png),linear-gradient(#00A8DE, #FFF) fixed,background-blend-mode(difference);
+    background-blend-mode: difference; */
+/* }  */
+.background_hero_description.is-light,
+span.is-light,
+p.is-light,
+h3.is-light,
+.line .is-light
+{
+    color: black;
+}
+/* .price-table-wrapper *{
+    background-color: #fff;
+} */
+.price-table-wrapper > div:nth-child(1).is-light{ background-color: #fff;}
+.price-table-wrapper > div:nth-child(2).is-light{ background-color: #fff;}
+.price-table-wrapper > div:nth-child(3).is-light{ background-color: #fff;}
+
+footer.is-light *{
+    color: black;
+    fill: black;
+}footer p.is-light{
+    color: white;
+}
+
