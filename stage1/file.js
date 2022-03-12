@@ -9,4 +9,11 @@ function highAndLow(numbers){
     return `${temp[0]} ${temp[temp.length - 1]}`;
   }
 
-highAndLow('8 3 -5 42 -1 0 0 -9 4 7 4 -4')
+// highAndLow('8 3 -5 42 -1 0 0 -9 4 7 4 -4')
+a = "This website is for losers LOL!"
+function disemvowel(str) {
+    listSogl = ["a", "e", "i", "o", "u","A","E","I","O","U"]
+    let temp = str.split('').map(item => listSogl.includes(item)?'':item)
+    return temp.join('')
+  }
+console.log(disemvowel(a))
