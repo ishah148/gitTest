@@ -17,3 +17,12 @@ function disemvowel(str) {
     return temp.join('')
   }
 console.log(disemvowel(a))
+
+function isIsogram(str){
+    temp = new Set(str.toUpperCase().split(''))
+    return temp.size === str.split('').length
+}
+
+// console.log(isIsogram("Dermatoglyphics"))
+// console.log(isIsogram("aba"))
+
