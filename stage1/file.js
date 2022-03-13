@@ -36,3 +36,10 @@ function explode(s) {
 // console.log(explode("312"))
 // console.log(explode("333122"))
 // explode('1488')
+
+function getParticipants(handshakes){
+    console.log(handshakes)
+    if(handshakes === 3) return handshakes
+    if(handshakes > 1) return Math.ceil(Math.sqrt(handshakes*2))
+    return handshakes > 3?handshakes - 2:handshakes + 1
+  }
