@@ -59,6 +59,7 @@ function duplicateEncode(word) {
     });
     return res.join('')
 }
+
 function duplicateEncode(word) {
     // let res = [];
     let i = 0;
@@ -73,7 +74,28 @@ function duplicateEncode(word) {
     },res = []);
 }
 
+function fib(n) {
+    let a = 1;
+    let b = 1;
+    for (let i = 3; i <= n; i++) {
+      let c = a + b;
+      a = b;
+      b = c;
+    }
+    return b;
+  }
+console.time()
+fib(40)
+console.timeEnd()
 
+function fib(n)
+{
+    if (n < 2) return n;
+	return fib(n - 1) + fib(n - 2);
+}
+console.time()
+fib(40)
+console.timeEnd()
 // "din"      =>  "((("
 // "recede"   =>  "()()()"
 // "Success"  =>  ")())())"
