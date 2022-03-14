@@ -78,12 +78,12 @@ function fib(n) {
     let a = 1;
     let b = 1;
     for (let i = 3; i <= n; i++) {
-      let c = a + b;
-      a = b;
-      b = c;
+        let c = a + b;
+        a = b;
+        b = c;
     }
     return b;
-  }
+}
 // console.time()
 // fib(40)
 // console.timeEnd()
@@ -92,12 +92,7 @@ function fib(n) {
     if (n < 2) return n;
     return fib(n - 1) + fib(n - 2);
 }
-let arr = []
-let res = []
-for (let i = 0; i < 38; i++) {
-    arr.push(i)
-}
-arr.forEach(i => res.push(fib(i)))
+
 function nthFibo(n) {
     let arr = []
     let res = []
@@ -111,5 +106,22 @@ function nthFibo(n) {
     // if (n === 3) return 1
     // if (n === 4) return 2
     // if (n === 5) return 3
-    return res[n-1]
+    return res[n - 1]
 }
+
+function solution(number) {
+
+    let arr = []
+    for (let i = 1; i < number; i++) {
+        if (i % 3 === 0 || i % 5 === 0) { arr.push(i) }
+
+    }
+    return arr.reduce((res, item) => {
+        return res += item
+    }, 0)
+
+}
+
+// 10 - 23
+// 20 - 78
+// 200 - 9168
