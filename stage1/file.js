@@ -59,6 +59,19 @@ function duplicateEncode(word) {
     });
     return res.join('')
 }
+function duplicateEncode(word) {
+    // let res = [];
+    let i = 0;
+    return word.toLowerCase().split('').reduce((res,item) => {
+        word.toLowerCase().split('').forEach(item2 => {
+            if (item === item2) { i++; }
+        })
+        if (i > 1) { res.push(')'); }
+        if (i <= 1) { res.push('('); }
+        i = 0;
+        return res
+    },res = []);
+}
 
 
 // "din"      =>  "((("
