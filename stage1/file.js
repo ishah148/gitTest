@@ -63,7 +63,7 @@ function duplicateEncode(word) {
 function duplicateEncode(word) {
     // let res = [];
     let i = 0;
-    return word.toLowerCase().split('').reduce((res,item) => {
+    return word.toLowerCase().split('').reduce((res, item) => {
         word.toLowerCase().split('').forEach(item2 => {
             if (item === item2) { i++; }
         })
@@ -71,7 +71,7 @@ function duplicateEncode(word) {
         if (i <= 1) { res.push('('); }
         i = 0;
         return res
-    },res = []);
+    }, res = []);
 }
 
 function fib(n) {
@@ -84,19 +84,32 @@ function fib(n) {
     }
     return b;
   }
-console.time()
-fib(40)
-console.timeEnd()
+// console.time()
+// fib(40)
+// console.timeEnd()
 
-function fib(n)
-{
+function fib(n) {
     if (n < 2) return n;
-	return fib(n - 1) + fib(n - 2);
+    return fib(n - 1) + fib(n - 2);
 }
-console.time()
-fib(40)
-console.timeEnd()
-// "din"      =>  "((("
-// "recede"   =>  "()()()"
-// "Success"  =>  ")())())"
-// "(( @"     =>  "))((" 
+let arr = []
+let res = []
+for (let i = 0; i < 38; i++) {
+    arr.push(i)
+}
+arr.forEach(i => res.push(fib(i)))
+function nthFibo(n) {
+    let arr = []
+    let res = []
+    for (let i = 0; i < 37; i++) {
+        arr.push(i)
+    }
+    arr.forEach(i => res.push(fib(i)))
+
+    // if (n === 1) return 0
+    // if (n === 2) return 1
+    // if (n === 3) return 1
+    // if (n === 4) return 2
+    // if (n === 5) return 3
+    return res[n-1]
+}
