@@ -125,3 +125,18 @@ function solution(number) {
 // 10 - 23
 // 20 - 78
 // 200 - 9168
+
+function head(arr) {
+    return arr[0]
+}
+function tail(arr) {
+    arr.splice(1)
+    return arr
+}
+function init(arr) {
+    arr.pop()  
+    return arr
+}
+function last(arr) {
+    return arr[arr.length - 1]
+}
