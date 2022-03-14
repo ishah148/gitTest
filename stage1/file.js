@@ -37,9 +37,31 @@ function explode(s) {
 // console.log(explode("333122"))
 // explode('1488')
 
-function getParticipants(handshakes){
+function getParticipants(handshakes) {
     console.log(handshakes)
-    if(handshakes === 3) return handshakes
-    if(handshakes > 1) return Math.ceil(Math.sqrt(handshakes*2))
-    return handshakes > 3?handshakes - 2:handshakes + 1
-  }
+    if (handshakes === 3) return handshakes
+    if (handshakes > 1) return Math.ceil(Math.sqrt(handshakes * 2))
+    return handshakes > 3 ? handshakes - 2 : handshakes + 1
+}
+
+function duplicateEncode(word) {
+    let res = [];
+    let i = 0;
+    word.toLowerCase().split('').forEach((item) => {
+        console.log(item)
+        // console.log(array)
+        word.toLowerCase().split('').forEach(item2 => {
+            if (item === item2) { i++; }
+        })
+        if (i > 1) { res.push(')'); }
+        if (i <= 1) { res.push('('); }
+        i = 0;
+    });
+    return res.join('')
+}
+
+
+// "din"      =>  "((("
+// "recede"   =>  "()()()"
+// "Success"  =>  ")())())"
+// "(( @"     =>  "))((" 
