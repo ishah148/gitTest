@@ -163,4 +163,25 @@ function deepCount(x){
     }
     return res
 }
-console.log(deepCount(a))
+// console.log(deepCount(a))
+
+function getLengthOfMissingArray(arrayOfArrays) {
+    let tmp = []
+    for(i of arrayOfArrays){
+        tmp.push(i.length)
+    }
+    // console.log(tmp.sort())
+    tmp.sort().forEach((item,index,array)=>{
+        console.log(item)
+        // console.log(index)
+        console.log(array[index+1])
+        console.log('-------')
+
+        if(array[index+1] - item !== 0){
+            console.log('res',item + 1)
+        }
+    })
+    console.log(tmp)
+  }
+  
+  getLengthOfMissingArray([[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]])
