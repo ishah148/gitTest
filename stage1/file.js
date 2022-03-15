@@ -147,13 +147,14 @@ function last(arr) {
 // a = [1, 2, [3, 4, [5]]]
 // a = ["x", "y", ["z"]]
 // a = [1, 2, 3]
-// a = [[[[[[[[[]]]]]]]]]
+a = [[[[[[[[[]]]]]]]]]
 
 function deepCount(x){
     let res = 0
     deep(x)
     function deep(x) {
-        if (x.length && typeof (x) !== 'string') {
+        // if (x.length && typeof (x) !== 'string') {
+        if (Array.isArray(x)) {
             for (i of x) {
                 res++
                 deep(i)
@@ -162,4 +163,4 @@ function deepCount(x){
     }
     return res
 }
-// console.log(deepCount(a))
+console.log(deepCount(a))
