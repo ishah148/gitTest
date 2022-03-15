@@ -134,9 +134,32 @@ function tail(arr) {
     return arr
 }
 function init(arr) {
-    arr.pop()  
+    arr.pop()
     return arr
 }
 function last(arr) {
     return arr[arr.length - 1]
 }
+// [1, 2, [3, 4, [5]]]
+// let res = 0;
+// let err = 0;
+// a = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]
+// a = [1, 2, [3, 4, [5]]]
+// a = ["x", "y", ["z"]]
+// a = [1, 2, 3]
+// a = [[[[[[[[[]]]]]]]]]
+
+function deepCount(x){
+    let res = 0
+    deep(x)
+    function deep(x) {
+        if (x.length && typeof (x) !== 'string') {
+            for (i of x) {
+                res++
+                deep(i)
+            }
+        }  
+    }
+    return res
+}
+// console.log(deepCount(a))
