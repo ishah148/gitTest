@@ -149,7 +149,7 @@ function last(arr) {
 // a = [1, 2, 3]
 a = [[[[[[[[[]]]]]]]]]
 
-function deepCount(x){
+function deepCount(x) {
     let res = 0
     deep(x)
     function deep(x) {
@@ -159,29 +159,29 @@ function deepCount(x){
                 res++
                 deep(i)
             }
-        }  
+        }
     }
     return res
 }
 // console.log(deepCount(a))
 
 function getLengthOfMissingArray(arrayOfArrays) {
-    let tmp = []
-    for(i of arrayOfArrays){
-        tmp.push(i.length)
+    let lengthArrays = []
+    if (arrayOfArrays === [] || arrayOfArrays === null) { return 0; }
+    for (i of arrayOfArrays) {
+        if (i === null) { return 0; }
+        lengthArrays.push(i.length);
     }
-    // console.log(tmp.sort())
-    tmp.sort().forEach((item,index,array)=>{
-        console.log(item)
-        // console.log(index)
-        console.log(array[index+1])
-        console.log('-------')
-
-        if(array[index+1] - item !== 0){
-            console.log('res',item + 1)
+    if (lengthArrays.includes(0)) {
+        return 0;
+    }
+    lengthArrays.sort((a, b) => a - b)
+    return lengthArrays.reduce((res, item, index, array) => {
+        if (item + 1 !== array[index + 1] && item + 1 < array[array.length - 1]) {
+            res = item + 1;
         }
-    })
-    console.log(tmp)
-  }
-  
-  getLengthOfMissingArray([[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]])
+        return res;
+    }, 0)
+}
+
+
