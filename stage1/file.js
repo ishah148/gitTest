@@ -184,22 +184,22 @@ function getLengthOfMissingArray(arrayOfArrays) {
     }, 0)
 }
 
-const gloves = ["red", "green", "red", "blue", "blue"]
-res = {
+const gloves = ["red", "green", "red", "blue", "blue", "red", "red", "red","blue","blue"]
 
-}
-temp = new Set(gloves)
-console.log(temp)
-temp.forEach(color => {res[color] = 0})
-temp.forEach(color => {
-    gloves.forEach(glove => {
-        if(color === glove){
-            res[color] +=1
-        }
-        
-
-    })
-})
 function numberOfPairs(gloves) {
-
+    let count = 0;
+    res = {}
+    gloveColors = new Set(gloves)
+    gloveColors.forEach(color => { res[color] = 0 }) // init object
+    gloveColors.forEach(color => { // count colors
+        gloves.forEach(glove => {
+            if (color === glove) {
+                res[color] += 1
+            }
+        })
+    })
+    for (let color in res) {
+        count+= Math.floor(res[color]/2)
+    }
+    return count
 }
