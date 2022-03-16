@@ -184,7 +184,7 @@ function getLengthOfMissingArray(arrayOfArrays) {
     }, 0)
 }
 
-const gloves = ["red", "green", "red", "blue", "blue", "red", "red", "red","blue","blue"]
+const gloves = ["red", "green", "red", "blue", "blue", "red", "red", "red", "blue", "blue"]
 
 function numberOfPairs(gloves) {
     let count = 0;
@@ -199,7 +199,25 @@ function numberOfPairs(gloves) {
         })
     })
     for (let color in res) {
-        count+= Math.floor(res[color]/2)
+        count += Math.floor(res[color] / 2)
     }
     return count
 }
+let test = [3, 8, 3, 6, 5, 7, 9, 1]
+// test = [9, 4, 5, 3, 5, 7, 2, 56, 8, 2, 6, 8, 0]
+
+function sortByBit(arr) {
+    return arr
+      .sort((a, b) => a - b)
+      .sort((a, b) => {
+          return count1Bits(a) === count1Bits(b) ? a - b : count1Bits(a) - count1Bits(b)
+      })
+  }
+  
+  function count1Bits(item) {
+      return Number(item)
+          .toString(2)
+          .split('')
+          .reduce((res, i) => i === '1' ? res += 1 : res, 0)
+  
+  }
