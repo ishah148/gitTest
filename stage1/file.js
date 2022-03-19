@@ -249,25 +249,15 @@ function launchAll() {
     }
 }
 
-// function launchAll(launchMissile) {
-//     for(var i = 0; i < 5; i++) {
-//       let k = i;
-//       setTimeout(function() {
-//         launchMissile(k);
-//       }, k * 1000);
-//     }
-//   }
-
-// function launchAll(launchMissile(i)) {
-//     for (var i = 0; i < 5; i++) {
-//         function name(i) {
-//             setTimeout(function () {
-//                 launchMissile(i);
-//             }, i * 1000);
-//         }
-//         name(i)
-//     }
-// }
-
-console.log('======')
-launchAll()
+function createFunctions(n) {
+    var callbacks = [];
+  
+    for (let i=0; i<n; i++) {
+      callbacks.push(function() {
+        return i;
+      });
+    }
+    
+    return callbacks;
+  }
+  
