@@ -261,7 +261,7 @@ function createFunctions(n) {
     return callbacks;
 }
 
-debugger
+
 // let temp = createFunctions(5)
 // temp[0]()
 // temp[1]()
@@ -278,3 +278,35 @@ function createSecretHolder(secret) {
         },
     }
 }
+
+
+
+
+
+function checkCoupon(enteredCode , correctCode, currentDate, expirationDate){
+    if(enteredCode!==correctCode){
+        return false;
+    }
+    
+}
+
+let dateRegexp = /(?<month>\w+)\s(?<day>\d{1,2}),\s(?<year>\d{4})/;
+let dateStr = "July 9, 2015";
+
+let groups = dateStr.match(dateRegexp).groups;
+
+ console.log(groups.day)
+
+
+
+
+// let dateRegexp = /(?<year>[0-9]{4})-(?<month>[0-9]{2})-(?<day>[0-9]{2})/;
+// let str = "2019-04-30";
+
+// let groups = str.match(dateRegexp).groups;
+
+// alert(groups.year); // 2019
+// alert(groups.month); // 04
+// alert(groups.day); // 30
+
+
