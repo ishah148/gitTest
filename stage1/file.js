@@ -251,13 +251,30 @@ function launchAll() {
 
 function createFunctions(n) {
     var callbacks = [];
-  
-    for (let i=0; i<n; i++) {
-      callbacks.push(function() {
-        return i;
-      });
+
+    for (let i = 0; i < n; i++) {
+        callbacks.push(function () {
+            return i;
+        });
     }
-    
+
     return callbacks;
-  }
-  
+}
+
+debugger
+// let temp = createFunctions(5)
+// temp[0]()
+// temp[1]()
+// temp[2]()
+
+function createSecretHolder(secret) {
+    return {
+        s: secret,
+        getSecret: function () {
+            return this.s;
+        },
+        setSecret: function (a) {
+            this.s = a;
+        },
+    }
+}
