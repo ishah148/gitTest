@@ -222,18 +222,52 @@ function count1Bits(item) {
 
 }
 
-  
+
 function calculate(...arguments) {
-  
+
     let sum = 0;
-    for (let arg of arguments) 
-    sum += arg;
-    
-    return function(...arguments){
-        for (let arg of arguments) 
-         sum += arg;
-      
-      return sum;
+    for (let arg of arguments)
+        sum += arg;
+
+    return function (...arguments) {
+        for (let arg of arguments)
+            sum += arg;
+
+        return sum;
     }
-  }
-    console.log(calculate(1)(5))
+}
+// console.log(calculate(1)(5))
+
+function launchAll() {
+    for (var i = 0; i < 5; i++) {
+        function name(i) {
+            setTimeout(function () {
+                console.log(i)
+            }, i * 1000);
+        }
+        name(i)
+    }
+}
+
+// function launchAll(launchMissile) {
+//     for(var i = 0; i < 5; i++) {
+//       let k = i;
+//       setTimeout(function() {
+//         launchMissile(k);
+//       }, k * 1000);
+//     }
+//   }
+
+// function launchAll(launchMissile(i)) {
+//     for (var i = 0; i < 5; i++) {
+//         function name(i) {
+//             setTimeout(function () {
+//                 launchMissile(i);
+//             }, i * 1000);
+//         }
+//         name(i)
+//     }
+// }
+
+console.log('======')
+launchAll()
