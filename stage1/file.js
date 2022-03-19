@@ -208,16 +208,32 @@ let test = [3, 8, 3, 6, 5, 7, 9, 1]
 
 function sortByBit(arr) {
     return arr
-      .sort((a, b) => a - b)
-      .sort((a, b) => {
-          return count1Bits(a) === count1Bits(b) ? a - b : count1Bits(a) - count1Bits(b)
-      })
-  }
+        .sort((a, b) => a - b)
+        .sort((a, b) => {
+            return count1Bits(a) === count1Bits(b) ? a - b : count1Bits(a) - count1Bits(b)
+        })
+}
+
+function count1Bits(item) {
+    return Number(item)
+        .toString(2)
+        .split('')
+        .reduce((res, i) => i === '1' ? res += 1 : res, 0)
+
+}
+
   
-  function count1Bits(item) {
-      return Number(item)
-          .toString(2)
-          .split('')
-          .reduce((res, i) => i === '1' ? res += 1 : res, 0)
+function calculate(...arguments) {
   
+    let sum = 0;
+    for (let arg of arguments) 
+    sum += arg;
+    
+    return function(...arguments){
+        for (let arg of arguments) 
+         sum += arg;
+      
+      return sum;
+    }
   }
+    console.log(calculate(1)(5))
