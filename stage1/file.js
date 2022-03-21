@@ -261,7 +261,6 @@ function createFunctions(n) {
     return callbacks;
 }
 
-debugger
 // let temp = createFunctions(5)
 // temp[0]()
 // temp[1]()
@@ -278,3 +277,17 @@ function createSecretHolder(secret) {
         },
     }
 }
+function getDate(year) {
+    let res = 0;
+    for (let month = 0; month <= 12; month++) {
+        for (let day = 1; day <= 31; day++) {
+            let tmp = new Date(`${month}-${day}-${year}`)
+            if (tmp.getDay() === 5 && tmp.getDate() === 13) {
+                res+=1;
+            }
+        }
+    }
+    return res
+}
+console.log(getDate(2015))
+console.log(getDate(1986))
