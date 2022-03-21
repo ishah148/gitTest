@@ -208,7 +208,7 @@ let test = [3, 8, 3, 6, 5, 7, 9, 1]
 
 function sortByBit(arr) {
     return arr
-        .sort((a, b) => a - b)
+        // .sort((a, b) => a - b)
         .sort((a, b) => {
             return count1Bits(a) === count1Bits(b) ? a - b : count1Bits(a) - count1Bits(b)
         })
@@ -219,10 +219,25 @@ function count1Bits(item) {
         .toString(2)
         .split('')
         .reduce((res, i) => i === '1' ? res += 1 : res, 0)
-
 }
 
 
+
+function sortByBit1(arr) {
+    let bitForm = {};
+    arr.forEach((item) => {
+        let bits = item.toString(2).match(/1/g);
+        bitForm[item] = bits ? bits.length : 0
+    })
+
+    return arr.sort((a, b) => {
+        return (bitForm[a] === bitForm[b]) ? a - b : bitForm[a] - bitForm[b]
+    });
+}
+console.time()
+console.log(sortByBit(testStr))
+console.timeEnd()
+console.log(sortByBit(testStr) == sortByBit1(testStr))
 function calculate(...arguments) {
 
     let sum = 0;
@@ -277,17 +292,38 @@ function createSecretHolder(secret) {
         },
     }
 }
+
 function getDate(year) {
     let res = 0;
     for (let month = 0; month <= 12; month++) {
         for (let day = 1; day <= 31; day++) {
             let tmp = new Date(`${month}-${day}-${year}`)
             if (tmp.getDay() === 5 && tmp.getDate() === 13) {
-                res+=1;
+                res += 1;
             }
         }
     }
     return res
 }
-console.log(getDate(2015))
-console.log(getDate(1986))
+
+
+function formatDuration(seconds) {
+    let sec = Math.floor(seconds % 60)
+    let min = Math.floor((seconds / 60) % 60)
+    let hour = Math.floor((seconds / 3600) % 24)
+    let day = Math.floor((seconds / 86400) % 365)
+    let year = Math.floor(seconds / 31536000)
+    let and = 'and '
+    and = sec?'and ':','
+    if(!minutes && sec){
+        and = ''
+    }
+    year = year === 1 ? year + ' year, ' : year > 1 ? year + ' years,' : ''
+    day = day === 1 ? day + ' day, ' : day > 1 ? day + ' days,' : ''
+    hour = hour === 1 ? hour + ' hour, ' : hour > 1 ? hour + ' hours,' : ''
+    min = min === 1 ? min + ' minute ': min > 1 ? min + ' minutes': ''
+    sec = sec === 1 ? and + sec + ' second ' : sec > 1 ? and + sec + ' seconds' : ''
+    return `${year} ${day} ${hour} ${min} ${sec} `
+}
+
+console.log(formatDuration(22222220 - 20))
