@@ -288,25 +288,16 @@ function checkCoupon(enteredCode , correctCode, currentDate, expirationDate){
         return false;
     }
     
+    return new Date(currentDate) <= new Date(expirationDate)
+
 }
 
-let dateRegexp = /(?<month>\w+)\s(?<day>\d{1,2}),\s(?<year>\d{4})/;
-let dateStr = "July 9, 2015";
 
-let groups = dateStr.match(dateRegexp).groups;
+// let dateRegexp = /(?<month>\w+)\s(?<day>\d{1,2}),\s(?<year>\d{4})/;
+// let dateStr = "July 9, 2015";
 
- console.log(groups.day)
+// let groups = dateStr.match(dateRegexp).groups;
 
-
-
-
-// let dateRegexp = /(?<year>[0-9]{4})-(?<month>[0-9]{2})-(?<day>[0-9]{2})/;
-// let str = "2019-04-30";
-
-// let groups = str.match(dateRegexp).groups;
-
-// alert(groups.year); // 2019
-// alert(groups.month); // 04
-// alert(groups.day); // 30
+//  console.log(groups.day)
 
 
