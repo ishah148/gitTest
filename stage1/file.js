@@ -334,9 +334,9 @@ function formatDuration(seconds) {
     return `${year}${day}${hour}${min}${sec}`
 }
 
-console.log(formatDuration(1))
+// console.log(formatDuration(1))
 
-var runLengthEncoding = function(str){
+var runLengthEncoding1 = function(str){
     if(!str) {return []}
     let res = [];
     str.split('').forEach((letter,index,array)=>{
@@ -350,9 +350,19 @@ var runLengthEncoding = function(str){
     })
   }
 
-console.log(runLengthEncoding('aaabcaacccccc'))
+// console.log(runLengthEncoding1('aaabcaacccccc'))
 
 // ("aaabcaa"), [[3,'a'],[1,'b'],[1,'c'],[2,'a']]
 // str.split().map( letter,index, array =>{
-
+    
 // }  )
+
+var runLengthEncoding = function(str){
+    console.log(str)
+    return (str.match(/(.)\1*/g) || []).map( group =>{
+        
+          return [group.length,group[0]]
+      })
+  }
+
+    // console.log(runLengthEncoding("hello world!"))
