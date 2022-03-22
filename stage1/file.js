@@ -283,11 +283,11 @@ function createSecretHolder(secret) {
 
 
 
-function checkCoupon(enteredCode , correctCode, currentDate, expirationDate){
-    if(enteredCode!==correctCode){
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
+    if (enteredCode !== correctCode) {
         return false;
     }
-    
+
     return new Date(currentDate) <= new Date(expirationDate)
 
 }
@@ -322,47 +322,119 @@ function formatDuration(seconds) {
     let day = Math.floor((seconds / 86400) % 365)
     let year = Math.floor(seconds / 31536000)
     let and = 'and '
-    and = sec?'and ':','
-    if(!min && sec){
+    and = sec ? 'and ' : ','
+    if (!min && sec) {
         and = ''
     }
     year = year === 1 ? year + ' year, ' : year > 1 ? year + ' years,' : ''
-    day = day === 1 ? day + ' day, ' : day > 1 ? ' '+day + ' days,' : ''
+    day = day === 1 ? day + ' day, ' : day > 1 ? ' ' + day + ' days,' : ''
     hour = hour === 1 ? hour + ' hour, ' : hour > 1 ? ' ' + hour + ' hours,' : ''
-    min = min === 1 ? min + ' minute ': min > 1 ?' ' + min + ' minutes': ''
+    min = min === 1 ? min + ' minute ' : min > 1 ? ' ' + min + ' minutes' : ''
     sec = sec === 1 ? and + sec + ' second' : sec > 1 ? and + sec + ' seconds' : ''
     return `${year}${day}${hour}${min}${sec}`
 }
 
 // console.log(formatDuration(1))
 
-var runLengthEncoding1 = function(str){
-    if(!str) {return []}
+var runLengthEncoding1 = function (str) {
+    if (!str) { return [] }
     let res = [];
-    str.split('').forEach((letter,index,array)=>{
+    str.split('').forEach((letter, index, array) => {
         res.push(letter)
-        if(letter !== array[index+1] && index!== array.length - 1){
-           res.push('.')
-        } 
+        if (letter !== array[index + 1] && index !== array.length - 1) {
+            res.push('.')
+        }
     })
-    return res.join('').split('.').map((item)=>{
-        return [item.length,item[0]]
+    return res.join('').split('.').map((item) => {
+        return [item.length, item[0]]
     })
-  }
+}
 
 // console.log(runLengthEncoding1('aaabcaacccccc'))
 
 // ("aaabcaa"), [[3,'a'],[1,'b'],[1,'c'],[2,'a']]
 // str.split().map( letter,index, array =>{
-    
+
 // }  )
 
-var runLengthEncoding = function(str){
+var runLengthEncoding = function (str) {
     console.log(str)
-    return (str.match(/(.)\1*/g) || []).map( group =>{
-        
-          return [group.length,group[0]]
-      })
-  }
+    return (str.match(/(.)\1*/g) || []).map(group => {
 
-    // console.log(runLengthEncoding("hello world!"))
+        return [group.length, group[0]]
+    })
+}
+
+// console.log(runLengthEncoding("hello world!"))
+
+
+// const input = [
+//     { "type": "rotten apples", "material": "organic" },
+//     { "type": "out of date yogurt", "material": "organic", "secondMaterial": "plastic" },
+//     { "type": "wine bottle", "material": "glass", "secondMaterial": "paper" },
+//     { "type": "amazon box", "material": "paper" },
+//     { "type": "beer bottle", "material": "glass", "secondMaterial": "paper" },
+//     { "type": "rotten apples", "material": "organic" },
+
+// ]
+ // ===============  ===============
+const materialss = ['paper','glass','organic','plastic']
+
+function GenerateTest() {
+    this.type = '' +  randNum(1000, 5000);
+    this.material = materialss[randNum(0,3)];
+    this.secondMaterial = materialss[randNum(0,3)];
+}
+
+const input = []
+for(let i = 0 ; i < 5000000; i++){
+    input[i] = new GenerateTest()
+}
+
+
+console.log(input)
+function randNum(min, max) { // random number from min to max
+    let rand = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
+}
+
+
+function recycle(input) {
+    let res = [[], [], [], []]
+    const materials = ['paper', 'glass', 'organic', 'plastic']
+    materials.forEach((material, index) => {
+        input.forEach(item => {
+            if (item.material === material) {
+                res[index].push(item.type)
+            }
+            if (item.secondMaterial === material) {
+                res[index].push(item.type)
+            }
+        })
+    })
+    return res
+}
+
+function kolya(input) {
+    let res = { paper: [], glass: [], organic: [], plastic: [] }
+
+
+    input.forEach((inputItem) => {
+
+        res[inputItem.material].push(inputItem.type)
+
+        if (inputItem.secondMaterial) {
+            res[inputItem.secondMaterial].push(inputItem.type)
+        }
+    })
+    return Object.values(res)
+}
+
+console.time()
+console.log(recycle(input))
+console.timeEnd()
+
+console.time()
+console.log(kolya(input))
+console.timeEnd()
+
