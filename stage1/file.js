@@ -223,21 +223,6 @@ function count1Bits(item) {
 
 
 
-function sortByBit1(arr) {
-    let bitForm = {};
-    arr.forEach((item) => {
-        let bits = item.toString(2).match(/1/g);
-        bitForm[item] = bits ? bits.length : 0
-    })
-
-    return arr.sort((a, b) => {
-        return (bitForm[a] === bitForm[b]) ? a - b : bitForm[a] - bitForm[b]
-    });
-}
-console.time()
-console.log(sortByBit(testStr))
-console.timeEnd()
-console.log(sortByBit(testStr) == sortByBit1(testStr))
 function calculate(...arguments) {
 
     let sum = 0;
@@ -276,10 +261,7 @@ function createFunctions(n) {
     return callbacks;
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e5ba14b3091028623ed16d6996f902d856e7589f
 // let temp = createFunctions(5)
 // temp[0]()
 // temp[1]()
@@ -297,7 +279,6 @@ function createSecretHolder(secret) {
     }
 }
 
-<<<<<<< HEAD
 
 
 
@@ -320,7 +301,6 @@ function checkCoupon(enteredCode , correctCode, currentDate, expirationDate){
 //  console.log(groups.day)
 
 
-=======
 function getDate(year) {
     let res = 0;
     for (let month = 0; month <= 12; month++) {
@@ -343,16 +323,36 @@ function formatDuration(seconds) {
     let year = Math.floor(seconds / 31536000)
     let and = 'and '
     and = sec?'and ':','
-    if(!minutes && sec){
+    if(!min && sec){
         and = ''
     }
     year = year === 1 ? year + ' year, ' : year > 1 ? year + ' years,' : ''
-    day = day === 1 ? day + ' day, ' : day > 1 ? day + ' days,' : ''
-    hour = hour === 1 ? hour + ' hour, ' : hour > 1 ? hour + ' hours,' : ''
-    min = min === 1 ? min + ' minute ': min > 1 ? min + ' minutes': ''
-    sec = sec === 1 ? and + sec + ' second ' : sec > 1 ? and + sec + ' seconds' : ''
-    return `${year} ${day} ${hour} ${min} ${sec} `
+    day = day === 1 ? day + ' day, ' : day > 1 ? ' '+day + ' days,' : ''
+    hour = hour === 1 ? hour + ' hour, ' : hour > 1 ? ' ' + hour + ' hours,' : ''
+    min = min === 1 ? min + ' minute ': min > 1 ?' ' + min + ' minutes': ''
+    sec = sec === 1 ? and + sec + ' second' : sec > 1 ? and + sec + ' seconds' : ''
+    return `${year}${day}${hour}${min}${sec}`
 }
 
-console.log(formatDuration(22222220 - 20))
->>>>>>> e5ba14b3091028623ed16d6996f902d856e7589f
+console.log(formatDuration(1))
+
+var runLengthEncoding = function(str){
+    if(!str) {return []}
+    let res = [];
+    str.split('').forEach((letter,index,array)=>{
+        res.push(letter)
+        if(letter !== array[index+1] && index!== array.length - 1){
+           res.push('.')
+        } 
+    })
+    return res.join('').split('.').map((item)=>{
+        return [item.length,item[0]]
+    })
+  }
+
+console.log(runLengthEncoding('aaabcaacccccc'))
+
+// ("aaabcaa"), [[3,'a'],[1,'b'],[1,'c'],[2,'a']]
+// str.split().map( letter,index, array =>{
+
+// }  )
