@@ -319,27 +319,28 @@ function getDate(year) {
 // }
 
 function formatDuration(seconds) {
-    let second = Math.floor(seconds % 60)
-    let min = Math.floor((seconds / 60) % 60)
-    let hour = Math.floor((seconds / 3600) % 24)
-    let day = Math.floor((seconds / 86400) % 365)
-    let year = Math.floor(seconds / 31536000)
-    let and = 'and '
-    let times = [year, day, hour, day, second]
-    const timesName = ['year', 'day', 'hour', 'day', 'second']
-    and = second ? 'and ' : ','
-    if (!min && second) {
-        and = ''
-    }
-   times = times.map((itemTime, index) => {
-        // console.log(timesName[index])
-        // return itemTime = '1231231'
-       return itemTime = itemTime === 1 ? itemTime + ` ${timesName[index]}, ` : itemTime > 1 ? itemTime + ` ${timesName[index]}s,` : '';
-    })
+    if (!seconds) { return 'now' }
+    const second = Math.floor(seconds % 60)
+    const min = Math.floor((seconds / 60) % 60)
+    const hour = Math.floor((seconds / 3600) % 24)
+    const day = Math.floor((seconds / 86400) % 365)
+    const year = Math.floor(seconds / 31536000)
+    let times = [year, day, hour, min, second]
+    const timesName = ['year', 'day', 'hour', 'minute', 'second']
 
-    console.log(times)
-    
-    return `${year}${day}${hour}${min}${second}`
+    times = times
+        .map((itemTime, index) => {
+            return itemTime = itemTime === 1 ? itemTime + ` ${timesName[index]}` : itemTime > 1 ? itemTime + ` ${timesName[index]}s` : '';
+        })
+        .reduce((res, itemTime, index, array) => {
+            if (itemTime !== '') { res.push(itemTime) }
+            return res
+        }, [])
+
+    times.forEach((itemTime, index, array) => {
+        if (array.length - index == 1 && index !== 0) { times.splice((index), 0, 'and') }
+    })
+    return times.join(', ').replace(/, and,/g, ' and')
 }
 // year = year === 1 ? year + ' year, ' : year > 1 ? year + ' years,' : ''
 // day = day === 1 ? day + ' day, ' : day > 1 ? ' ' + day + ' days,' : ''
@@ -350,12 +351,12 @@ function formatDuration(seconds) {
 console.log(formatDuration(2))
 console.log(formatDuration(22))
 console.log(formatDuration(222))
-console.log('===')
+// console.log('===')
 console.log(formatDuration(1))
 console.log(formatDuration(62))
 console.log(formatDuration(120))
 console.log(formatDuration(3600))
-console.log(formatDuration(3662))
+console.log(formatDuration(355556222))
 
 // console.log(formatDuration(1))
 
