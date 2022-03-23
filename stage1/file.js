@@ -313,26 +313,49 @@ function getDate(year) {
     }
     return res
 }
+// function sec() {
+//     this.name = seconds
 
+// }
 
 function formatDuration(seconds) {
-    let sec = Math.floor(seconds % 60)
+    let second = Math.floor(seconds % 60)
     let min = Math.floor((seconds / 60) % 60)
     let hour = Math.floor((seconds / 3600) % 24)
     let day = Math.floor((seconds / 86400) % 365)
     let year = Math.floor(seconds / 31536000)
     let and = 'and '
-    and = sec ? 'and ' : ','
-    if (!min && sec) {
+    let times = [year, day, hour, day, second]
+    const timesName = ['year', 'day', 'hour', 'day', 'second']
+    and = second ? 'and ' : ','
+    if (!min && second) {
         and = ''
     }
-    year = year === 1 ? year + ' year, ' : year > 1 ? year + ' years,' : ''
-    day = day === 1 ? day + ' day, ' : day > 1 ? ' ' + day + ' days,' : ''
-    hour = hour === 1 ? hour + ' hour, ' : hour > 1 ? ' ' + hour + ' hours,' : ''
-    min = min === 1 ? min + ' minute ' : min > 1 ? ' ' + min + ' minutes' : ''
-    sec = sec === 1 ? and + sec + ' second' : sec > 1 ? and + sec + ' seconds' : ''
-    return `${year}${day}${hour}${min}${sec}`
+   times = times.map((itemTime, index) => {
+        // console.log(timesName[index])
+        // return itemTime = '1231231'
+       return itemTime = itemTime === 1 ? itemTime + ` ${timesName[index]}, ` : itemTime > 1 ? itemTime + ` ${timesName[index]}s,` : '';
+    })
+
+    console.log(times)
+    
+    return `${year}${day}${hour}${min}${second}`
 }
+// year = year === 1 ? year + ' year, ' : year > 1 ? year + ' years,' : ''
+// day = day === 1 ? day + ' day, ' : day > 1 ? ' ' + day + ' days,' : ''
+// hour = hour === 1 ? hour + ' hour, ' : hour > 1 ? ' ' + hour + ' hours,' : ''
+// min = min === 1 ? min + ' minute ' : min > 1 ? min + ' minutes ' : ''
+// sec = sec === 1 ? and + sec + ' second' : sec > 1 ? and + sec + ' seconds' : ''
+
+console.log(formatDuration(2))
+console.log(formatDuration(22))
+console.log(formatDuration(222))
+console.log('===')
+console.log(formatDuration(1))
+console.log(formatDuration(62))
+console.log(formatDuration(120))
+console.log(formatDuration(3600))
+console.log(formatDuration(3662))
 
 // console.log(formatDuration(1))
 
@@ -377,26 +400,26 @@ var runLengthEncoding = function (str) {
 //     { "type": "rotten apples", "material": "organic" },
 
 // ]
- // ===============  ===============
-const materialss = ['paper','glass','organic','plastic']
+// ===============  ===============
+const materialss = ['paper', 'glass', 'organic', 'plastic']
 
 function GenerateTest() {
-    this.type = '' +  randNum(1000, 5000);
-    this.material = materialss[randNum(0,3)];
-    this.secondMaterial = materialss[randNum(0,3)];
+    this.type = '' + randNum(1000, 5000);
+    this.material = materialss[randNum(0, 3)];
+    this.secondMaterial = materialss[randNum(0, 3)];
 }
 
-const input = []
-for(let i = 0 ; i < 5000000; i++){
-    input[i] = new GenerateTest()
-}
+// const input = []
+// for(let i = 0 ; i < 5000000; i++){
+//     input[i] = new GenerateTest()
+// }
 
 
-console.log(input)
-function randNum(min, max) { // random number from min to max
-    let rand = min + Math.random() * (max + 1 - min);
-    return Math.floor(rand);
-}
+// console.log(input)
+// function randNum(min, max) { // random number from min to max
+//     let rand = min + Math.random() * (max + 1 - min);
+//     return Math.floor(rand);
+// }
 
 
 function recycle(input) {
@@ -415,26 +438,17 @@ function recycle(input) {
     return res
 }
 
-function kolya(input) {
-    let res = { paper: [], glass: [], organic: [], plastic: [] }
+// function kolya(input) {
+//     let res = { paper: [], glass: [], organic: [], plastic: [] }
 
 
-    input.forEach((inputItem) => {
+//     input.forEach((inputItem) => {
 
-        res[inputItem.material].push(inputItem.type)
+//         res[inputItem.material].push(inputItem.type)
 
-        if (inputItem.secondMaterial) {
-            res[inputItem.secondMaterial].push(inputItem.type)
-        }
-    })
-    return Object.values(res)
-}
-
-console.time()
-console.log(recycle(input))
-console.timeEnd()
-
-console.time()
-console.log(kolya(input))
-console.timeEnd()
-
+//         if (inputItem.secondMaterial) {
+//             res[inputItem.secondMaterial].push(inputItem.type)
+//         }
+//     })
+//     return Object.values(res)
+// }
