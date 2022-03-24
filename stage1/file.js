@@ -313,10 +313,6 @@ function getDate(year) {
     }
     return res
 }
-// function sec() {
-//     this.name = seconds
-
-// }
 
 function formatDuration(seconds) {
     if (!seconds) { return 'now' }
@@ -342,23 +338,6 @@ function formatDuration(seconds) {
     })
     return times.join(', ').replace(/, and,/g, ' and')
 }
-// year = year === 1 ? year + ' year, ' : year > 1 ? year + ' years,' : ''
-// day = day === 1 ? day + ' day, ' : day > 1 ? ' ' + day + ' days,' : ''
-// hour = hour === 1 ? hour + ' hour, ' : hour > 1 ? ' ' + hour + ' hours,' : ''
-// min = min === 1 ? min + ' minute ' : min > 1 ? min + ' minutes ' : ''
-// sec = sec === 1 ? and + sec + ' second' : sec > 1 ? and + sec + ' seconds' : ''
-
-console.log(formatDuration(2))
-console.log(formatDuration(22))
-console.log(formatDuration(222))
-// console.log('===')
-console.log(formatDuration(1))
-console.log(formatDuration(62))
-console.log(formatDuration(120))
-console.log(formatDuration(3600))
-console.log(formatDuration(355556222))
-
-// console.log(formatDuration(1))
 
 var runLengthEncoding1 = function (str) {
     if (!str) { return [] }
@@ -389,19 +368,7 @@ var runLengthEncoding = function (str) {
     })
 }
 
-// console.log(runLengthEncoding("hello world!"))
 
-
-// const input = [
-//     { "type": "rotten apples", "material": "organic" },
-//     { "type": "out of date yogurt", "material": "organic", "secondMaterial": "plastic" },
-//     { "type": "wine bottle", "material": "glass", "secondMaterial": "paper" },
-//     { "type": "amazon box", "material": "paper" },
-//     { "type": "beer bottle", "material": "glass", "secondMaterial": "paper" },
-//     { "type": "rotten apples", "material": "organic" },
-
-// ]
-// ===============  ===============
 const materialss = ['paper', 'glass', 'organic', 'plastic']
 
 function GenerateTest() {
@@ -409,19 +376,6 @@ function GenerateTest() {
     this.material = materialss[randNum(0, 3)];
     this.secondMaterial = materialss[randNum(0, 3)];
 }
-
-// const input = []
-// for(let i = 0 ; i < 5000000; i++){
-//     input[i] = new GenerateTest()
-// }
-
-
-// console.log(input)
-// function randNum(min, max) { // random number from min to max
-//     let rand = min + Math.random() * (max + 1 - min);
-//     return Math.floor(rand);
-// }
-
 
 function recycle(input) {
     let res = [[], [], [], []]
