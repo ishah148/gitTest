@@ -1,7 +1,7 @@
 h2, h3, h4, h5 {
   font-family: "Georgia";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .logo-subtitle {
@@ -67,7 +67,20 @@ h5 {
   color: #b2b2b2;
 }
 
-.wr body .help-svg {
+:root {
+  --example:green;
+}
+
+body {
+  padding: 20px;
+}
+
+.help-svg {
   fill: #f1cdb3;
+  display: none;
+}
+
+.test-sprite {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

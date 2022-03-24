@@ -1,9 +1,9 @@
-$svg-color: #f1cdb3;
-$font1: Georgia, "Times New Roman", Times, serif;
 %header-default {
     font-family: "Georgia";
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
+    // margin: 0;
+    // padding: 0;
 }
 .logo-subtitle {
     font-family: "Arial";
@@ -22,7 +22,6 @@ $font1: Georgia, "Times New Roman", Times, serif;
     letter-spacing: 0.06em;
     color: #f1cdb3;
 }
-
 
 h2 {
     @extend %header-default;
@@ -66,9 +65,4 @@ h5 {
     font-size: 12px;
     line-height: 150%;
     color: #b2b2b2;
-}
-.wr body {
-    .help-svg {
-        fill: $svg-color;
-    }
 }

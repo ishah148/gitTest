@@ -1,0 +1,24 @@
+@import "fonts.scss";
+$svg-color: #f1cdb3;
+$font1: Georgia, "Times New Roman", Times, serif;
+$color-light-l:#F6F6F6;
+$color-light-s:#FAFAFA;
+$color-dark-l:#545454;
+$color-dark-m:#B2B2B2;
+
+:root{
+    --example:green;
+}
+
+body {
+    padding: 20px;
+}
+
+.help-svg {
+    fill: $svg-color;
+    display: none;
+}
+
+.test-sprite{
+    display: none;
+}
