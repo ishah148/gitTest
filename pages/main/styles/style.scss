@@ -1,24 +1,57 @@
 @import "fonts.scss";
 $svg-color: #f1cdb3;
 $font1: Georgia, "Times New Roman", Times, serif;
-$color-light-l:#F6F6F6;
-$color-light-s:#FAFAFA;
-$color-dark-l:#545454;
-$color-dark-m:#B2B2B2;
+$color-primary: #f1cdb3;
+$color-light-l: #f6f6f6;
+$color-light-s: #fafafa;
+$color-dark-l: #545454;
+$color-dark-m: #b2b2b2;
+$color-dark-s: #cdcdcd;
+$color-dark-3xl: #292929;
+$color-dark-2xl: #444444;
+$color-dark-xl: #4c4c4c;
 
-:root{
-    --example:green;
+:root {
+    --example: green;
+    --primary-width: 1200px;
 }
 
 body {
-    padding: 20px;
+    max-width: var(--primary-width);
+    margin: auto;
 }
+main {
+}
+.start-screen {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 60px;
+    background: url('assets/images/start-screen-puppy.png');
+    header {
+        display: flex;
+        justify-content: space-between;
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+        nav {
+            display: flex;
+            gap: 25px;
+            p {
+            }
+        }
+    }
 
+    .content {
+        width: 460px;
+        height: 322px;
+    }
+}
 .help-svg {
     fill: $svg-color;
     display: none;
 }
 
-.test-sprite{
+.test-sprite {
     display: none;
 }
