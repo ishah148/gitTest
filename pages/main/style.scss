@@ -1,5 +1,10 @@
 $svg-color: #f1cdb3;
 $font1: Georgia, "Times New Roman", Times, serif;
+%header-default {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 500;
+}
 .logo-subtitle {
     font-family: "Arial";
     font-style: normal;
@@ -18,32 +23,28 @@ $font1: Georgia, "Times New Roman", Times, serif;
     color: #f1cdb3;
 }
 
-h2,
-h3,
-h4,
-h5 {
-    font-family: "Georgia";
-    font-style: normal;
-    font-weight: 400;
-}
 
 h2 {
+    @extend %header-default;
     font-size: 44px;
     line-height: 130%;
     color: #545454;
 }
 h3 {
+    @extend %header-default;
     font-size: 35px;
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #545454;
 }
 h4 {
+    @extend %header-default;
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
 }
 h5 {
+    @extend %header-default;
     font-size: 15px;
     line-height: 110%;
     /* identical to box height, or 17px */
@@ -64,10 +65,9 @@ h5 {
     font-weight: 400;
     font-size: 12px;
     line-height: 150%;
-    color: #B2B2B2;
+    color: #b2b2b2;
 }
-.wr
-body {
+.wr body {
     .help-svg {
         fill: $svg-color;
     }
