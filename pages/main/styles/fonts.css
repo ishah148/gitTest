@@ -2,6 +2,7 @@ h2, h3, h4, h5 {
   font-family: "Georgia";
   font-style: normal;
   font-weight: 400;
+  margin: 0;
 }
 
 .logo-subtitle {
@@ -65,5 +66,14 @@ h5 {
   font-size: 12px;
   line-height: 150%;
   color: #b2b2b2;
+}
+
+button {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
 }
 /*# sourceMappingURL=fonts.css.map */

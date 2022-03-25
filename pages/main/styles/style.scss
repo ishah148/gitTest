@@ -10,10 +10,12 @@ $color-dark-s: #cdcdcd;
 $color-dark-3xl: #292929;
 $color-dark-2xl: #444444;
 $color-dark-xl: #4c4c4c;
-
+* {
+    box-sizing: border-box;
+}
 :root {
     --example: green;
-    --primary-width: 1200px;
+    --primary-width: 1280px;
 }
 
 body {
@@ -23,28 +25,83 @@ body {
 main {
 }
 .start-screen {
+    width: inherit;
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 60px;
-    background: url('assets/images/start-screen-puppy.png');
+    // background: #211F20;
+    background: url(../../../assets/images/start-screen-background.jpg);
+    background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+    // background-repeat: no-repeat;
+    // background-size: 698px 728px;
     header {
         display: flex;
         justify-content: space-between;
         .logo {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
+            width: 186px;
+            height: 60px;
+            .logo-title {
+                margin: 0;
+                word-wrap: none;
+            }
+            .logo-subtitle {
+                margin: 0;
+                text-align: center;
+            }
         }
         nav {
             display: flex;
-            gap: 25px;
+            gap: 35px;
             p {
+                position: relative;
+                color: $color-light-s;
+                
+            }
+            .current-page{
+                &::before{
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 3px;
+                    background: $color-primary;
+                    bottom: 0;
+                }
             }
         }
     }
-
-    .content {
-        width: 460px;
-        height: 322px;
+    .content-wrapper {
+        display: flex;
+        flex-direction: row;
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 460px;
+            height: 322px;
+            margin-top: 225px;
+            h1 {
+                color: white;
+            }
+            p {
+                color: $color-dark-s;
+            }
+            button {
+                width: 207px;
+                height: 52px;
+                background: #f1cdb3;
+                border-radius: 100px;
+            }
+        }
+        .backgroud-img {
+            background: url(../../../assets/images/start-screen-puppy.png);
+            background-repeat: no-repeat;
+            background-size: 698px 728px;
+            width: 698px;
+            height: 728px;
+        }
     }
 }
 .help-svg {
