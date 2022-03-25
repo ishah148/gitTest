@@ -175,12 +175,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   width: 460px;
   height: 322px;
-  margin-top: 225px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  gap: 18px;
 }
 
 .start-screen .content-wrapper .content h1 {
@@ -192,6 +191,7 @@ body {
 }
 
 .start-screen .content-wrapper .content button {
+  margin-top: 7px;
   width: 207px;
   height: 52px;
   background: #f1cdb3;
@@ -206,6 +206,43 @@ body {
   height: 728px;
   margin-left: 40px;
   margin-top: 60px;
+}
+
+.about-the-shelter {
+  max-width: var(--primary-width);
+  height: 588px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 125px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-the-shelter .backgroud-img {
+  width: 300px;
+  height: 408px;
+  background: url(../../../assets/images/about-pets.png);
+  background-repeat: no-repeat;
+}
+
+.about-the-shelter .content {
+  width: 430px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .help-svg {
