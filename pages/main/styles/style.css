@@ -94,6 +94,7 @@ body {
 
 .start-screen {
   width: inherit;
+  height: 908px;
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 60px;
@@ -203,6 +204,8 @@ body {
   background-size: 698px 728px;
   width: 698px;
   height: 728px;
+  margin-left: 40px;
+  margin-top: 60px;
 }
 
 .help-svg {
