@@ -182,9 +182,12 @@ main {
         }
 
         .button-arrow{
-            
+                display: flex;
+                align-items: center;
+                justify-content: center;
             &.left{
                 left: 0;
+                transform: rotate(180deg);
             }
             &.right{
                 right: 0;
