@@ -68,22 +68,6 @@ h5 {
   color: #b2b2b2;
 }
 
-button {
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-}
-
-.button-primary {
-  width: 157px;
-  height: 52px;
-  border: 2px solid #f1cdb3;
-  border-radius: 100px;
-}
-
 .pets-card-title {
   font-family: "Georgia";
   font-style: normal;
@@ -91,5 +75,6 @@ button {
   font-size: 20px;
   line-height: 23px;
   letter-spacing: 0.06em;
+  margin: 0;
 }
 /*# sourceMappingURL=fonts.css.map */

@@ -68,6 +68,16 @@ h5 {
   color: #b2b2b2;
 }
 
+.pets-card-title {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
 button {
   font-family: "Georgia";
   font-style: normal;
@@ -84,13 +94,14 @@ button {
   border-radius: 100px;
 }
 
-.pets-card-title {
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
-  letter-spacing: 0.06em;
+.button-arrow {
+  border: 2px solid #f1cdb3;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 100px;
+  width: 52px;
+  height: 52px;
+  position: absolute;
 }
 
 * {
@@ -266,6 +277,16 @@ body {
   padding-left: 40px;
   padding-right: 40px;
   margin: auto;
+  background: #f6f6f6;
+  padding-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 60px;
 }
 
 .pets h3 {
@@ -286,10 +307,11 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  gap: 8%;
+  position: relative;
 }
 
 .pets .content-wrapper .card {
-  padding-top: 60px;
   width: 270px;
   height: 435px;
   display: -webkit-box;
@@ -299,7 +321,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 1px solid black;
+  background: #fafafa;
+  gap: 30px;
 }
 
 .pets .content-wrapper .card .image {
@@ -307,10 +330,39 @@ body {
   height: 270px;
 }
 
-.pets .content-wrapper .card button {
+.pets .content-wrapper .card .image img {
+  background-image: none;
+}
+
+.pets .content-wrapper .card p {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.pets .content-wrapper .card .button-primary {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background: #fafafa;
+  width: 187px;
+}
+
+.pets .content-wrapper .button-arrow.left {
+  left: 0;
+}
+
+.pets .content-wrapper .button-arrow.right {
+  right: 0;
+}
+
+.pets .button-primary {
+  width: 261px;
+  height: 52px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background: #f1cdb3;
 }
 
 .help-svg {
