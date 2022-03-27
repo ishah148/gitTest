@@ -77,6 +77,22 @@ button {
   letter-spacing: 0.06em;
 }
 
+.button-primary {
+  width: 157px;
+  height: 52px;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+}
+
+.pets-card-title {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -243,6 +259,58 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.pets {
+  width: inherit;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: auto;
+}
+
+.pets h3 {
+  text-align: center;
+}
+
+.pets .content-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pets .content-wrapper .card {
+  padding-top: 60px;
+  width: 270px;
+  height: 435px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid black;
+}
+
+.pets .content-wrapper .card .image {
+  width: 270px;
+  height: 270px;
+}
+
+.pets .content-wrapper .card button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .help-svg {

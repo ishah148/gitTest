@@ -60,10 +60,9 @@ main {
             p {
                 position: relative;
                 color: $color-light-s;
-                
             }
-            .current-page{
-                &::before{
+            .current-page {
+                &::before {
                     position: absolute;
                     content: "";
                     width: 100%;
@@ -84,7 +83,7 @@ main {
             width: 460px;
             height: 322px;
             align-self: center;
-            gap:18px;
+            gap: 18px;
             // margin-top: 225px;
             h1 {
                 color: white;
@@ -112,7 +111,7 @@ main {
     }
 }
 
-.about-the-shelter{
+.about-the-shelter {
     max-width: var(--primary-width);
     height: 588px;
     display: flex;
@@ -120,19 +119,51 @@ main {
     gap: 125px;
     flex-direction: row;
     align-items: center;
-    .backgroud-img{
-        
+    .backgroud-img {
         width: 300px;
         height: 408px;
         background: url(../../../assets/images/about-pets.png);
         background-repeat: no-repeat;
     }
-    .content{
+    .content {
         width: 430px;
         display: flex;
         flex-direction: column;
     }
 }
+
+.pets {
+    width: inherit;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: auto;
+
+    h3{
+        text-align: center;
+    }
+    .content-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .card {
+            padding-top: 60px;
+            width: 270px;
+            height: 435px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            .image {
+                width: 270px;
+                height: 270px;
+            }
+            button{
+                align-self: center;
+            }
+        }
+    }
+}
+
 .help-svg {
     fill: $svg-color;
     display: none;
