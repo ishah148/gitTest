@@ -12,6 +12,7 @@ h2, h3, h4, h5 {
   font-size: 13px;
   line-height: 15px;
   letter-spacing: 0.1em;
+  color: #ffffff;
 }
 
 .logo-title {
@@ -66,6 +67,15 @@ h5 {
   font-size: 12px;
   line-height: 150%;
   color: #b2b2b2;
+}
+
+.donation-description {
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #B2B2B2;
 }
 
 .pets-card-title {
@@ -214,7 +224,7 @@ body {
   gap: 18px;
 }
 
-.start-screen .content-wrapper .content h1 {
+.start-screen .content-wrapper .content h2 {
   color: white;
 }
 
@@ -448,6 +458,65 @@ body {
   fill: #f1cdb3;
   max-width: 60px;
   max-height: 60px;
+}
+
+.donation {
+  padding: 80px 20px;
+  height: 462px;
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  background: #f6f6f6;
+}
+
+.donation img {
+  padding-top: 10px;
+}
+
+.donation .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 380px;
+  height: 282px;
+  gap: 20px;
+}
+
+.donation .content .credit-card {
+  width: 349px;
+  height: 43px;
+  background: #f1cdb3;
+  border-radius: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.donation .content .credit-card .card-svg {
+  width: 30px;
+  height: 23px;
+}
+
+.donation .content p {
+  margin: 0;
 }
 
 .test-sprite {

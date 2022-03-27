@@ -12,6 +12,7 @@ h2, h3, h4, h5 {
   font-size: 13px;
   line-height: 15px;
   letter-spacing: 0.1em;
+  color: #ffffff;
 }
 
 .logo-title {
@@ -66,6 +67,15 @@ h5 {
   font-size: 12px;
   line-height: 150%;
   color: #b2b2b2;
+}
+
+.donation-description {
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #B2B2B2;
 }
 
 .pets-card-title {
