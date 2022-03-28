@@ -210,11 +210,13 @@ header nav .current-page::before {
   width: 100%;
   height: 3px;
   background: #f1cdb3;
-  bottom: 0;
+  top: 25px;
 }
 
 main {
   min-height: 1342px;
+  padding-top: 80px;
+  padding: 80px 40px 0px 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,19 +228,93 @@ main {
       -ms-flex-align: center;
           align-items: center;
   background: #f6f6f6;
+  row-gap: 60px;
 }
 
-main .cards-container {
-  width: inherit;
-  height: 930px;
-  padding: 0px 40px 0px 40px;
+main h3 {
+  text-align: center;
+}
+
+main .content-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px 40px;
+  position: relative;
+}
+
+main .content-wrapper .card {
+  width: 270px;
+  height: 435px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #fafafa;
+  gap: 30px;
+}
+
+main .content-wrapper .card .image {
+  width: 270px;
+  height: 270px;
+}
+
+main .content-wrapper .card .image img {
+  background-image: none;
+}
+
+main .content-wrapper .card p {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+main .content-wrapper .card .button-primary {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background: #fafafa;
+  width: 187px;
+}
+
+main .content-wrapper .card .button-primary:hover {
+  background: #fddcc4;
+}
+
+main .content-wrapper .button-arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .content-wrapper .button-arrow.left {
+  left: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+main .content-wrapper .button-arrow.right {
+  right: 0;
 }
 /*# sourceMappingURL=style.css.map */
