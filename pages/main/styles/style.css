@@ -97,15 +97,16 @@ button {
   letter-spacing: 0.06em;
 }
 
-button:hover {
-  background: #FDDCC4;
-}
-
 .button-primary {
   width: 157px;
   height: 52px;
   border: 2px solid #f1cdb3;
   border-radius: 100px;
+  background: #f1cdb3;
+}
+
+.button-primary:hover {
+  background: #FDDCC4;
 }
 
 .button-arrow {
@@ -378,6 +379,10 @@ body {
   width: 187px;
 }
 
+.pets .content-wrapper .card .button-primary:hover {
+  background: #FDDCC4;
+}
+
 .pets .content-wrapper .button-arrow {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -406,7 +411,6 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  background: #f1cdb3;
 }
 
 .help {

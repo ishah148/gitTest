@@ -22,11 +22,9 @@ body {
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 60px;
-    // background: #211F20;
     background: url(../../../assets/images/start-screen-background.jpg);
     background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
-    // background-repeat: no-repeat;
-    // background-size: 698px 728px;
+
     header {
         display: flex;
         justify-content: space-between;
@@ -118,12 +116,14 @@ body {
     gap: 125px;
     flex-direction: row;
     align-items: center;
+
     .backgroud-img {
         width: 300px;
         height: 408px;
         background: url(../../../assets/images/about-pets.png);
         background-repeat: no-repeat;
     }
+
     .content {
         width: 430px;
         display: flex;
@@ -142,9 +142,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 60px;
+
     h3 {
         text-align: center;
     }
+
     .content-wrapper {
         display: flex;
         flex-direction: row;
@@ -176,6 +178,9 @@ body {
                 align-self: center;
                 background: $color-light-s;
                 width: 187px;
+                &:hover{
+                    background: #FDDCC4;
+                }
             }
         }
 
@@ -196,7 +201,6 @@ body {
         width: 261px;
         height: 52px;
         align-self: center;
-        background: $color-primary;
     }
 }
 
