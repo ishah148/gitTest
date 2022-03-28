@@ -139,8 +139,16 @@ button {
   color: #cdcdcd;
 }
 
+.button-round.invalid:hover {
+  background: none;
+}
+
 .button-round.current {
   background: #f1cdb3;
+}
+
+.button-round:hover {
+  background: #FDDCC4;
 }
 
 * {

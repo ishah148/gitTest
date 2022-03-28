@@ -42,8 +42,14 @@ button {
     &.invalid {
         border: 2px solid $color-dark-s;
         color: $color-dark-s;
+        &:hover {
+            background: none;
+        }
     }
-    &.current{
+    &.current {
         background: $color-primary;
+    }
+    &:hover {
+        background: $color-primary-light;
     }
 }
