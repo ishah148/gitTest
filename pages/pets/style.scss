@@ -11,13 +11,19 @@
     --example: green;
     --primary-width: 1280px;
 }
+html{
+    background: black;
+}
 body {
     max-width: var(--primary-width);
+    margin: auto;
 }
+
 header {
     width: inherit;
     background: $color-light-xl;
-    padding: 60px 40px 0px 40px;
+    padding: 30px 40px 0px 40px;
+    height: 120px;
     display: flex;
     justify-content: space-between;
     .logo {
@@ -65,16 +71,26 @@ header {
     }
 }
 
-.cards-container {
-    width: inherit;
+main {
+    min-height: 1342px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $color-light-l;
     .cards-container {
+        width: inherit;
+        height: 930px;
+        padding: 0px 40px 0px 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         .card {
         }
         .pets-card-title {
         }
         .button-primary {
         }
-    }
-    .navigation {
+        .navigation {
+        }
     }
 }

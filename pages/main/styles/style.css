@@ -134,6 +134,10 @@ button {
   --primary-width: 1280px;
 }
 
+html {
+  background: black;
+}
+
 body {
   max-width: var(--primary-width);
   margin: auto;
