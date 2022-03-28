@@ -97,6 +97,10 @@ button {
   letter-spacing: 0.06em;
 }
 
+button:hover {
+  background: #FDDCC4;
+}
+
 .button-primary {
   width: 157px;
   height: 52px;
@@ -188,6 +192,16 @@ body {
 .start-screen header nav p {
   position: relative;
   color: #fafafa;
+  cursor: pointer;
+}
+
+.start-screen header nav p a {
+  text-decoration: none;
+  color: #fafafa;
+}
+
+.start-screen header nav p:hover {
+  opacity: 0.5;
 }
 
 .start-screen header nav .current-page::before {
@@ -549,6 +563,10 @@ footer h3 {
 footer h4 {
   color: #f1cdb3;
   white-space: pre;
+}
+
+footer svg {
+  fill: #f1cdb3;
 }
 
 footer .contacts {

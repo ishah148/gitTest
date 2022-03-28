@@ -1,16 +1,7 @@
-@import "fonts.scss";
-@import "elements.scss";
-$svg-color: #f1cdb3;
-$font1: Georgia, "Times New Roman", Times, serif;
-$color-primary: #f1cdb3;
-$color-light-l: #f6f6f6;
-$color-light-s: #fafafa;
-$color-dark-l: #545454;
-$color-dark-m: #b2b2b2;
-$color-dark-s: #cdcdcd;
-$color-dark-3xl: #292929;
-$color-dark-2xl: #444444;
-$color-dark-xl: #4c4c4c;
+@import "_variables.scss";
+@import "_fonts.scss";
+@import "_elements.scss";
+
 * {
     box-sizing: border-box;
 }
@@ -23,8 +14,7 @@ body {
     max-width: var(--primary-width);
     margin: auto;
 }
-main {
-}
+
 // =============== Start Screen ===============
 .start-screen {
     width: inherit;
@@ -61,6 +51,14 @@ main {
             p {
                 position: relative;
                 color: $color-light-s;
+                cursor: pointer;
+                a{
+                    text-decoration: none;
+                    color: $color-light-s;
+                }
+                &:hover{
+                    opacity: 0.5;
+                }
             }
             .current-page {
                 &::before {
@@ -298,7 +296,9 @@ footer {
         color: $color-primary;
         white-space: pre;
     }
-
+    svg{
+        fill: $color-primary;
+    }
     .contacts {
         display: flex;
         width: 278px;
@@ -341,6 +341,7 @@ footer {
         height: 40px;
     }
 }
+
 
 .test-sprite {
     display: none;

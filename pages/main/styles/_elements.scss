@@ -1,3 +1,13 @@
+$color-primary: #f1cdb3;
+$color-light-l: #f6f6f6;
+$color-light-s: #fafafa;
+$color-dark-l: #545454;
+$color-dark-m: #b2b2b2;
+$color-dark-s: #cdcdcd;
+$color-dark-3xl: #292929;
+$color-dark-2xl: #444444;
+$color-dark-xl: #4c4c4c;
+
 button {
     font-family: "Georgia";
     font-style: normal;
@@ -5,6 +15,10 @@ button {
     font-size: 17px;
     line-height: 130%;
     letter-spacing: 0.06em;
+
+    &:hover{
+        background: #FDDCC4;
+    }
 }
 
 .button-primary {
