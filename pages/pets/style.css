@@ -317,4 +317,9 @@ main .content-wrapper .button-arrow.left {
 main .content-wrapper .button-arrow.right {
   right: 0;
 }
+
+main .navigation {
+  width: 340px;
+  height: 52px;
+}
 /*# sourceMappingURL=style.css.map */

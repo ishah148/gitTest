@@ -2,8 +2,6 @@
 @import "../main/styles/_fonts.scss";
 @import "../main/styles/_elements.scss";
 
-// @import "../main/style/_variables.scss";
-// @import "../main/style/_variables.scss";
 * {
     box-sizing: border-box;
 }
@@ -84,6 +82,7 @@ main {
     h3 {
         text-align: center;
     }
+
     .content-wrapper {
         // width: inherit;
         display: flex;
@@ -137,5 +136,10 @@ main {
                 right: 0;
             }
         }
+    }
+
+    .navigation{
+        width: 340px;
+        height: 52px;
     }
 }
