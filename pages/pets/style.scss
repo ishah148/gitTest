@@ -4,14 +4,14 @@
 
 // @import "../main/style/_variables.scss";
 // @import "../main/style/_variables.scss";
-*{
+* {
     box-sizing: border-box;
 }
 :root {
     --example: green;
     --primary-width: 1280px;
 }
-body{
+body {
     max-width: var(--primary-width);
 }
 header {
@@ -44,11 +44,11 @@ header {
             position: relative;
             color: $color-dark-l;
             cursor: pointer;
-            a{
+            a {
                 text-decoration: none;
                 // color: $color-light-s;
             }
-            &:hover{
+            &:hover {
                 opacity: 0.5;
             }
         }
@@ -62,5 +62,19 @@ header {
                 bottom: 0;
             }
         }
+    }
+}
+
+.cards-container {
+    width: inherit;
+    .cards-container {
+        .card {
+        }
+        .pets-card-title {
+        }
+        .button-primary {
+        }
+    }
+    .navigation {
     }
 }

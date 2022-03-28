@@ -206,4 +206,8 @@ header nav .current-page::before {
   background: #f1cdb3;
   bottom: 0;
 }
+
+.cards-container {
+  width: inherit;
+}
 /*# sourceMappingURL=style.css.map */
