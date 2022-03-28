@@ -1,1 +1,209 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+h2, h3, h4, h5 {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+}
+
+.logo-subtitle {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.logo-title {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #f1cdb3;
+}
+
+h2 {
+  font-size: 44px;
+  line-height: 130%;
+  color: #545454;
+}
+
+h3 {
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+
+h5 {
+  font-size: 15px;
+  line-height: 110%;
+  /* identical to box height, or 17px */
+  letter-spacing: 0.06em;
+}
+
+.paragraph-l {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  color: #4c4c4c;
+}
+
+.paragraph-s {
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #b2b2b2;
+}
+
+.donation-description {
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #B2B2B2;
+}
+
+.pets-card-title {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+button {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+.button-primary {
+  width: 157px;
+  height: 52px;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  background: #f1cdb3;
+}
+
+.button-primary:hover {
+  background: #FDDCC4;
+}
+
+.button-arrow {
+  border: 2px solid #f1cdb3;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 100px;
+  width: 52px;
+  height: 52px;
+  position: absolute;
+}
+
+.button-arrow svg {
+  width: 14px;
+  height: 6px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --example: green;
+  --primary-width: 1280px;
+}
+
+body {
+  max-width: var(--primary-width);
+}
+
+header {
+  width: inherit;
+  background: #ffffff;
+  padding: 60px 40px 0px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 186px;
+  height: 60px;
+}
+
+header .logo .logo-title {
+  margin: 0;
+  word-wrap: none;
+  color: #545454;
+}
+
+header .logo .logo-subtitle {
+  margin: 0;
+  text-align: center;
+  color: #292929;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 35px;
+}
+
+header nav p {
+  position: relative;
+  color: #545454;
+  cursor: pointer;
+}
+
+header nav p a {
+  text-decoration: none;
+}
+
+header nav p:hover {
+  opacity: 0.5;
+}
+
+header nav .current-page::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #f1cdb3;
+  bottom: 0;
+}
+/*# sourceMappingURL=style.css.map */
