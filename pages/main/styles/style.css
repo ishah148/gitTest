@@ -106,7 +106,7 @@ button {
 }
 
 .button-primary:hover {
-  background: #FDDCC4;
+  background: #fddcc4;
 }
 
 .button-arrow {
@@ -122,6 +122,25 @@ button {
 .button-arrow svg {
   width: 14px;
   height: 6px;
+}
+
+.button-round {
+  border: 2px solid #f1cdb3;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 100px;
+  background: none;
+  width: 52px;
+  height: 52px;
+}
+
+.button-round.invalid {
+  border: 2px solid #cdcdcd;
+  color: #cdcdcd;
+}
+
+.button-round.current {
+  background: #f1cdb3;
 }
 
 * {

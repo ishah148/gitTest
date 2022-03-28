@@ -106,7 +106,7 @@ button {
 }
 
 .button-primary:hover {
-  background: #FDDCC4;
+  background: #fddcc4;
 }
 
 .button-arrow {
@@ -122,6 +122,25 @@ button {
 .button-arrow svg {
   width: 14px;
   height: 6px;
+}
+
+.button-round {
+  border: 2px solid #f1cdb3;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 100px;
+  background: none;
+  width: 52px;
+  height: 52px;
+}
+
+.button-round.invalid {
+  border: 2px solid #cdcdcd;
+  color: #cdcdcd;
+}
+
+.button-round.current {
+  background: #f1cdb3;
 }
 
 * {
@@ -227,6 +246,8 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   background: #f6f6f6;
   row-gap: 60px;
 }
@@ -319,7 +340,128 @@ main .content-wrapper .button-arrow.right {
 }
 
 main .navigation {
+  margin-top: 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 340px;
   height: 52px;
+}
+
+main .navigation button {
+  position: static;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 40px 0px 40px;
+  background: url(../../../assets/images/start-screen-background.jpg);
+  background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+}
+
+footer h3 {
+  color: #ffffff;
+  white-space: pre;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+footer h4 {
+  color: #f1cdb3;
+  white-space: pre;
+}
+
+footer svg {
+  fill: #f1cdb3;
+}
+
+footer .contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 278px;
+  height: 234px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .contacts .mail,
+footer .contacts .phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+footer .location {
+  width: 302px;
+  height: 234px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .location h3 {
+  -ms-flex-item-align: auto;
+      -ms-grid-row-align: auto;
+      align-self: auto;
+}
+
+footer .location .location-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .image {
+  width: 310px;
+  height: 310px;
+}
+
+footer .contacts-svg {
+  width: 40px;
+  height: 40px;
 }
 /*# sourceMappingURL=style.css.map */

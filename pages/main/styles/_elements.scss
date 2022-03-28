@@ -11,23 +11,39 @@ button {
 .button-primary {
     width: 157px;
     height: 52px;
-    border: 2px solid #f1cdb3;
+    border: 2px solid $color-primary;
     border-radius: 100px;
     background: $color-primary;
-        &:hover{
-            background: #FDDCC4;
-        }
+    &:hover {
+        background: #fddcc4;
+    }
 }
 .button-arrow {
-    border: 2px solid #f1cdb3;
+    border: 2px solid $color-primary;
     box-sizing: border-box;
     border-radius: 100px;
     width: 52px;
     height: 52px;
     position: absolute;
 
-    svg{
+    svg {
         width: 14px;
         height: 6px;
+    }
+}
+
+.button-round {
+    border: 2px solid $color-primary;
+    box-sizing: border-box;
+    border-radius: 100px;
+    background: none;
+    width: 52px;
+    height: 52px;
+    &.invalid {
+        border: 2px solid $color-dark-s;
+        color: $color-dark-s;
+    }
+    &.current{
+        background: $color-primary;
     }
 }
