@@ -9,7 +9,7 @@
     --example: green;
     --primary-width: 1280px;
 }
-html{
+html {
     background: black;
 }
 body {
@@ -52,11 +52,11 @@ body {
                 position: relative;
                 color: $color-light-s;
                 cursor: pointer;
-                a{
+                a {
                     text-decoration: none;
                     color: $color-light-s;
                 }
-                &:hover{
+                &:hover {
                     opacity: 0.5;
                 }
             }
@@ -75,6 +75,11 @@ body {
     .content-wrapper {
         display: flex;
         flex-direction: row;
+
+        @media (max-width: $breakpoint-tablet) {
+            flex-direction: column;
+        }
+
         .content {
             display: flex;
             flex-direction: column;
@@ -113,7 +118,7 @@ body {
 
 .about-the-shelter {
     max-width: var(--primary-width);
-    height: 588px;
+    min-height: 588px;
     display: flex;
     justify-content: center;
     gap: 125px;
@@ -181,8 +186,8 @@ body {
                 align-self: center;
                 background: $color-light-s;
                 width: 187px;
-                &:hover{
-                    background: #FDDCC4;
+                &:hover {
+                    background: #fddcc4;
                 }
             }
         }
@@ -206,6 +211,7 @@ body {
         align-self: center;
     }
 }
+
 
 .help {
     display: flex;
@@ -304,7 +310,7 @@ footer {
         color: $color-primary;
         white-space: pre;
     }
-    svg{
+    svg {
         fill: $color-primary;
     }
     .contacts {
@@ -328,10 +334,10 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        h3{
+        h3 {
             // text-align: center;
             align-self: auto;
-        } 
+        }
 
         .location-data {
             display: flex;
@@ -349,7 +355,6 @@ footer {
         height: 40px;
     }
 }
-
 
 .test-sprite {
     display: none;

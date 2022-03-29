@@ -172,7 +172,7 @@ body {
 
 .start-screen {
   width: inherit;
-  height: 908px;
+  min-height: 908px;
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 60px;
@@ -255,6 +255,15 @@ body {
           flex-direction: row;
 }
 
+@media (max-width: 768px) {
+  .start-screen .content-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .start-screen .content-wrapper .content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -284,6 +293,7 @@ body {
   height: 52px;
   background: #f1cdb3;
   border-radius: 100px;
+  border: none;
 }
 
 .start-screen .content-wrapper .backgroud-img {
@@ -298,7 +308,7 @@ body {
 
 .about-the-shelter {
   max-width: var(--primary-width);
-  height: 588px;
+  min-height: 588px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -412,7 +422,7 @@ body {
 }
 
 .pets .content-wrapper .card .button-primary:hover {
-  background: #FDDCC4;
+  background: #fddcc4;
 }
 
 .pets .content-wrapper .button-arrow {
