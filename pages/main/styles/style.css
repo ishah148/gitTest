@@ -171,6 +171,12 @@ body {
   margin: auto;
 }
 
+@media (max-width: 769px) {
+  body {
+    width: 100vw;
+  }
+}
+
 .start-screen {
   width: inherit;
   min-height: 908px;
@@ -179,9 +185,9 @@ body {
   background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .start-screen {
-    padding: 60px 40px 0 40px;
+    padding: 30px 30px 0 30px;
   }
 }
 
@@ -260,13 +266,13 @@ body {
           flex-direction: row;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .start-screen .content-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    min-height: 1165px;
+    padding-top: 70px;
   }
 }
 
@@ -304,6 +310,14 @@ body {
   border: none;
 }
 
+@media (max-width: 769px) {
+  .start-screen .content-wrapper .content button {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
 .start-screen .content-wrapper .backgroud-img {
   background: url(../../../assets/images/start-screen-puppy.png);
   background-repeat: no-repeat;
@@ -312,6 +326,18 @@ body {
   height: 728px;
   margin-left: 40px;
   margin-top: 60px;
+}
+
+@media (max-width: 769px) {
+  .start-screen .content-wrapper .backgroud-img {
+    width: 569px;
+    height: 593px;
+    background-size: 569px 593px;
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
+    margin-top: 90px;
+  }
 }
 
 .about-the-shelter {

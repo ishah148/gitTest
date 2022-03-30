@@ -22,6 +22,10 @@ html {
 body {
     max-width: var(--primary-width);
     margin: auto;
+    @media (max-width: $breakpoint-tablet) {
+        width: 100vw;
+        // !!!!!!!
+    }
 }
 
 // =============== Start Screen ===============
