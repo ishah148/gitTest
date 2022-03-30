@@ -177,10 +177,9 @@ body {
   padding: 60px 40px 0 40px;
   background: url(../../../assets/images/start-screen-background.jpg);
   background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
-  margin: auto;
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1103px) {
   .start-screen {
     padding: 30px 30px 0 30px;
   }
@@ -261,7 +260,7 @@ body {
           flex-direction: row;
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1103px) {
   .start-screen .content-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -305,7 +304,7 @@ body {
   border: none;
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1103px) {
   .start-screen .content-wrapper .content button {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
@@ -323,7 +322,7 @@ body {
   margin-top: 60px;
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1103px) {
   .start-screen .content-wrapper .backgroud-img {
     width: 569px;
     height: 593px;
@@ -353,10 +352,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background: #ffffff;
-  margin: auto;
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1103px) {
   .about-the-shelter {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -389,7 +387,7 @@ body {
           flex-direction: column;
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1103px) {
   .about-the-shelter .content {
     gap: 25px;
   }
@@ -414,7 +412,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 60px;
-  margin: auto;
 }
 
 .pets h3 {
@@ -453,7 +450,7 @@ body {
   gap: 30px;
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1103px) {
   .pets .content-wrapper .card:nth-child(3) {
     display: none;
   }
@@ -504,7 +501,7 @@ body {
           transform: rotate(180deg);
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1103px) {
   .pets .content-wrapper .button-arrow.left {
     left: -10px;
   }
@@ -514,7 +511,7 @@ body {
   right: 0;
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1103px) {
   .pets .content-wrapper .button-arrow.right {
     right: -10px;
   }
@@ -544,10 +541,9 @@ body {
   row-gap: 65px;
   padding-top: 80px;
   background: #ffffff;
-  margin: auto;
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1103px) {
   .help {
     height: auto;
     padding-bottom: 100px;
@@ -579,7 +575,7 @@ body {
   height: 281px;
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1103px) {
   .help .list {
     width: 630px;
     height: 449px;
@@ -632,10 +628,9 @@ body {
           justify-content: center;
   gap: 30px;
   background: #f6f6f6;
-  margin: auto;
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1103px) {
   .donation {
     min-height: 783px;
     -webkit-box-orient: vertical;
@@ -654,7 +649,7 @@ body {
   padding-top: 10px;
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1103px) {
   .donation img {
     padding-top: 40px;
   }
@@ -715,10 +710,9 @@ footer {
   padding: 0px 40px 0px 40px;
   background: url(../../../assets/images/start-screen-background.jpg);
   background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
-  margin: auto;
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1103px) {
   footer {
     min-height: 639px;
     -ms-flex-wrap: wrap;
@@ -818,7 +812,7 @@ footer .image {
   height: 310px;
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1103px) {
   footer .image {
     width: 100%;
     text-align: -webkit-center;

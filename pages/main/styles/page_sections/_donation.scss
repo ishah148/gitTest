@@ -7,9 +7,6 @@
     justify-content: center;
     gap: 30px;
     background: $color-light-l;
-
-    margin: auto;
-    
     @media (max-width: $breakpoint-tablet) {
         min-height: 783px;
         flex-direction: column-reverse;
