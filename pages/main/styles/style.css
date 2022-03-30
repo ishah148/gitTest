@@ -457,6 +457,12 @@ body {
   gap: 30px;
 }
 
+@media (max-width: 769px) {
+  .pets .content-wrapper .card:nth-child(3) {
+    display: none;
+  }
+}
+
 .pets .content-wrapper .card .image {
   width: 270px;
   height: 270px;
@@ -502,8 +508,20 @@ body {
           transform: rotate(180deg);
 }
 
+@media (max-width: 769px) {
+  .pets .content-wrapper .button-arrow.left {
+    left: -10px;
+  }
+}
+
 .pets .content-wrapper .button-arrow.right {
   right: 0;
+}
+
+@media (max-width: 769px) {
+  .pets .content-wrapper .button-arrow.right {
+    right: -10px;
+  }
 }
 
 .pets .button-primary {

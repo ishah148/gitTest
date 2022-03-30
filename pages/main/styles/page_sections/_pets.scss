@@ -28,7 +28,15 @@
             flex-direction: column;
             background: $color-light-s;
             gap: 30px;
-
+            // &:nth-child(3){
+            //     display: none;
+            // }
+            @media (max-width: $breakpoint-tablet) { 
+                    &:nth-child(3){
+                        display: none;
+                    }
+                    // !!!!!!!!
+            }
             .image {
                 width: 270px;
                 height: 270px;
@@ -58,9 +66,16 @@
             &.left {
                 left: 0;
                 transform: rotate(180deg);
+                @media (max-width: $breakpoint-tablet){
+                    left: -10px;
+                }
             }
+
             &.right {
                 right: 0;
+                @media (max-width: $breakpoint-tablet){
+                    right: -10px;
+                }
             }
         }
     }
