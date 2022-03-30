@@ -7,6 +7,14 @@
     flex-direction: row;
     align-items: center;
     background: #ffffff;
+
+    @media (max-width: $breakpoint-tablet) {
+        flex-direction: column-reverse;
+        padding-top: 80px;
+        gap: 80px;
+        min-height: 1048px;
+        justify-content: flex-end;
+    }
     .backgroud-img {
         width: 300px;
         height: 408px;
@@ -18,5 +26,12 @@
         width: 430px;
         display: flex;
         flex-direction: column;
+
+        @media (max-width: $breakpoint-tablet) {
+            gap: 25px;
+            p {
+                margin: 0;
+            }
+        }
     }
 }
