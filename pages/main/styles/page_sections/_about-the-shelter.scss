@@ -8,6 +8,8 @@
     align-items: center;
     background: #ffffff;
 
+    margin: auto;
+
     @media (max-width: $breakpoint-tablet) {
         flex-direction: column-reverse;
         padding-top: 80px;

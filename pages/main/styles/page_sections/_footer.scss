@@ -7,8 +7,11 @@ footer {
     padding: 0px 40px 0px 40px;
     background: url(../../../assets/images/start-screen-background.jpg);
     background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+
+    margin: auto;
+
     @media (max-width: $breakpoint-tablet) {
-        min-height: 839px;
+        min-height: 639px;
         flex-wrap: wrap;
         align-content: flex-start;
         justify-content: space-around;

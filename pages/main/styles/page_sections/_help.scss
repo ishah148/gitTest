@@ -8,6 +8,7 @@
     row-gap: 65px;
     padding-top: 80px;
     background: $color-light-xl;
+    margin: auto;
     @media (max-width: $breakpoint-tablet) {
         height: auto;
         padding-bottom: 100px;

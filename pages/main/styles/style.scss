@@ -18,13 +18,13 @@
 
 html {
     background: black;
-    width: 100vw;
+    // width: 100vw;
 }
 body {
     max-width: var(--primary-width);
     margin: auto;
     @media (max-width: $breakpoint-tablet) {
-        width: 100vw;
+        // width: 100vw;
         // !!!!!!!
     }
 }
