@@ -719,6 +719,20 @@ footer {
   background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
 }
 
+@media (max-width: 769px) {
+  footer {
+    min-height: 839px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    row-gap: 60px;
+    padding-top: 30px;
+  }
+}
+
 footer h3 {
   color: #ffffff;
   white-space: pre;
@@ -803,6 +817,13 @@ footer .location .location-data {
 footer .image {
   width: 310px;
   height: 310px;
+}
+
+@media (max-width: 769px) {
+  footer .image {
+    width: 100%;
+    text-align: -webkit-center;
+  }
 }
 
 footer .contacts-svg {

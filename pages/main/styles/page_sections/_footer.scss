@@ -7,6 +7,14 @@ footer {
     padding: 0px 40px 0px 40px;
     background: url(../../../assets/images/start-screen-background.jpg);
     background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+    @media (max-width: $breakpoint-tablet) {
+        min-height: 839px;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: space-around;
+        row-gap: 60px;
+        padding-top: 30px;
+    }
     h3 {
         color: #ffffff;
         white-space: pre;
@@ -55,6 +63,11 @@ footer {
     .image {
         width: 310px;
         height: 310px;
+        @media (max-width: $breakpoint-tablet) {
+            width: 100%;
+            text-align: -webkit-center;
+        }
+        
     }
     .contacts-svg {
         width: 40px;
