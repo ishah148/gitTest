@@ -1,0 +1,22 @@
+.about-the-shelter {
+    max-width: var(--primary-width);
+    min-height: 588px;
+    display: flex;
+    justify-content: center;
+    gap: 125px;
+    flex-direction: row;
+    align-items: center;
+    background: #ffffff;
+    .backgroud-img {
+        width: 300px;
+        height: 408px;
+        background: url(../../../assets/images/about-pets.png);
+        background-repeat: no-repeat;
+    }
+
+    .content {
+        width: 430px;
+        display: flex;
+        flex-direction: column;
+    }
+}

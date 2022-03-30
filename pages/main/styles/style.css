@@ -159,6 +159,7 @@ button {
 :root {
   --example: green;
   --primary-width: 1280px;
+  --padding-media: 40px;
 }
 
 html {
@@ -173,11 +174,15 @@ body {
 .start-screen {
   width: inherit;
   min-height: 908px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 60px;
+  padding: 60px 40px 0 40px;
   background: url(../../../assets/images/start-screen-background.jpg);
   background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+}
+
+@media (max-width: 768px) {
+  .start-screen {
+    padding: 60px 40px 0 40px;
+  }
 }
 
 .start-screen header {
@@ -261,6 +266,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    min-height: 1165px;
   }
 }
 
@@ -281,6 +287,8 @@ body {
 
 .start-screen .content-wrapper .content h2 {
   color: white;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .start-screen .content-wrapper .content p {
@@ -581,6 +589,7 @@ body {
 }
 
 footer {
+  min-height: 350px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -594,7 +603,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px 40px 0px 40px;
+  padding: 0px 40px 0px 40px;
   background: url(../../../assets/images/start-screen-background.jpg);
   background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
 }

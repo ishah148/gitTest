@@ -1,0 +1,72 @@
+.pets {
+    width: inherit;
+    height: 877px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: auto;
+    background: $color-light-l;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    h3 {
+        text-align: center;
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 8%;
+        position: relative;
+        .card {
+            width: 270px;
+            height: 435px;
+            display: flex;
+            flex-direction: column;
+            background: $color-light-s;
+            gap: 30px;
+
+            .image {
+                width: 270px;
+                height: 270px;
+                img {
+                    background-image: none;
+                }
+            }
+
+            p {
+                align-self: center;
+            }
+
+            .button-primary {
+                align-self: center;
+                background: $color-light-s;
+                width: 187px;
+                &:hover {
+                    background: #fddcc4;
+                }
+            }
+        }
+
+        .button-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &.left {
+                left: 0;
+                transform: rotate(180deg);
+            }
+            &.right {
+                right: 0;
+            }
+        }
+    }
+    .button-primary {
+        width: 261px;
+        height: 52px;
+        align-self: center;
+    }
+}
