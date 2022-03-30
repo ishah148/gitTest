@@ -588,6 +588,14 @@ body {
   }
 }
 
+@media (max-width: 646px) {
+  .help .list {
+    width: 100%;
+    height: auto;
+        grid-template-areas: ". . " ". . " ". . " ". . " ". . ";
+  }
+}
+
 .help .list .svg-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
