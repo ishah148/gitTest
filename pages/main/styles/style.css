@@ -550,6 +550,14 @@ body {
   background: #ffffff;
 }
 
+@media (max-width: 769px) {
+  .help {
+    height: auto;
+    padding-bottom: 100px;
+    row-gap: 60px;
+  }
+}
+
 .help h3 {
   text-align: center;
 }
@@ -572,6 +580,19 @@ body {
   row-gap: 40px;
   width: 1026px;
   height: 281px;
+}
+
+@media (max-width: 769px) {
+  .help .list {
+    width: 630px;
+    height: 449px;
+    display: -ms-inline-grid;
+    display: inline-grid;
+        grid-template-areas: ". . ." ". . ." ". . .";
+    -webkit-column-gap: 74px;
+            column-gap: 74px;
+    row-gap: 52px;
+  }
 }
 
 .help .list .svg-wrapper {
