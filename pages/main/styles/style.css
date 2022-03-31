@@ -1,3 +1,4 @@
+@import url(/pages/main/styles/_fonts.scss);
 h2, h3, h4, h5 {
   font-family: "Georgia";
   font-style: normal;
@@ -75,7 +76,7 @@ h5 {
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  color: #B2B2B2;
+  color: #b2b2b2;
 }
 
 .pets-card-title {
@@ -86,6 +87,19 @@ h5 {
   line-height: 23px;
   letter-spacing: 0.06em;
   margin: 0;
+}
+
+.paragraph-mobile-menu {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 160%;
+  color: #fafafa;
+}
+
+.paragraph-mobile-menu.current {
+  color: #cdcdcd;
 }
 
 button {
@@ -207,6 +221,7 @@ body {
           justify-content: space-between;
   width: 186px;
   height: 60px;
+  z-index: 2;
 }
 
 .start-screen header .logo .logo-title {
@@ -224,6 +239,44 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 35px;
+}
+
+@media (max-width: 646px) {
+  .start-screen header nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: none;
+  }
+  .start-screen header nav.active {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    left: 0;
+    bottom: 0;
+    padding-top: 248px;
+    background: #292929;
+  }
+  .start-screen header nav.active p {
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 160%;
+    color: #fafafa;
+    margin: 0;
+  }
+  .start-screen header nav.active p.current {
+    color: #cdcdcd;
+  }
 }
 
 .start-screen header nav p {

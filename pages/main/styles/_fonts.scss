@@ -75,7 +75,7 @@ h5 {
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
-    color: #B2B2B2;
+    color: #b2b2b2;
 }
 
 .pets-card-title {
@@ -86,4 +86,18 @@ h5 {
     line-height: 23px;
     letter-spacing: 0.06em;
     margin: 0;
+}
+@mixin paragraph-mobile-menu {
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 160%;
+    color: $color-light-s;
+    &.current {
+        color: $color-dark-s;
+    }
+}
+.paragraph-mobile-menu {
+    @include paragraph-mobile-menu;
 }
