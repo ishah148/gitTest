@@ -24,6 +24,7 @@ body {
     max-width: var(--primary-width);
     margin: auto;
     @media (max-width: $breakpoint-tablet) {
+        overflow-y: overlay;
         // width: 100vw;
         // !!!!!!!
     }

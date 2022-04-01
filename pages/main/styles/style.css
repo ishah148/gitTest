@@ -185,6 +185,12 @@ body {
   margin: auto;
 }
 
+@media (max-width: 1103px) {
+  body {
+    overflow-y: overlay;
+  }
+}
+
 .start-screen {
   width: inherit;
   min-height: 908px;
