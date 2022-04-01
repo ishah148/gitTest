@@ -53,3 +53,36 @@ button {
         background: $color-primary-light;
     }
 }
+
+.hamburger {
+    width: 30px;
+    height: 30px;
+    border: 1px solid violet;
+    display: none;
+    @media (max-width: $breakpoint-mobile) {
+        display: flex;
+        z-index: 2;
+    }
+
+    &.active {
+        .wrapper {
+            transform: rotate(-90deg);
+        }
+    }
+    .wrapper {
+        width: 100%;
+        height: 20px;
+        margin-top: auto;
+        margin-bottom: auto;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        transition: all 0.3s ease-in-out;
+        .line {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: red;
+        }
+    }
+}
