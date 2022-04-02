@@ -1,6 +1,6 @@
 .pets {
     width: inherit;
-    height: 877px;
+    min-height: 877px;
     padding-left: 40px;
     padding-right: 40px;
     margin: auto;
@@ -34,7 +34,11 @@
                     &:nth-child(3){
                         display: none;
                     }
-                    // !!!!!!!!
+            }
+            @media (max-width: $breakpoint-mobile) { 
+                    &:nth-child(2){
+                        display: none;
+                    }
             }
             .image {
                 width: 270px;

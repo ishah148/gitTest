@@ -31,11 +31,24 @@ h2 {
   color: #545454;
 }
 
+@media (max-width: 570px) {
+  h2 {
+    font-size: 25px;
+    letter-spacing: 0.06em;
+  }
+}
+
 h3 {
   font-size: 35px;
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #545454;
+}
+
+@media (max-width: 570px) {
+  h3 {
+    font-size: 25px;
+  }
 }
 
 h4 {
@@ -58,6 +71,13 @@ h5 {
   font-size: 15px;
   line-height: 160%;
   color: #4c4c4c;
+}
+
+@media (max-width: 570px) {
+  .paragraph-l {
+    max-width: 320px;
+    height: auto;
+  }
 }
 
 .paragraph-s {

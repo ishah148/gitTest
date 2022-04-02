@@ -30,6 +30,10 @@ h2 {
     font-size: 44px;
     line-height: 130%;
     color: #545454;
+    @media (max-width: $breakpoint-mobile) {
+        font-size: 25px;
+        letter-spacing: 0.06em;
+    }
 }
 h3 {
     @extend %header-default;
@@ -37,6 +41,9 @@ h3 {
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #545454;
+    @media (max-width: $breakpoint-mobile) {
+        font-size: 25px;
+    }
 }
 h4 {
     @extend %header-default;
@@ -59,6 +66,10 @@ h5 {
     line-height: 160%;
     color: #4c4c4c;
     // margin: 0;
+    @media (max-width: $breakpoint-mobile) {
+        max-width: 320px;
+        height: auto;
+    }
 }
 
 .paragraph-s {
