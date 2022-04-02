@@ -275,6 +275,7 @@ body {
 @media (max-width: 570px) {
   .start-screen {
     padding: 30px 10px 0 10px;
+    min-height: auto;
   }
 }
 
@@ -514,6 +515,12 @@ body {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+  }
+}
+
+@media (max-width: 570px) {
+  .about-the-shelter {
+    padding: 42px 10px;
   }
 }
 

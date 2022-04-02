@@ -12,6 +12,8 @@
     }
     @media (max-width: $breakpoint-mobile) {
         padding: 30px 10px 0 10px;
+        min-height: auto;
+
         // height: 123px;
     }
     header {
