@@ -58,10 +58,16 @@ h4 {
   letter-spacing: 0.06em;
 }
 
+@media (max-width: 570px) {
+  h4 {
+    font-size: 15px;
+    line-height: 110%;
+  }
+}
+
 h5 {
   font-size: 15px;
   line-height: 110%;
-  /* identical to box height, or 17px */
   letter-spacing: 0.06em;
 }
 
@@ -199,7 +205,7 @@ button {
 }
 
 .button-round:hover {
-  background: #FDDCC4;
+  background: #fddcc4;
 }
 
 .hamburger {
@@ -775,6 +781,12 @@ body {
   }
 }
 
+@media (max-width: 570px) {
+  .help {
+    padding: 42px 10px;
+  }
+}
+
 .help h3 {
   text-align: center;
 }
@@ -820,6 +832,12 @@ body {
   }
 }
 
+@media (max-width: 570px) {
+  .help .list {
+    gap: 20px 20px;
+  }
+}
+
 .help .list .svg-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -835,6 +853,12 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 113px;
+}
+
+@media (max-width: 570px) {
+  .help .list .svg-wrapper {
+    height: 87px;
+  }
 }
 
 .help .list .svg-wrapper .help-svg {
@@ -874,6 +898,12 @@ body {
             align-items: center;
     padding-top: 60px;
     gap: 18px;
+  }
+}
+
+@media (max-width: 570px) {
+  .donation {
+    padding: 42px 10px;
   }
 }
 

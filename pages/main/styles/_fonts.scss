@@ -50,12 +50,15 @@ h4 {
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
+    @media (max-width: $breakpoint-mobile) {
+        font-size: 15px;
+        line-height: 110%;
+    }
 }
 h5 {
     @extend %header-default;
     font-size: 15px;
     line-height: 110%;
-    /* identical to box height, or 17px */
     letter-spacing: 0.06em;
 }
 .paragraph-l {

@@ -14,7 +14,9 @@
         padding-top: 60px;
         gap: 18px;
     }
-
+    @media (max-width: $breakpoint-mobile) {
+        padding: 42px 10px;
+    }
     img {
         padding-top: 10px;
         @media (max-width: $breakpoint-tablet){

@@ -5,6 +5,7 @@
 * {
     box-sizing: border-box;
 }
+
 :root {
     --example: green;
     --primary-width: 1280px;
@@ -13,16 +14,17 @@
     // --primary-width: 767px;
 }
 
-@media (max-width: $breakpoint-tablet) {
-}
+@media (max-width: $breakpoint-tablet) {}
 
 html {
     background: black;
     // width: 100vw;
 }
+
 body {
     max-width: var(--primary-width);
     margin: auto;
+
     @media (max-width: $breakpoint-tablet) {
         overflow-y: overlay;
         // width: 100vw;

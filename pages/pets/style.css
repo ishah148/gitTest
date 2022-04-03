@@ -57,10 +57,16 @@ h4 {
   letter-spacing: 0.06em;
 }
 
+@media (max-width: 570px) {
+  h4 {
+    font-size: 15px;
+    line-height: 110%;
+  }
+}
+
 h5 {
   font-size: 15px;
   line-height: 110%;
-  /* identical to box height, or 17px */
   letter-spacing: 0.06em;
 }
 
@@ -198,7 +204,7 @@ button {
 }
 
 .button-round:hover {
-  background: #FDDCC4;
+  background: #fddcc4;
 }
 
 .hamburger {
