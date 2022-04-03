@@ -18,17 +18,28 @@ button {
         background: #fddcc4;
     }
 }
-.button-arrow {
-    border: 2px solid $color-primary;
-    box-sizing: border-box;
-    border-radius: 100px;
-    width: 52px;
-    height: 52px;
+.button-wrapper {
+    width: 100%;
+    display: flex;
     position: absolute;
+    justify-content: space-between;
+    @media (max-width: $breakpoint-mobile) {
+        position: static;
+        width: 190px;       
+    }
 
-    svg {
-        width: 14px;
-        height: 6px;
+    .button-arrow {
+        border: 2px solid $color-primary;
+        box-sizing: border-box;
+        border-radius: 100px;
+        width: 52px;
+        height: 52px;
+        // position: absolute;
+
+        svg {
+            width: 14px;
+            height: 6px;
+        }
     }
 }
 

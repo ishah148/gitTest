@@ -143,17 +143,34 @@ button {
   background: #fddcc4;
 }
 
-.button-arrow {
+.button-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 570px) {
+  .button-wrapper {
+    position: static;
+    width: 190px;
+  }
+}
+
+.button-wrapper .button-arrow {
   border: 2px solid #f1cdb3;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 100px;
   width: 52px;
   height: 52px;
-  position: absolute;
 }
 
-.button-arrow svg {
+.button-wrapper .button-arrow svg {
   width: 14px;
   height: 6px;
 }
@@ -585,7 +602,7 @@ body {
 }
 
 .pets {
-  width: inherit;
+  width: 100%;
   min-height: 877px;
   padding-left: 40px;
   padding-right: 40px;
@@ -600,10 +617,19 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 60px;
+  position: relative;
 }
 
 .pets h3 {
   text-align: center;
+}
+
+@media (max-width: 570px) {
+  .pets {
+    padding: 42px 10px;
+    gap: 42px;
+    min-height: auto;
+  }
 }
 
 .pets .content-wrapper {
@@ -622,6 +648,16 @@ body {
           justify-content: center;
   gap: 8%;
   position: relative;
+}
+
+@media (max-width: 570px) {
+  .pets .content-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+  }
 }
 
 .pets .content-wrapper .card {
@@ -689,26 +725,20 @@ body {
           justify-content: center;
 }
 
+@media (max-width: 570px) {
+  .pets .content-wrapper .button-arrow {
+    position: relative;
+  }
+}
+
 .pets .content-wrapper .button-arrow.left {
   left: 0;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
-@media (max-width: 1103px) {
-  .pets .content-wrapper .button-arrow.left {
-    left: -10px;
-  }
-}
-
 .pets .content-wrapper .button-arrow.right {
   right: 0;
-}
-
-@media (max-width: 1103px) {
-  .pets .content-wrapper .button-arrow.right {
-    right: -10px;
-  }
 }
 
 .pets .button-primary {
