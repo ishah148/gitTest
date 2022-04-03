@@ -144,7 +144,7 @@ button {
 }
 
 .button-wrapper {
-  width: 100%;
+  width: 103%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -680,7 +680,7 @@ body {
   }
 }
 
-@media (max-width: 570px) {
+@media (max-width: calc(570px + 190px)) {
   .pets .content-wrapper .card:nth-child(2) {
     display: none;
   }

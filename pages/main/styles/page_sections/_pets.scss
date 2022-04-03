@@ -46,7 +46,7 @@
                         display: none;
                     }
             }
-            @media (max-width: $breakpoint-mobile) { 
+            @media (max-width: calc(#{$breakpoint-mobile} + 190px)) { 
                     &:nth-child(2){
                         display: none;
                     }
