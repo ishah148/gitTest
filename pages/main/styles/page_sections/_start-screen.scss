@@ -122,9 +122,11 @@
                 background: #f1cdb3;
                 border-radius: 100px;
                 border: none;
-
                 @media (max-width: $breakpoint-tablet) {
                     align-self: center;
+                }
+                &:hover{
+                    background-color: $color-primary-light;
                 }
             }
         }

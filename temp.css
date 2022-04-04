@@ -5,8 +5,8 @@
 });
  */
 
-
-
+ sass ./pages/pets/style.scss ./pages/pets/style.css --watch
+ sass ./pages/main/styles/style.scss ./pages/main/styles/style.css --watch
 
 
 span{

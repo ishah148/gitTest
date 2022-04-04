@@ -168,6 +168,10 @@ button {
   border-radius: 100px;
   width: 52px;
   height: 52px;
+  background: none;
+}
+.button-wrapper .button-arrow:hover {
+  background-color: #fddcc4;
 }
 .button-wrapper .button-arrow svg {
   width: 14px;
@@ -387,6 +391,9 @@ body {
   .start-screen .content-wrapper .content button {
     align-self: center;
   }
+}
+.start-screen .content-wrapper .content button:hover {
+  background-color: #fddcc4;
 }
 .start-screen .content-wrapper .backgroud-img {
   background: url(../../../assets/images/start-screen-puppy.png);
