@@ -39,7 +39,7 @@
         nav {
             display: flex;
             gap: 35px;
-            @media (max-width: $breakpoint-mobile) {
+            @media (max-width: calc(#{$breakpoint-mobile} + 250px)) {
                 flex-direction: column;
                 display: none;
                 &.active {
