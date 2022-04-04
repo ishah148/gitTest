@@ -76,7 +76,7 @@ button {
     height: 30px;
     border: 1px solid violet;
     display: none;
-    @media (max-width: $breakpoint-mobile) {
+    @media (max-width: calc(#{$breakpoint-mobile + 130px})) {
         display: flex;
         z-index: 2;
     }
