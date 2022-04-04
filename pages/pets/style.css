@@ -242,6 +242,7 @@ html {
 
 body {
   max-width: var(--primary-width);
+  overflow: overlay;
   margin: auto;
 }
 
@@ -304,6 +305,11 @@ main {
   flex-wrap: nowrap;
   background: #f6f6f6;
   row-gap: 60px;
+}
+@media (max-width: 1103px) {
+  main {
+    row-gap: 30px;
+  }
 }
 main h3 {
   text-align: center;
@@ -482,6 +488,10 @@ footer .image {
 footer .contacts-svg {
   width: 40px;
   height: 40px;
+}
+
+footer .image {
+  align-self: self-end;
 }
 
 /*# sourceMappingURL=style.css.map */
