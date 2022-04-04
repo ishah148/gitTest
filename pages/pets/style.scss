@@ -17,6 +17,7 @@ body {
     max-width: var(--primary-width);
     overflow: overlay;
     margin: auto;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -52,6 +53,10 @@ header {
             cursor: pointer;
             a {
                 text-decoration: none;
+                color: $color-dark-l;
+                &:visited{
+                    color: $color-dark-l;
+                }
                 // color: $color-light-s;
             }
             &:hover {

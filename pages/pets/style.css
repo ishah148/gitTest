@@ -129,6 +129,10 @@ h5 {
   color: #cdcdcd;
 }
 
+a {
+  color: red;
+}
+
 button {
   font-family: "Georgia";
   font-style: normal;
@@ -167,6 +171,10 @@ button {
   border-radius: 100px;
   width: 52px;
   height: 52px;
+  background: none;
+}
+.button-wrapper .button-arrow:hover {
+  background-color: #fddcc4;
 }
 .button-wrapper .button-arrow svg {
   width: 14px;
@@ -244,6 +252,7 @@ body {
   max-width: var(--primary-width);
   overflow: overlay;
   margin: auto;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -282,6 +291,10 @@ header nav p {
 }
 header nav p a {
   text-decoration: none;
+  color: #545454;
+}
+header nav p a:visited {
+  color: #545454;
 }
 header nav p:hover {
   opacity: 0.5;

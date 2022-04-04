@@ -130,6 +130,10 @@ h5 {
   color: #cdcdcd;
 }
 
+a {
+  color: red;
+}
+
 button {
   font-family: "Georgia";
   font-style: normal;
@@ -244,6 +248,7 @@ button {
 
 html {
   background: black;
+  scroll-behavior: smooth;
 }
 
 body {
