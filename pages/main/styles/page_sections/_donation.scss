@@ -15,12 +15,19 @@
         gap: 18px;
     }
     @media (max-width: $breakpoint-mobile) {
-        padding: 42px 10px;
+        padding: 42px 20px;
+        justify-content: start;
+        gap: 36px;
+        height: auto;
+        min-height: auto;
     }
+
     img {
         padding-top: 10px;
-        @media (max-width: $breakpoint-tablet){
-            padding-top: 40px;
+        @media (max-width: $breakpoint-tablet) {
+            // padding-top: 40px;
+            width: 260px;
+            height: 135px;
         }
     }
     .content {
@@ -29,6 +36,12 @@
         width: 380px;
         height: 282px;
         gap: 20px;
+        @media (max-width: $breakpoint-tablet) {
+            width: 100%;
+        }
+        @media (max-width: $breakpoint-mobile) {
+            gap: 23px;
+        }
         .credit-card {
             width: 349px;
             height: 43px;
@@ -38,6 +51,10 @@
             justify-content: space-around;
             align-items: center;
             // padding: 10px 15px;
+            @media (max-width: $breakpoint-mobile) {
+                width: 100%;
+            }
+
             .card-svg {
                 width: 30px;
                 height: 23px;
@@ -46,6 +63,9 @@
 
         p {
             margin: 0;
+            @media (max-width: $breakpoint-mobile) {
+                text-align: justify;
+            }
         }
     }
 }

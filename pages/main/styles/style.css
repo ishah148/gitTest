@@ -47,6 +47,7 @@ h3 {
 @media (max-width: 570px) {
   h3 {
     font-size: 25px;
+    text-align: center;
   }
 }
 
@@ -66,6 +67,12 @@ h5 {
   font-size: 15px;
   line-height: 110%;
   letter-spacing: 0.06em;
+}
+@media (max-width: 570px) {
+  h5 {
+    letter-spacing: 0;
+    text-align: center;
+  }
 }
 
 .paragraph-l {
@@ -674,7 +681,11 @@ body {
 }
 @media (max-width: 570px) {
   .donation {
-    padding: 42px 10px;
+    padding: 42px 20px;
+    justify-content: start;
+    gap: 36px;
+    height: auto;
+    min-height: auto;
   }
 }
 .donation img {
@@ -682,7 +693,8 @@ body {
 }
 @media (max-width: 1103px) {
   .donation img {
-    padding-top: 40px;
+    width: 260px;
+    height: 135px;
   }
 }
 .donation .content {
@@ -691,6 +703,16 @@ body {
   width: 380px;
   height: 282px;
   gap: 20px;
+}
+@media (max-width: 1103px) {
+  .donation .content {
+    width: 100%;
+  }
+}
+@media (max-width: 570px) {
+  .donation .content {
+    gap: 23px;
+  }
 }
 .donation .content .credit-card {
   width: 349px;
@@ -701,12 +723,22 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+@media (max-width: 570px) {
+  .donation .content .credit-card {
+    width: 100%;
+  }
+}
 .donation .content .credit-card .card-svg {
   width: 30px;
   height: 23px;
 }
 .donation .content p {
   margin: 0;
+}
+@media (max-width: 570px) {
+  .donation .content p {
+    text-align: justify;
+  }
 }
 
 footer {
@@ -773,11 +805,22 @@ footer .location .location-data {
 footer .image {
   width: 310px;
   height: 310px;
+  width: 500px;
 }
 @media (max-width: 1103px) {
   footer .image {
     width: 100%;
     text-align: -webkit-center;
+  }
+}
+@media (max-width: 570px) {
+  footer .image {
+    width: 260px;
+    height: 269px;
+  }
+  footer .image img {
+    width: inherit;
+    height: inherit;
   }
 }
 footer .contacts-svg {

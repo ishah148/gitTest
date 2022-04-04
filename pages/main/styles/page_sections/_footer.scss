@@ -63,9 +63,18 @@ footer {
     .image {
         width: 310px;
         height: 310px;
+        width: 500px;
         @media (max-width: $breakpoint-tablet) {
             width: 100%;
             text-align: -webkit-center;
+        }
+        @media (max-width: $breakpoint-mobile) {
+            width: 260px;
+            height: 269px;
+            img{
+                width: inherit;
+                height: inherit;
+            }
         }
         
     }

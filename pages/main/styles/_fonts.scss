@@ -43,6 +43,7 @@ h3 {
     color: #545454;
     @media (max-width: $breakpoint-mobile) {
         font-size: 25px;
+        text-align: center;
     }
 }
 h4 {
@@ -60,6 +61,10 @@ h5 {
     font-size: 15px;
     line-height: 110%;
     letter-spacing: 0.06em;
+    @media (max-width: $breakpoint-mobile) {
+        letter-spacing: 0;
+        text-align: center;
+    }
 }
 .paragraph-l {
     font-family: "Arial";
