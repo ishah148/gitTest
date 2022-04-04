@@ -12,7 +12,9 @@
         flex-direction: column-reverse;
         align-items: center;
         padding-top: 60px;
-        gap: 18px;
+        // gap: 18px;
+        justify-content: space-around;
+        gap: 0;
     }
     @media (max-width: $breakpoint-mobile) {
         padding: 42px 20px;
@@ -24,7 +26,7 @@
 
     img {
         padding-top: 10px;
-        @media (max-width: $breakpoint-tablet) {
+        @media (max-width: $breakpoint-mobile) {
             // padding-top: 40px;
             width: 260px;
             height: 135px;
@@ -37,9 +39,12 @@
         height: 282px;
         gap: 20px;
         @media (max-width: $breakpoint-tablet) {
-            width: 100%;
+            // width: 100%;
+            // justify-content: space-around;
+            // gap: 0;
         }
         @media (max-width: $breakpoint-mobile) {
+            width: 100%;
             gap: 23px;
         }
         .credit-card {

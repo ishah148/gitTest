@@ -676,7 +676,8 @@ body {
     flex-direction: column-reverse;
     align-items: center;
     padding-top: 60px;
-    gap: 18px;
+    justify-content: space-around;
+    gap: 0;
   }
 }
 @media (max-width: 570px) {
@@ -691,7 +692,7 @@ body {
 .donation img {
   padding-top: 10px;
 }
-@media (max-width: 1103px) {
+@media (max-width: 570px) {
   .donation img {
     width: 260px;
     height: 135px;
@@ -704,13 +705,9 @@ body {
   height: 282px;
   gap: 20px;
 }
-@media (max-width: 1103px) {
-  .donation .content {
-    width: 100%;
-  }
-}
 @media (max-width: 570px) {
   .donation .content {
+    width: 100%;
     gap: 23px;
   }
 }
@@ -761,14 +758,27 @@ footer {
     padding-top: 30px;
   }
 }
+@media (max-width: 570px) {
+  footer {
+    gap: 20px;
+  }
+}
 footer h3 {
   color: #ffffff;
-  white-space: pre;
   align-self: center;
+  width: 101%;
+  height: 90px;
+}
+@media (max-width: 570px) {
+  footer h3 {
+    height: 70px;
+  }
 }
 footer h4 {
   color: #f1cdb3;
   white-space: pre;
+  font-size: 20px;
+  line-height: 115%;
 }
 footer svg {
   fill: #f1cdb3;
@@ -779,6 +789,12 @@ footer .contacts {
   height: 234px;
   flex-direction: column;
   justify-content: space-between;
+}
+@media (max-width: 570px) {
+  footer .contacts {
+    justify-content: normal;
+    gap: 30px;
+  }
 }
 footer .contacts .mail,
 footer .contacts .phone {
@@ -794,8 +810,21 @@ footer .location {
   flex-direction: column;
   justify-content: space-between;
 }
+@media (max-width: 570px) {
+  footer .location {
+    gap: 32px;
+    justify-content: normal;
+  }
+}
 footer .location h3 {
-  align-self: auto;
+  align-self: center;
+  width: 98%;
+  height: 90px;
+}
+@media (max-width: 570px) {
+  footer .location h3 {
+    height: 70px;
+  }
 }
 footer .location .location-data {
   display: flex;
@@ -805,7 +834,6 @@ footer .location .location-data {
 footer .image {
   width: 310px;
   height: 310px;
-  width: 500px;
 }
 @media (max-width: 1103px) {
   footer .image {
