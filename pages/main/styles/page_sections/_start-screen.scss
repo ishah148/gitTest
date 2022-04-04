@@ -1,6 +1,6 @@
 @import url(/pages/main/styles/_fonts.scss);
-    // @import "../fonts";
-    // @extend .paragraph-mobile-menu;
+// @import "../fonts";
+// @extend .paragraph-mobile-menu;
 .start-screen {
     width: 100%;
     min-height: 908px;
@@ -19,6 +19,7 @@
     header {
         display: flex;
         justify-content: space-between;
+        position: relative;
         .logo {
             display: flex;
             flex-direction: column;
@@ -38,10 +39,10 @@
         nav {
             display: flex;
             gap: 35px;
-            @media (max-width: $breakpoint-mobile){
+            @media (max-width: $breakpoint-mobile) {
                 flex-direction: column;
                 display: none;
-                &.active{
+                &.active {
                     align-items: center;
                     z-index: 1;
                     display: flex;
@@ -52,9 +53,9 @@
                     top: 0;
                     // gap:25px;
                     padding-top: 248px;
-                    
+
                     background: $color-dark-3xl;
-                    p{
+                    p {
                         @include paragraph-mobile-menu;
                         margin: 0;
                     }
@@ -81,6 +82,17 @@
                     height: 3px;
                     background: $color-primary;
                     bottom: 0;
+                }
+            }
+        }
+        .hamburger {
+            position: absolute;
+            right: 35px;
+            top: 12px;
+            border: none;
+            .wrapper {
+                border: none;
+                span {
                 }
             }
         }
@@ -125,7 +137,7 @@
                 @media (max-width: $breakpoint-tablet) {
                     align-self: center;
                 }
-                &:hover{
+                &:hover {
                     background-color: $color-primary-light;
                 }
             }
@@ -151,7 +163,6 @@
                 height: 271px;
                 background-size: 260px 271px;
                 margin-top: 70px;
-
             }
         }
     }

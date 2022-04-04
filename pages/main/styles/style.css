@@ -282,6 +282,7 @@ body {
 .start-screen header {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 .start-screen header .logo {
   display: flex;
@@ -352,6 +353,15 @@ body {
   height: 3px;
   background: #f1cdb3;
   bottom: 0;
+}
+.start-screen header .hamburger {
+  position: absolute;
+  right: 35px;
+  top: 12px;
+  border: none;
+}
+.start-screen header .hamburger .wrapper {
+  border: none;
 }
 .start-screen .content-wrapper {
   display: flex;
