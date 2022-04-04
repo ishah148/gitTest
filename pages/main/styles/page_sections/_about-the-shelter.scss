@@ -37,6 +37,10 @@
         width: 430px;
         display: flex;
         flex-direction: column;
+        @media (min-width: $breakpoint-mobile) {
+            height: 380px;
+            justify-content: space-between;
+        }
         @media (max-width: $breakpoint-tablet) {
             gap: 25px;
         }

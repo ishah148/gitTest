@@ -459,6 +459,12 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 570px) {
+  .about-the-shelter .content {
+    height: 380px;
+    justify-content: space-between;
+  }
+}
 @media (max-width: 1103px) {
   .about-the-shelter .content {
     gap: 25px;
