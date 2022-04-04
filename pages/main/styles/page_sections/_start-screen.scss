@@ -16,7 +16,7 @@
 
         // height: 123px;
     }
-    header {
+    @mixin header-mix {
         display: flex;
         justify-content: space-between;
         position: relative;
@@ -100,7 +100,9 @@
             }
         }
     }
-
+    header{
+           @include header-mix; 
+    }
     .content-wrapper {
         display: flex;
         flex-direction: row;

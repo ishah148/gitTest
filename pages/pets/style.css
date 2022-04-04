@@ -1,3 +1,4 @@
+@import url(/pages/main/styles/_fonts.scss);
 h5, h4, h3, h2 {
   font-family: "Georgia";
   font-style: normal;
@@ -235,6 +236,183 @@ button {
   background: #f1cdb3;
 }
 
+.start-screen {
+  width: 100%;
+  min-height: 908px;
+  padding: 60px 40px 0 40px;
+  background: url(../../../assets/images/start-screen-background.jpg);
+  background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+}
+@media (max-width: 1103px) {
+  .start-screen {
+    padding: 30px 30px 0 30px;
+  }
+}
+@media (max-width: 570px) {
+  .start-screen {
+    padding: 30px 10px 0 10px;
+    min-height: auto;
+  }
+}
+.start-screen header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.start-screen header .logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 186px;
+  height: 60px;
+  z-index: 2;
+}
+.start-screen header .logo .logo-title {
+  margin: 0;
+  word-wrap: none;
+}
+.start-screen header .logo .logo-subtitle {
+  margin: 0;
+  text-align: center;
+}
+.start-screen header nav {
+  display: flex;
+  gap: 35px;
+}
+@media (max-width: calc(570px + 130px)) {
+  .start-screen header nav {
+    flex-direction: column;
+    display: none;
+  }
+  .start-screen header nav.active {
+    align-items: center;
+    z-index: 1;
+    display: flex;
+    position: absolute;
+    width: 320px;
+    height: 800px;
+    right: 0;
+    top: 0;
+    opacity: 0.98;
+    padding-top: 225px;
+    background: #292929;
+  }
+  .start-screen header nav.active p {
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 160%;
+    color: #fafafa;
+    margin: 0;
+  }
+  .start-screen header nav.active p.current {
+    color: #cdcdcd;
+  }
+}
+.start-screen header nav p {
+  position: relative;
+  color: #fafafa;
+  cursor: pointer;
+}
+.start-screen header nav p a {
+  text-decoration: none;
+  color: #fafafa;
+}
+.start-screen header nav p:hover {
+  opacity: 0.5;
+}
+.start-screen header nav .current-page::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #f1cdb3;
+  bottom: 0;
+}
+.start-screen header .hamburger {
+  position: absolute;
+  right: 35px;
+  top: 12px;
+  border: none;
+}
+.start-screen header .hamburger .wrapper {
+  border: none;
+}
+.start-screen .content-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 1103px) {
+  .start-screen .content-wrapper {
+    flex-direction: column;
+    padding-top: 70px;
+  }
+}
+.start-screen .content-wrapper .content {
+  display: flex;
+  flex-direction: column;
+  width: 460px;
+  height: 322px;
+  align-self: center;
+  gap: 18px;
+}
+@media (max-width: 570px) {
+  .start-screen .content-wrapper .content {
+    width: 100%;
+    text-align: center;
+  }
+}
+.start-screen .content-wrapper .content h2 {
+  color: white;
+  transform: translateY(-10px);
+}
+.start-screen .content-wrapper .content p {
+  color: #cdcdcd;
+}
+.start-screen .content-wrapper .content button {
+  margin-top: 7px;
+  width: 207px;
+  height: 52px;
+  background: #f1cdb3;
+  border-radius: 100px;
+  border: none;
+}
+@media (max-width: 1103px) {
+  .start-screen .content-wrapper .content button {
+    align-self: center;
+  }
+}
+.start-screen .content-wrapper .content button:hover {
+  background-color: #fddcc4;
+}
+.start-screen .content-wrapper .backgroud-img {
+  background: url(../../../assets/images/start-screen-puppy.png);
+  background-repeat: no-repeat;
+  background-size: 698px 728px;
+  width: 698px;
+  height: 728px;
+  margin-left: 40px;
+  margin-top: 60px;
+}
+@media (max-width: 1103px) {
+  .start-screen .content-wrapper .backgroud-img {
+    width: 569px;
+    height: 593px;
+    background-size: 569px 593px;
+    align-self: end;
+    margin-top: 90px;
+  }
+}
+@media (max-width: 570px) {
+  .start-screen .content-wrapper .backgroud-img {
+    width: 260px;
+    height: 271px;
+    background-size: 260px 271px;
+    margin-top: 70px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -253,59 +431,6 @@ body {
   overflow: overlay;
   margin: auto;
   scroll-behavior: smooth;
-}
-
-header {
-  width: inherit;
-  background: #ffffff;
-  padding: 30px 40px 0px 40px;
-  height: 120px;
-  display: flex;
-  justify-content: space-between;
-}
-header .logo {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 186px;
-  height: 60px;
-}
-header .logo .logo-title {
-  margin: 0;
-  word-wrap: none;
-  color: #545454;
-}
-header .logo .logo-subtitle {
-  margin: 0;
-  text-align: center;
-  color: #292929;
-}
-header nav {
-  display: flex;
-  gap: 35px;
-}
-header nav p {
-  position: relative;
-  color: #545454;
-  cursor: pointer;
-}
-header nav p a {
-  text-decoration: none;
-  color: #545454;
-}
-header nav p a:visited {
-  color: #545454;
-}
-header nav p:hover {
-  opacity: 0.5;
-}
-header nav .current-page::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 3px;
-  background: #f1cdb3;
-  top: 25px;
 }
 
 main {
