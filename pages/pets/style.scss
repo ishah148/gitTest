@@ -1,8 +1,7 @@
 @import "../main/styles/_variables.scss";
 @import "../main/styles/_fonts.scss";
 @import "../main/styles/_elements.scss";
-@import '../main/styles/page_sections/_start-screen.scss';
-
+@import "../main/styles/page_sections/_start-screen.scss";
 
 * {
     box-sizing: border-box;
@@ -20,10 +19,14 @@ body {
     margin: auto;
     scroll-behavior: smooth;
 }
-.header{
 
-    @extend .header;
-}
+// @at-root {
+header {
+
+    @import "../main/styles/page_sections/_footer.scss";
+    }
+// }
+
 // @include ../main/styles/page_sections/_start-screen.scss/header-mix;
 
 // header{
@@ -94,7 +97,7 @@ main {
     align-items: center;
     flex-wrap: nowrap;
     background: $color-light-l;
-    row-gap: 60px; 
+    row-gap: 60px;
     @media (max-width: $breakpoint-tablet) {
         row-gap: 30px;
     }
@@ -158,29 +161,26 @@ main {
         }
     }
 
-    .navigation{
+    .navigation {
         // position: relative;
         margin-top: 28px;
         display: flex;
         justify-content: space-between;
         width: 340px;
         height: 52px;
-        button{
+        button {
             position: static;
-
         }
     }
 }
 
 // @import url(../main/styles/page_sections/_footer.scss);
-@import '../main/styles/page_sections/_footer.scss';
-footer{
-    .image{
+@import "../main/styles/page_sections/_footer.scss";
+footer {
+    .image {
         align-self: self-end;
     }
 }
-
-
 
 // footer {
 //     display: flex;
@@ -226,7 +226,7 @@ footer{
 //         h3{
 //             // text-align: center;
 //             align-self: auto;
-//         } 
+//         }
 
 //         .location-data {
 //             display: flex;

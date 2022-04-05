@@ -433,6 +433,124 @@ body {
   scroll-behavior: smooth;
 }
 
+header footer {
+  min-height: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px 0px 40px;
+  background: url(../../../assets/images/start-screen-background.jpg);
+  background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+}
+@media (max-width: 1103px) {
+  header footer {
+    min-height: 639px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-around;
+    row-gap: 60px;
+    padding-top: 30px;
+  }
+}
+@media (max-width: 570px) {
+  header footer {
+    gap: 20px;
+  }
+}
+header footer h3 {
+  color: #ffffff;
+  align-self: center;
+  width: 101%;
+  height: 90px;
+}
+@media (max-width: 570px) {
+  header footer h3 {
+    height: 70px;
+  }
+}
+header footer h4 {
+  color: #f1cdb3;
+  white-space: pre;
+  font-size: 20px;
+  line-height: 115%;
+}
+header footer svg {
+  fill: #f1cdb3;
+}
+header footer .contacts {
+  display: flex;
+  width: 278px;
+  height: 234px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 570px) {
+  header footer .contacts {
+    justify-content: normal;
+    gap: 30px;
+  }
+}
+header footer .contacts .mail,
+header footer .contacts .phone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+header footer .location {
+  width: 302px;
+  height: 234px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 570px) {
+  header footer .location {
+    gap: 32px;
+    justify-content: normal;
+  }
+}
+header footer .location h3 {
+  align-self: center;
+  width: 98%;
+  height: 90px;
+}
+@media (max-width: 570px) {
+  header footer .location h3 {
+    height: 70px;
+  }
+}
+header footer .location .location-data {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header footer .image {
+  width: 310px;
+  height: 310px;
+}
+@media (max-width: 1103px) {
+  header footer .image {
+    width: 100%;
+    text-align: -webkit-center;
+  }
+}
+@media (max-width: 570px) {
+  header footer .image {
+    width: 260px;
+    height: 269px;
+  }
+  header footer .image img {
+    width: inherit;
+    height: inherit;
+  }
+}
+header footer .contacts-svg {
+  width: 40px;
+  height: 40px;
+}
+
 main {
   min-height: 1342px;
   padding-top: 80px;
