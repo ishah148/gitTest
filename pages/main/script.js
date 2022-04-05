@@ -6,7 +6,7 @@ const elems = {
 console.log(window.innerWidth)
 
 window.addEventListener('resize',()=>{
-    console.log(this.innerWidth)
+    // console.log(this.innerWidth)
 })
 
 elems.hamburger.addEventListener('click',function (){

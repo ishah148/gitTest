@@ -88,6 +88,7 @@ footer {
     .image {
         width: 310px;
         height: 310px;
+        align-self: self-end;
         @media (max-width: $breakpoint-tablet) {
             width: 100%;
             text-align: -webkit-center;
