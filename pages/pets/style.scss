@@ -20,7 +20,12 @@ body {
     margin: auto;
     scroll-behavior: smooth;
 }
+.header{
+
+    @extend .header;
+}
 // @include ../main/styles/page_sections/_start-screen.scss/header-mix;
+
 // header{
 //     @include header-mix();
 // }

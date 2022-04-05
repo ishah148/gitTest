@@ -210,7 +210,7 @@ button {
   border: 1px solid violet;
   display: none;
 }
-@media (max-width: 570px) {
+@media (max-width: calc(700px)) {
   .hamburger {
     display: flex;
     z-index: 2;
