@@ -16,7 +16,7 @@ elems.hamburger.addEventListener('click',function (){
 
 document.querySelectorAll('nav p').forEach(block =>{
     block.addEventListener('click',function(){
-    if(window.innerWidth < 560){
+    if(window.innerWidth < 660){
         elems.nav.classList.toggle('active')
         elems.hamburger.classList.toggle('active')
     }

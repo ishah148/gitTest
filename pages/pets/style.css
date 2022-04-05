@@ -235,26 +235,6 @@ button {
   background: #f1cdb3;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-:root {
-  --example: green;
-  --primary-width: 1280px;
-}
-
-html {
-  background: black;
-}
-
-body {
-  max-width: var(--primary-width);
-  overflow: overlay;
-  margin: auto;
-  scroll-behavior: smooth;
-}
-
 header {
   display: flex;
   justify-content: space-between;
@@ -341,10 +321,29 @@ header .hamburger .wrapper {
   border: none;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --example: green;
+  scroll-behavior: smooth;
+  --primary-width: 1280px;
+}
+
+html {
+  background: rgb(35, 141, 163);
+}
+
+body {
+  max-width: var(--primary-width);
+  overflow: overlay;
+  margin: auto;
+}
+
 header {
   background: #ffffff;
-  padding: 30px 40px 0px 40px;
-  height: 120px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
 }
@@ -355,6 +354,7 @@ header .logo .logo-subtitle {
   color: #292929;
 }
 header nav p {
+  margin: 0;
   color: #545454;
 }
 header nav p a {
@@ -373,7 +373,7 @@ header nav .current-page::before {
   width: 100%;
   height: 3px;
   background: #f1cdb3;
-  top: 25px;
+  top: 50px;
 }
 
 main {

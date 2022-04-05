@@ -81,6 +81,7 @@ h5 {
   font-size: 15px;
   line-height: 160%;
   color: #4c4c4c;
+  margin: 0;
 }
 @media (max-width: 570px) {
   .paragraph-l {
@@ -246,7 +247,7 @@ button {
 }
 
 html {
-  background: black;
+  background: rgb(232, 189, 252);
   scroll-behavior: smooth;
 }
 
@@ -302,6 +303,7 @@ body {
 .start-screen header nav {
   display: flex;
   gap: 35px;
+  align-items: center;
 }
 @media (max-width: calc(570px + 130px)) {
   .start-screen header nav {
