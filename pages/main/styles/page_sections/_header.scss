@@ -23,24 +23,25 @@ header {
         display: flex;
         gap: 35px;
         align-items: center;
+        transition: all 0.3s cubic-bezier(0.21, 1.09, 0.58, 1);
         @media (max-width: calc(#{$breakpoint-mobile} + 130px)) {
             flex-direction: column;
-            display: none;
+            transform: translateX(500px);
+            // display: none;
+            // transition: all 0.3s;
+            
             &.active {
                 align-items: center;
                 z-index: 1;
                 display: flex;
+                transform: translateX(0);
                 position: absolute;
-                // width: 100%;
                 width: 320px;
                 height: 800px;
-                // left: 0;
                 right: 0;
                 top: 0;
                 opacity: 0.98;
-                // gap:25px;
                 padding-top: 225px;
-
                 background: $color-dark-3xl;
                 p {
                     @include paragraph-mobile-menu;

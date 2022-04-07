@@ -246,7 +246,7 @@ button {
 }
 
 html {
-  background: rgb(16, 254, 85);
+  background: rgb(238, 231, 222);
   scroll-behavior: smooth;
 }
 
@@ -303,16 +303,18 @@ body {
   display: flex;
   gap: 35px;
   align-items: center;
+  transition: all 0.3s cubic-bezier(0.21, 1.09, 0.58, 1);
 }
 @media (max-width: calc(570px + 130px)) {
   .start-screen header nav {
     flex-direction: column;
-    display: none;
+    transform: translateX(500px);
   }
   .start-screen header nav.active {
     align-items: center;
     z-index: 1;
     display: flex;
+    transform: translateX(0);
     position: absolute;
     width: 320px;
     height: 800px;
