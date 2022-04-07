@@ -1,8 +1,55 @@
-.parent {
-    font-size: 2rem;
+.body2{
+    width: 1000px;
+    height: 300px;
+    border: 2px solid red;
+    position: static;
     
 }
-
-.ch {
-    font-size: 200%;
+.wrapper{
+    margin: auto;
+    display: flex;
+    
+    width: 800px;
+    border: 2px solid black;
+    gap: 15px;
 }
+.item{
+    width: 100px;
+    height: 150px;
+    background: darkgray;
+}
+
+.zzz {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    border: 2px solid yellow;
+}
+
+
+.abs{
+    display: inline-block;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 2px solid red;
+}
+/* .f{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: yellow;
+}
+
+.a {
+    position: absolute;
+}
+.b {
+    position: absolute;
+    left: 30%;
+    
+}
+.c {
+    position: absolute;
+    left: 60%;
+} */
