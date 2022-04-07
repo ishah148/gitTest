@@ -1,3 +1,9 @@
+// import {* as x} from 'pages/pets/pets-list.js'
+import {pets} from './pets-list.js';
+
+console.log(...pets.map(i => console.log(i.name)))
+
+
 const elems = {
     nav : document.querySelector("nav"),
     hamburger : document.querySelector(".hamburger"),
