@@ -2,13 +2,35 @@
 const elems = {
     nav: document.querySelector("nav"),
     hamburger: document.querySelector(".hamburger"),
-    content:document.querySelector('.pets .content-wrapper')
+    content: document.querySelector('.pets .content-wrapper'),
+    contentAll: document.querySelectorAll('.pets .content-wrapper'),
 }
+let petsString ;
+
 import { pets } from './pets-list.js';
 console.log(pets)
 console.log(pets.map(i => console.log(i.img)))
-pets.forEach(pet => elems.content.insertAdjacentHTML('beforeend',getCard(pet)))
-elems.content.insertAdjacentHTML('beforeend',getCard(pets[1]))
+pets.forEach(pet => elems.content.insertAdjacentHTML('beforeend', getCard(pet)))
+petsString = pets.reduce((res, pet) => {
+    res.push(getCard(pet))
+    return res;
+}, [])
+console.log(petsString)
+
+
+
+function getMediaType(){
+    const width = window.innerWidth
+    if(width > 1280){return 'desktop'}
+    if(width < 1280 && width > 768){return 'tablet'}
+    if(width < 768 ){return 'mobile'}
+}
+setInterval(() => {
+    console.log(getMediaType())
+}, 1000);
+function removeCards() {
+    elems.contentAll.forEach(i => i.remove())
+}
 
 function getCard(obj) {
     return `
