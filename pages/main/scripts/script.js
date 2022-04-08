@@ -10,6 +10,9 @@ const elems = {
     contentAll: function () {
         return document.querySelectorAll('.pets .content-wrapper .card');
     },
+    getCountCard: function(){
+        return document.querySelectorAll('.card').length
+    },
 }
 
 let numberOfPage = 1
@@ -25,11 +28,14 @@ console.log(petsString)
 
 showCards()
 
-
 function showCards() {
-    pets.
-        slice(numberOfPage - 1, numberOfPage - 1 + getMediaType()).
-        forEach(pet => elems.content.insertAdjacentHTML('beforeend', getCard(pet)))
+    let min = (numberOfPage - 1 )*getMediaType();
+    let max = ((numberOfPage - 1)*getMediaType()) + getMediaType();
+    console.log(min)
+    console.log(max)
+    pets
+        .slice(min,max)
+        .forEach(pet => elems.content.insertAdjacentHTML('beforeend', getCard(pet)))
 }
 // debugger
 
@@ -48,7 +54,7 @@ function removeCards() {
 }
 
 window.addEventListener('resize', () => {
-    // console.log(this.innerWidth)
+    updateCardResize()
 })
 
 elems.hamburger.addEventListener('click', function () {
@@ -65,42 +71,41 @@ document.querySelectorAll('nav p').forEach(block => {
     })
 })
 
-document.addEventListener('keydown', logKey);
 
-function logKey(event) {
-    // console.log(event.keyCode);
-    if (event.keyCode === 37) {
-        removeCards()
-        numberOfPage > 1 ? numberOfPage -= 1 : numberOfPage = 1;
-        showCards()
-    }
-    if (event.keyCode === 39) {
-        // removeCards()
-        numberOfPage += 1;
-        showCards()
-
-    }
-    console.log(numberOfPage)
-}
 
 elems.buttonLeft.onclick = function minusPage() {
+    let min = 1
     removeCards()
-    numberOfPage > 1 ? numberOfPage -= 1 : numberOfPage = 1;
+    numberOfPage > min ? numberOfPage -= 1 : min;
+    checkStyle()
     showCards()
 }
 elems.buttonRight.onclick = function plusPage() {
     let max = Math.ceil(pets.length / getMediaType());
-    console.log('max')
-    console.log(max)
+    console.log('=>',max)
     removeCards()
-    numberOfPage > max ? max : numberOfPage += 1;
-    if(numberOfPage ===  max){
-        elems.buttonRight.classList.toggle('invalid')
-        console.log(elems.buttonRight)
-    }
+    numberOfPage >= max ? max : numberOfPage += 1;
+    checkStyle()
     showCards()
 }
 
+
+function checkStyle(){
+    let max = Math.ceil(pets.length / getMediaType());
+    if(numberOfPage ===  max){
+        elems.buttonRight.classList.add('invalid');
+        return;
+    }
+    if(numberOfPage ===  1){
+        elems.buttonLeft.classList.add('invalid');
+        return;
+    }
+    if(numberOfPage > 1 || numberOfPage < max){
+        elems.buttonLeft.classList.remove('invalid');
+        elems.buttonRight.classList.remove('invalid');
+        return;
+    }
+}
 
 setInterval(() => {
     // console.log(numberOfPage)
@@ -118,5 +123,12 @@ function getCard(obj) {
 }
 
 function updateCardResize(){
-
+    if(elems.getCountCard !== getMediaType()){
+        numberOfPage = Math.floor(numberOfPage / getMediaType()) || 1;
+        console.log('NOP')
+        console.log(numberOfPage)
+        console.log('NOP')
+        removeCards()
+        showCards()
+    }
 }

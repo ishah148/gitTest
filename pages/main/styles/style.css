@@ -253,7 +253,7 @@ button {
 }
 
 html {
-  background: rgb(188, 200, 61);
+  background: rgb(106, 9, 103);
   scroll-behavior: smooth;
 }
 
@@ -569,16 +569,6 @@ body {
   flex-direction: column;
   background: #fafafa;
   gap: 30px;
-}
-@media (max-width: 1103px) {
-  .pets .content-wrapper .card:nth-child(3) {
-    display: none;
-  }
-}
-@media (max-width: calc(570px + 190px)) {
-  .pets .content-wrapper .card:nth-child(2) {
-    display: none;
-  }
 }
 .pets .content-wrapper .card .image {
   width: 270px;
