@@ -94,6 +94,10 @@ elems.buttonRight.onclick = function plusPage() {
     console.log(max)
     removeCards()
     numberOfPage > max ? max : numberOfPage += 1;
+    if(numberOfPage ===  max){
+        elems.buttonRight.classList.toggle('invalid')
+        console.log(elems.buttonRight)
+    }
     showCards()
 }
 
@@ -111,4 +115,8 @@ function getCard(obj) {
         <button class="button-primary">Learn more</button>
     </div>
  `
+}
+
+function updateCardResize(){
+
 }

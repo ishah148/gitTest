@@ -247,7 +247,7 @@ button {
 }
 
 html {
-  background: rgb(163, 171, 204);
+  background: rgb(57, 241, 206);
 }
 
 body {
@@ -291,16 +291,18 @@ header nav {
   display: flex;
   gap: 35px;
   align-items: center;
+  transition: all 0.3s cubic-bezier(0.21, 1.09, 0.58, 1);
 }
 @media (max-width: calc(570px + 130px)) {
   header nav {
     flex-direction: column;
-    display: none;
+    transform: translateX(500px);
   }
   header nav.active {
     align-items: center;
     z-index: 1;
     display: flex;
+    transform: translateX(0);
     position: absolute;
     width: 320px;
     height: 800px;
