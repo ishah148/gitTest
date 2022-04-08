@@ -21,9 +21,12 @@ let petsString = pets.reduce((res, pet) => {
 console.log(petsString)
 
 function showCards() {
+    console.log('---')
+    console.log(pets.
+        slice(numberOfPage - 1, numberOfPage - 1 + getMediaType()))
+    console.log('---')
     pets.
-        slice(numberOfPage - 1, numberOfPage -1 + getMediaType()).
-        // forEach(i => console.log(i))
+        slice(numberOfPage - 1, numberOfPage - 1 + getMediaType()).
         forEach(pet => elems.content.insertAdjacentHTML('beforeend', getCard(pet)))
 }
 // debugger
@@ -31,7 +34,7 @@ showCards()
 
 function getMediaType() {
     const width = window.innerWidth
-    console.log(width)
+    // console.log(width)
     if (width > 1280) { return 3 }
     if (width < 1280 && width > 768) { return 2 }
     if (width < 768) { return 1 }
@@ -74,3 +77,28 @@ document.querySelectorAll('nav p').forEach(block => {
         }
     })
 })
+
+document.addEventListener('keydown', logKey);
+
+function logKey(event) {
+    // console.log(event.keyCode);
+    if (event.keyCode === 37) {
+        removeCards()
+        numberOfPage > 1 ? numberOfPage -= 1 : numberOfPage = 1;
+        showCards()
+    }
+    if (event.keyCode === 39) {
+        // removeCards()
+        numberOfPage +=1;
+        showCards()
+
+    }
+    console.log(numberOfPage)
+}
+
+function plusPage(){
+    alert('+')
+}
+function minusPage(){
+    alert('-')
+}
