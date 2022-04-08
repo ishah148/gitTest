@@ -253,7 +253,7 @@ button {
 }
 
 html {
-  background: rgb(106, 9, 103);
+  background: rgb(53, 77, 78);
   scroll-behavior: smooth;
 }
 
@@ -555,6 +555,11 @@ body {
   justify-content: center;
   gap: 8%;
   position: relative;
+}
+@media (max-width: calc(1280px - 190px)) {
+  .pets .content-wrapper {
+    gap: 30px;
+  }
 }
 @media (max-width: 570px) {
   .pets .content-wrapper {

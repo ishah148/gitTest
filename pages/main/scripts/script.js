@@ -1,6 +1,8 @@
 // import { pets } from './pets-list.js';
 // import {* as x} from 'pages/pets/pets-list.js'
 // window.onload
+let numberOfPage = 1
+
 const elems = {
     nav: document.querySelector("nav"),
     hamburger: document.querySelector(".hamburger"),
@@ -10,47 +12,35 @@ const elems = {
     contentAll: function () {
         return document.querySelectorAll('.pets .content-wrapper .card');
     },
-    getCountCard: function(){
+    getCountCard: function () {
         return document.querySelectorAll('.card').length
     },
 }
 
-let numberOfPage = 1
-
-let petsString = pets.reduce((res, pet) => {
-    res.push(getCard(pet))
-    return res;
-}, [])
-
-// console.log(pets.map(i => console.log(i.img)))
-// pets.forEach(pet => elems.content.insertAdjacentHTML('beforeend', getCard(pet)))
-console.log(petsString)
 
 showCards()
 
 function showCards() {
-    let min = (numberOfPage - 1 )*getMediaType();
-    let max = ((numberOfPage - 1)*getMediaType()) + getMediaType();
-    console.log(min)
-    console.log(max)
+    let min = (numberOfPage - 1) * getMediaType();
+    let max = ((numberOfPage - 1) * getMediaType()) + getMediaType();
     pets
-        .slice(min,max)
-        .forEach(pet => elems.content.insertAdjacentHTML('beforeend', getCard(pet)))
+        .slice(min, max)
+        .forEach(pet => elems.content.insertAdjacentHTML('afterbegin', getCard(pet)))
 }
-// debugger
+
 
 function getMediaType() {
     const width = window.innerWidth
     // console.log(width)
-    if (width > 1280) { return 3 }
-    if (width < 1280 && width > 768) { return 2 }
-    if (width < 768) { return 1 }
+    if (width > 1000) { return 3 }
+    if (width < 1000 && width > 750) { return 2 }
+    if (width < 750) { return 1 }
 }
 
 function removeCards() {
     // debugger
     elems.contentAll().forEach(i => i.remove())
-    
+
 }
 
 window.addEventListener('resize', () => {
@@ -82,7 +72,7 @@ elems.buttonLeft.onclick = function minusPage() {
 }
 elems.buttonRight.onclick = function plusPage() {
     let max = Math.ceil(pets.length / getMediaType());
-    console.log('=>',max)
+    console.log('=>', max)
     removeCards()
     numberOfPage >= max ? max : numberOfPage += 1;
     checkStyle()
@@ -90,17 +80,17 @@ elems.buttonRight.onclick = function plusPage() {
 }
 
 
-function checkStyle(){
+function checkStyle() {
     let max = Math.ceil(pets.length / getMediaType());
-    if(numberOfPage ===  max){
+    if (numberOfPage === max) {
         elems.buttonRight.classList.add('invalid');
         return;
     }
-    if(numberOfPage ===  1){
+    if (numberOfPage === 1) {
         elems.buttonLeft.classList.add('invalid');
         return;
     }
-    if(numberOfPage > 1 || numberOfPage < max){
+    if (numberOfPage > 1 || numberOfPage < max) {
         elems.buttonLeft.classList.remove('invalid');
         elems.buttonRight.classList.remove('invalid');
         return;
@@ -122,12 +112,9 @@ function getCard(obj) {
  `
 }
 
-function updateCardResize(){
-    if(elems.getCountCard !== getMediaType()){
+function updateCardResize() {
+    if (elems.getCountCard !== getMediaType()) {
         numberOfPage = Math.floor(numberOfPage / getMediaType()) || 1;
-        console.log('NOP')
-        console.log(numberOfPage)
-        console.log('NOP')
         removeCards()
         showCards()
     }

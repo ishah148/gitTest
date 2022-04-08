@@ -29,7 +29,9 @@
         justify-content: center;
         gap: 8%;
         position: relative;
-
+        @media (max-width: calc(#{$breakpoint-decktop} - 190px)) {
+            gap: 30px;
+        }
         @media (max-width: $breakpoint-mobile) {
             flex-direction: column;
             gap: 20px;
@@ -89,7 +91,6 @@
 
             @media (max-width: $breakpoint-mobile) {
                 position: relative;
-
             }
 
             &.left {
