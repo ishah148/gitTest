@@ -1,11 +1,15 @@
-import { pets } from './pets-list.js';
+// import { pets } from './pets-list.js';
 // import {* as x} from 'pages/pets/pets-list.js'
 // window.onload
 const elems = {
     nav: document.querySelector("nav"),
     hamburger: document.querySelector(".hamburger"),
     content: document.querySelector('.pets .content-wrapper'),
-    contentAll: document.querySelectorAll('.pets .content-wrapper'),
+    buttonLeft: document.querySelector("button.button-arrow.left"),
+    buttonRight: document.querySelector("button.button-arrow.right"),
+    contentAll: function () {
+        return document.querySelectorAll('.pets .content-wrapper .card');
+    },
 }
 
 let numberOfPage = 1
@@ -15,22 +19,19 @@ let petsString = pets.reduce((res, pet) => {
     return res;
 }, [])
 
-// console.log(pets)
 // console.log(pets.map(i => console.log(i.img)))
 // pets.forEach(pet => elems.content.insertAdjacentHTML('beforeend', getCard(pet)))
 console.log(petsString)
 
+showCards()
+
+
 function showCards() {
-    console.log('---')
-    console.log(pets.
-        slice(numberOfPage - 1, numberOfPage - 1 + getMediaType()))
-    console.log('---')
     pets.
         slice(numberOfPage - 1, numberOfPage - 1 + getMediaType()).
         forEach(pet => elems.content.insertAdjacentHTML('beforeend', getCard(pet)))
 }
 // debugger
-showCards()
 
 function getMediaType() {
     const width = window.innerWidth
@@ -41,24 +42,10 @@ function getMediaType() {
 }
 
 function removeCards() {
-    elems.contentAll.forEach(i => i.remove())
+    // debugger
+    elems.contentAll().forEach(i => i.remove())
+    
 }
-
-function getCard(obj) {
-    return `
-    <div class="card">
-        <div class="image"><img src="${obj.img}" alt=""></div>
-        <p class="pets-card-title">${obj.name}</p>
-        <button class="button-primary">Learn more</button>
-    </div>
- `
-}
-
-
-
-
-
-console.log(window.innerWidth)
 
 window.addEventListener('resize', () => {
     // console.log(this.innerWidth)
@@ -89,16 +76,39 @@ function logKey(event) {
     }
     if (event.keyCode === 39) {
         // removeCards()
-        numberOfPage +=1;
+        numberOfPage += 1;
         showCards()
 
     }
     console.log(numberOfPage)
 }
 
-function plusPage(){
-    alert('+')
+elems.buttonLeft.onclick = function minusPage() {
+    removeCards()
+    numberOfPage > 1 ? numberOfPage -= 1 : numberOfPage = 1;
+    showCards()
 }
-function minusPage(){
-    alert('-')
+elems.buttonRight.onclick = function plusPage() {
+    let max = Math.ceil(pets.length / getMediaType());
+    console.log('max')
+    console.log(max)
+    removeCards()
+    numberOfPage > max ? max : numberOfPage += 1;
+    showCards()
+}
+
+
+setInterval(() => {
+    // console.log(numberOfPage)
+}, 600);
+
+
+function getCard(obj) {
+    return `
+    <div class="card">
+        <div class="image"><img src="${obj.img}" alt=""></div>
+        <p class="pets-card-title">${obj.name}</p>
+        <button class="button-primary">Learn more</button>
+    </div>
+ `
 }
