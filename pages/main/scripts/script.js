@@ -1,33 +1,42 @@
+import { pets } from './pets-list.js';
 // import {* as x} from 'pages/pets/pets-list.js'
+// window.onload
 const elems = {
     nav: document.querySelector("nav"),
     hamburger: document.querySelector(".hamburger"),
     content: document.querySelector('.pets .content-wrapper'),
     contentAll: document.querySelectorAll('.pets .content-wrapper'),
 }
-let petsString ;
 
-import { pets } from './pets-list.js';
-console.log(pets)
-console.log(pets.map(i => console.log(i.img)))
-pets.forEach(pet => elems.content.insertAdjacentHTML('beforeend', getCard(pet)))
-petsString = pets.reduce((res, pet) => {
+let numberOfPage = 1
+
+let petsString = pets.reduce((res, pet) => {
     res.push(getCard(pet))
     return res;
 }, [])
+
+// console.log(pets)
+// console.log(pets.map(i => console.log(i.img)))
+// pets.forEach(pet => elems.content.insertAdjacentHTML('beforeend', getCard(pet)))
 console.log(petsString)
 
-
-
-function getMediaType(){
-    const width = window.innerWidth
-    if(width > 1280){return 'desktop'}
-    if(width < 1280 && width > 768){return 'tablet'}
-    if(width < 768 ){return 'mobile'}
+function showCards() {
+    pets.
+        slice(numberOfPage - 1, numberOfPage -1 + getMediaType()).
+        // forEach(i => console.log(i))
+        forEach(pet => elems.content.insertAdjacentHTML('beforeend', getCard(pet)))
 }
-setInterval(() => {
-    console.log(getMediaType())
-}, 1000);
+// debugger
+showCards()
+
+function getMediaType() {
+    const width = window.innerWidth
+    console.log(width)
+    if (width > 1280) { return 3 }
+    if (width < 1280 && width > 768) { return 2 }
+    if (width < 768) { return 1 }
+}
+
 function removeCards() {
     elems.contentAll.forEach(i => i.remove())
 }
