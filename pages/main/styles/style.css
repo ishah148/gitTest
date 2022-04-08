@@ -253,7 +253,7 @@ button {
 }
 
 html {
-  background: rgb(53, 77, 78);
+  background: rgb(210, 24, 23);
   scroll-behavior: smooth;
 }
 
@@ -493,8 +493,9 @@ body {
 }
 @media (min-width: 570px) {
   .about-the-shelter .content {
-    height: 380px;
-    justify-content: space-between;
+    height: 396px;
+    justify-content: flex-start;
+    gap: 24px;
   }
 }
 @media (max-width: 1103px) {
