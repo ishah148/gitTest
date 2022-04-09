@@ -173,6 +173,13 @@ button {
   height: 52px;
   background: none;
 }
+.button-wrapper .button-arrow.invalid {
+  border: 2px solid #cdcdcd;
+  color: #cdcdcd;
+}
+.button-wrapper .button-arrow.invalid:hover {
+  background: none;
+}
 .button-wrapper .button-arrow:hover {
   background-color: #fddcc4;
 }
@@ -235,6 +242,12 @@ button {
   background: #f1cdb3;
 }
 
+.modal-window {
+  width: 900px;
+  height: 500px;
+  position: absolute;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -247,7 +260,7 @@ button {
 }
 
 html {
-  background: rgb(57, 241, 206);
+  background: rgb(144, 61, 255);
 }
 
 body {

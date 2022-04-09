@@ -111,3 +111,48 @@ button {
         }
     }
 }
+
+.modal-window{
+    width: 75%;
+    height: 500px;
+    position: absolute;
+    background: yellowgreen;
+    // display: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .image{
+        // flex: 1 1 300px;
+        width: 40%;
+        // height: 500px;
+        img{
+            width: 100%;
+            height: 100%
+        }
+    }
+    
+    .content{
+        display: flex;
+        flex-direction: column;
+        // flex: 1 1 200px;
+        width: 40%;
+        align-items: start;
+        ul{
+            padding-left: 20px;
+        }
+    }
+    .button-round{
+        position: absolute;
+        width: 52px;
+        height: 52px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: -45px;
+        top: -45px;
+        svg{
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
