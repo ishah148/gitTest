@@ -1,55 +1,19 @@
-.body2{
-    width: 1000px;
-    height: 300px;
-    border: 2px solid red;
-    position: static;
+.wrapper {
+    display: grid;
+    height: 500px;
+    gap: 10px;
+    /* grid-column: 3 / span 2; */
+
+    /* grid-row-end: span 2; */
+
     
-}
-.wrapper{
-    margin: auto;
-    display: flex;
-    
-    width: 800px;
-    border: 2px solid black;
-    gap: 15px;
-}
-.item{
-    width: 100px;
-    height: 150px;
-    background: darkgray;
-}
 
-.zzz {
-    display: inline-block;
-    width: 300px;
-    height: 300px;
-    border: 2px solid yellow;
+    /* grid-area: auto; */
 }
 
 
-.abs{
-    display: inline-block;
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border: 2px solid red;
-}
-/* .f{
-    display: inline-block;
-    width: 60px;
-    height: 60px;
-    background: yellow;
-}
 
-.a {
-    position: absolute;
+.item {
+    background: rosybrown;
+    flex: 1 1 100px
 }
-.b {
-    position: absolute;
-    left: 30%;
-    
-}
-.c {
-    position: absolute;
-    left: 60%;
-} */
