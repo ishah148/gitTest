@@ -261,6 +261,9 @@ button {
   justify-content: space-around;
   align-items: center;
 }
+.modal-window.open {
+  display: flex;
+}
 .modal-window .image {
   width: 40%;
 }
@@ -308,7 +311,7 @@ button {
 }
 
 html {
-  background: rgb(231, 140, 32);
+  background: rgb(154, 120, 217);
   scroll-behavior: smooth;
 }
 

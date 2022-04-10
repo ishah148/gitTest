@@ -9,6 +9,11 @@ const elems = {
     content: document.querySelector('.pets .content-wrapper'),
     buttonLeft: document.querySelector("button.button-arrow.left"),
     buttonRight: document.querySelector("button.button-arrow.right"),
+    buttonClose: document.querySelector('.modal-window button'),
+    modalWindow: document.querySelector('.modal-window'),
+    getButtonsLearnMore: function () {
+        return document.querySelectorAll(".card .button-primary")
+    },
     contentAll: function () {
         return document.querySelectorAll('.pets .content-wrapper .card');
     },
@@ -17,8 +22,29 @@ const elems = {
     },
 }
 
-
 showCards()
+// =============== Buttons ===============
+updateButtons(elems.getButtonsLearnMore())
+elems.buttonLeft.onclick = function minusPage() {
+    let min = 1
+    removeCards()
+    numberOfPage > min ? numberOfPage -= 1 : min;
+    checkStyle()
+    showCards()
+}
+elems.buttonRight.onclick = function plusPage() {
+    let max = Math.ceil(pets.length / getMediaType());
+    console.log('=>', max)
+    removeCards()
+    numberOfPage >= max ? max : numberOfPage += 1;
+    checkStyle()
+    showCards()
+}
+elems.buttonClose.onclick = function () {
+    console.log('123')
+    closeModalWindow();
+}
+// =============== ======= ===============
 
 function showCards() {
     let min = (numberOfPage - 1) * getMediaType();
@@ -29,18 +55,15 @@ function showCards() {
 }
 
 
-function getMediaType() {
-    const width = window.innerWidth
-    // console.log(width)
-    if (width > 1000) { return 3 }
-    if (width < 1000 && width > 750) { return 2 }
-    if (width < 750) { return 1 }
-}
 
 function removeCards() {
     // debugger
     elems.contentAll().forEach(i => i.remove())
 
+}
+
+function removeModalInfo() {
+    document.querySelectorAll("div.modal-window *").forEach(i => i.remove())
 }
 
 window.addEventListener('resize', () => {
@@ -63,21 +86,6 @@ document.querySelectorAll('nav p').forEach(block => {
 
 
 
-elems.buttonLeft.onclick = function minusPage() {
-    let min = 1
-    removeCards()
-    numberOfPage > min ? numberOfPage -= 1 : min;
-    checkStyle()
-    showCards()
-}
-elems.buttonRight.onclick = function plusPage() {
-    let max = Math.ceil(pets.length / getMediaType());
-    console.log('=>', max)
-    removeCards()
-    numberOfPage >= max ? max : numberOfPage += 1;
-    checkStyle()
-    showCards()
-}
 
 
 function checkStyle() {
@@ -107,9 +115,52 @@ function getCard(obj) {
     <div class="card">
         <div class="image"><img src="${obj.img}" alt=""></div>
         <p class="pets-card-title">${obj.name}</p>
-        <button class="button-primary">Learn more</button>
+        <button class="button-primary" id="${obj.name}">Learn more</button>
     </div>
  `
+}
+
+function getMediaType() {
+    const width = window.innerWidth
+    // console.log(width)
+    if (width > 1000) { return 3 }
+    if (width < 1000 && width > 750) { return 2 }
+    if (width < 750) { return 1 }
+}
+
+function getInfoAbout(name) {
+    for (pet of pets) {
+        if (pet.name === name) {
+            return `
+            <div class="image">
+                <img src="${pet.img}" alt="">
+            </div>
+            <div class="content">
+                <div class="name-wrapper">
+                    <h3>${pet.name}</h3>
+                    <h4>${pet.type} - ${pet.breed}</h4>
+                </div>
+                <h5>${pet.description}</h5>
+                <div class="list">
+                    <ul>
+                        <li><b>Age:</b> ${pet.age}</li>
+                        <li><b>Inoculations:</b> ${pet.inoculations.join(',')}</li>
+                        <li><b>Diseases:</b> ${pet.diseases.join(',')}</li>
+                        <li><b>Parasites:</b>${pet.parasites.join(',')} </li>
+                    </ul>
+                </div>
+            </div>
+            <button class="button-round">
+                <svg>
+                    <use xlink:href="../../assets/icons/arrow.svg#cross"></use>
+                </svg>
+            </button>
+        `}
+    }
+}
+
+function getModalWindowInfo(id) {
+
 }
 
 function updateCardResize() {
@@ -117,5 +168,29 @@ function updateCardResize() {
         numberOfPage = Math.floor(numberOfPage / getMediaType()) || 1;
         removeCards()
         showCards()
+        updateButtons(elems.getButtonsLearnMore())
     }
+}
+
+function updateButtons(elem) {  //elems.getButtonsLearnMore()
+
+    elem.forEach(bt => bt.onclick = function () {
+        removeModalInfo()
+        elems.modalWindow.insertAdjacentHTML('afterbegin', getInfoAbout(bt.id))
+        
+        showModalWindow()
+        console.log(getInfoAbout(bt.id))
+    })
+    console.log(elems.buttonClose)
+    document.querySelector('.modal-window button.button-round').onclick = function ffff () {
+        console.log('123')
+        closeModalWindow();
+    }
+}
+
+function showModalWindow() {
+    elems.modalWindow.classList.add('open')
+}
+function closeModalWindow() {
+    elems.modalWindow.classList.remove('open')
 }
