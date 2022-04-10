@@ -311,7 +311,7 @@ button {
 }
 
 html {
-  background: rgb(154, 120, 217);
+  background: rgb(146, 91, 131);
   scroll-behavior: smooth;
 }
 
@@ -637,6 +637,7 @@ body {
 .pets .content-wrapper .card .image {
   width: 270px;
   height: 270px;
+  user-select: none;
 }
 .pets .content-wrapper .card .image img {
   background-image: none;

@@ -31,6 +31,7 @@ elems.buttonLeft.onclick = function minusPage() {
     numberOfPage > min ? numberOfPage -= 1 : min;
     checkStyle()
     showCards()
+    updateButtons(elems.getButtonsLearnMore())
 }
 elems.buttonRight.onclick = function plusPage() {
     let max = Math.ceil(pets.length / getMediaType());
@@ -39,6 +40,7 @@ elems.buttonRight.onclick = function plusPage() {
     numberOfPage >= max ? max : numberOfPage += 1;
     checkStyle()
     showCards()
+    updateButtons(elems.getButtonsLearnMore())
 }
 elems.buttonClose.onclick = function () {
     console.log('123')
@@ -83,9 +85,6 @@ document.querySelectorAll('nav p').forEach(block => {
         }
     })
 })
-
-
-
 
 
 function checkStyle() {
@@ -173,23 +172,20 @@ function updateCardResize() {
 }
 
 function updateButtons(elem) {  //elems.getButtonsLearnMore()
-
     elem.forEach(bt => bt.onclick = function () {
         removeModalInfo()
         elems.modalWindow.insertAdjacentHTML('afterbegin', getInfoAbout(bt.id))
-        
         showModalWindow()
         console.log(getInfoAbout(bt.id))
-    })
-    console.log(elems.buttonClose)
-    document.querySelector('.modal-window button.button-round').onclick = function ffff () {
-        console.log('123')
-        closeModalWindow();
-    }
+    })  
 }
 
 function showModalWindow() {
     elems.modalWindow.classList.add('open')
+    console.log(elems.buttonClose)
+    document.querySelector('.modal-window button.button-round').onclick = function ffff () {
+        closeModalWindow();
+    }
 }
 function closeModalWindow() {
     elems.modalWindow.classList.remove('open')
