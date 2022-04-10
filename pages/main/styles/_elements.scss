@@ -116,9 +116,9 @@ button {
     width: 75%;
     height: 500px;
     position: absolute;
-    background: yellowgreen;
-    // display: none;
-    display: flex;
+    background: $color-light-s;
+    display: none;
+    // display: flex;
     justify-content: space-around;
     align-items: center;
     .image{
@@ -134,11 +134,17 @@ button {
     .content{
         display: flex;
         flex-direction: column;
-        // flex: 1 1 200px;
+        height: 80%;
         width: 40%;
         align-items: start;
+        justify-content: space-around;
         ul{
             padding-left: 20px;
+            li{
+                &::marker{
+                    color: $color-primary;
+                }
+            }
         }
     }
     .button-round{

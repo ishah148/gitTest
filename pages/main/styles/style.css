@@ -129,6 +129,16 @@ h5 {
   color: #cdcdcd;
 }
 
+li {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
 a {
   color: red;
 }
@@ -246,8 +256,8 @@ button {
   width: 75%;
   height: 500px;
   position: absolute;
-  background: yellowgreen;
-  display: flex;
+  background: #fafafa;
+  display: none;
   justify-content: space-around;
   align-items: center;
 }
@@ -261,11 +271,16 @@ button {
 .modal-window .content {
   display: flex;
   flex-direction: column;
+  height: 80%;
   width: 40%;
   align-items: start;
+  justify-content: space-around;
 }
 .modal-window .content ul {
   padding-left: 20px;
+}
+.modal-window .content ul li::marker {
+  color: #f1cdb3;
 }
 .modal-window .button-round {
   position: absolute;
@@ -293,7 +308,7 @@ button {
 }
 
 html {
-  background: rgb(128, 81, 55);
+  background: rgb(231, 140, 32);
   scroll-behavior: smooth;
 }
 
