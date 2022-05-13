@@ -1,39 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(http://habrastorage.org/files/996/d76/d04/996d76d0410d422fa54cc433ce7ead2a.png);
+}
+
 .slider-wrapper {
-  width: min-content;
-  margin: 0 auto;
-}
-.slider-wrapper .slider--links {
-  width: 800px;
-  height: 50px;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  justify-content: center;
-}
-.slider-wrapper .slider--links a {
-  width: 50px;
-  height: 50px;
-  font-size: 34px;
-  text-decoration: none;
-  cursor: pointer;
-}
-.slider-wrapper .slider--links a .slide {
-  width: 800px;
   height: 600px;
-  border: 1px solid black;
+  margin: 100px auto 0;
+  position: relative;
+  width: 800px;
 }
-.slider-wrapper .slider--links a:visited .slide {
-  background: red;
+
+.slider-container {
+  background-color: #ddd;
+  height: inherit;
+  overflow: hidden;
+  position: relative;
+  width: inherit;
 }
-.slider-wrapper .slider--links a:active .slide {
-  background: red;
+
+.slides {
+  height: inherit;
+  position: absolute;
+  width: inherit;
 }
-.slider-wrapper .slider--links a:checked {
-  background: yellow;
+
+#page1:checked ~ .slider-container .page1,
+#page2:checked ~ .slider-container .page2,
+#page3:checked ~ .slider-container .page3,
+#page4:checked ~ .slider-container .page4,
+#page5:checked ~ .slider-container .page5 {
+  opacity: 1;
+  z-index: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
 }
-.slider-wrapper .slider--links a:checked .slide {
-  background: red;
+
+.page1 {
+  background-image: url(assets/1.png);
+}
+
+.page2 {
+  background-image: url(assets/2.png);
+}
+
+.page3 {
+  background-image: url(assets/3.png);
+}
+
+.page4 {
+  background-image: url(assets/3.png);
+}
+
+.page5 {
+  background-image: url(assets/4.png);
 }
 
 /*# sourceMappingURL=style.css.map */

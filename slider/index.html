@@ -11,21 +11,26 @@
 
 <body>
     <div class="slider-wrapper">
-        <div class="slider--links">
-            <a class="one" href="fff" onclick="return false;">
-                <div class="slide"></div>
-            </a>
-            <a class="two" href="">
-                <div class="slide"></div>
-            </a>
-            <a class="three" href="">
-                <div class="slide"></div>
-            </a>
-            <a class="four" href="">
-                <div class="slide"></div>
-            </a>
+        <input type="radio" name="point" id="page1" checked>
+        <input type="radio" name="point" id="page2">
+        <input type="radio" name="point" id="page3">
+        <input type="radio" name="point" id="page4">
+        <input type="radio" name="point" id="page5">
+        <div class="slider-container">
+            <div class="slides page1"></div>
+            <div class="slides page2"></div>
+            <div class="slides page3"></div>
+            <div class="slides page4"></div>
+            <div class="slides page5"></div>
+        </div>	
+        <!-- <input type="radio" name="point" id="page6">1 -->
+        <div class="controls">
+            <label for="page1"></label>
+            <label for="page2"></label>
+            <label for="page3"></label>
+            <label for="page4"></label>
+            <label for="page5"></label>
         </div>
-        <div class="slider--container"></div>
     </div>
 </body>
 
