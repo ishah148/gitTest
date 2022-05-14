@@ -17,18 +17,23 @@
 body {
     background: linear-gradient(55deg, rgba(137, 171, 198, 1) 0%, rgba(186, 221, 249, 1) 100%);
     background-size: 100vw 100vh;
+    width: 100vw;
+    min-height: 100vh;
 }
 
 .slider-wrapper {
     display: flex;
     flex-direction: column;
-    height: 600px;
+    // height: 600px;
     margin: 100px auto 0;
     position: relative;
-    width: 800px;
+    // width: 800px;
+    width: 70%;
+    height: -webkit-fill-available;
+    aspect-ratio: 3/2;
 }
 
-.slider-wrapper > input {
+.slider-wrapper input {
     display: none;
 }
 
@@ -37,7 +42,7 @@ body {
     height: inherit;
     overflow: hidden;
     position: relative;
-    width: inherit;
+    width: 100%;
 
     .slides {
         height: inherit;
@@ -61,7 +66,9 @@ body {
         height: min-content;
         align-self: center;
         p {
-            display: none;
+            transform: scale(0.01);
+            font-size: 0;
+            transition: all 0.3s;
         }
     }
     label {
@@ -90,6 +97,7 @@ body {
     opacity: 1;
     z-index: 1;
     transform: scale(1);
+    transition: all 0.3s;
 }
 #page1:checked ~ .label-container .label1,
 #page2:checked ~ .label-container .label2,
@@ -105,7 +113,10 @@ body {
 #page3:checked ~ .label-container .description-container .description-page3,
 #page4:checked ~ .label-container .description-container .description-page4,
 #page5:checked ~ .label-container .description-container .description-page5 {
-    display: block;
+    // display: block;
+    transform: scale(1);
+    font-size: 18px;
+    transition: all 0.3s
 }
 
 
@@ -128,3 +139,10 @@ body {
     background-image: url(assets/5.png);
 }
 // sass --watch ./slider/style.scss:./slider/style.css
+.page1,.page2,.page3,.page4,.page5{
+    opacity: 0.1;
+    z-index: 1;
+    transform: scale(0.01);
+    transition: all 0.3s;
+    background-size: 100% 100%;
+}
