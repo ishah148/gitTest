@@ -14,9 +14,6 @@ module.exports = {
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-    "no-tabs": ["error", { allowIndentationTabs: true }],
-    // "prettier/prettier": "error",
-    // "useTabs": 2,
-    // tabWidth: 4,
+    // "no-tabs": ["error", { allowIndentationTabs: true }],
   },
 };
