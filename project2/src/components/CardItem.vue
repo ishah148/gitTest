@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <img src="" alt="" />
-    <p>{{name}}</p>
-    <p>{{text}}</p>
+    <p>{{ name }}</p>
+    <p>{{ text }}</p>
   </div>
 </template>
 
@@ -20,6 +20,9 @@ export default {
     updateText () {
       console.log('')
     }
+  },
+  mounted () {
+    console.log('CardItem is mounted')
   }
 }
 </script>
