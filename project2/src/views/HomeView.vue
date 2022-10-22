@@ -7,8 +7,7 @@
         <router-link to="/about">About</router-link>
       </nav>
     </HeaderMain>
-    <SearchBar />
-    <CardItem />
+    <ResourcesItemList />
   </div>
 </template>
 
@@ -16,14 +15,16 @@
 import { defineComponent } from 'vue'
 import HeaderMain from '@/components/HeaderMain.vue'
 import SearchBar from '@/components/SearchBar.vue'
-import CardItem from '@/components/CardItem.vue'
+import ResourcesItemList from '@/components/ResourcesItemList.vue'
 
 export default defineComponent({
   name: 'HomeView',
   components: {
     HeaderMain,
-    SearchBar,
-    CardItem
+    ResourcesItemList
+  },
+  mounted () {
+    console.log('Main is mounted')
   }
 })
 </script>
