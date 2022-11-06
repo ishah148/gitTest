@@ -1,0 +1,58 @@
+$time: 600ms;
+$number-of-frames: 12;
+$frame-duration: $time / $number-of-frames;
+
+@keyframes frame-animation {
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.Animation {
+    margin: 0 auto;
+    max-width: 520px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.AnimationFrames {
+    animation: frame-animation $time infinite;
+    animation-timing-function: steps($number-of-frames);
+    display: flex;
+    width: $number-of-frames * 100%;
+    background: var(--bs-grey-100);
+}
+
+.AnimationFrame {
+    display: block;
+    width: 100% / $number-of-frames;
+    max-width: 100% / $number-of-frames;
+    flex-basis: 100% / $number-of-frames;
+
+    img {
+        width: 100%;
+    }
+}
+
+//////////////////////////////////////////////
+// Typography
+//////////////////////////////////////////////
+body {
+    background: #f4f5fa;
+    padding: 20px;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    text-align: center;
+}
+
+a {
+    font-size: 14px;
+    color: #999;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    transition: all 250ms;
+
+    &:hover {
+        color: #777;
+        border-bottom: 1px solid #555;
+    }
+}

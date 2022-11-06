@@ -1,0 +1,98 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+:root {
+    --primary-orange: #ff9000;
+    --primary-grey: #343434;
+    --primary-text: #f0f0f0;
+    --max-width: 100%;
+    --max-width-container: 1440px;
+    --padding-primary: 40px;
+}
+@media (max-width: 768px) {
+    :root {
+        --padding-primary: 20px;
+    }
+}
+body{
+    background: var(--bs-gray-100);
+}
+.forms__continer {
+    width: 500px;
+    margin: auto;
+    position: relative;
+    max-width: 100%;
+    background: var(--bs-gray-100);
+    z-index: 100;
+    margin: auto;
+    .invalid {
+        border: 3px solid #dc3545;
+    }
+    .valid {
+        border: 3px solid var(--bs-green);
+    }
+}
+.hidden {
+    transition: all 0.3s;
+    opacity: 0.01;
+    position: absolute;
+    top: -10;
+}
+.product-card {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px;
+    img {
+        width: 130px;
+        height: 200px;
+        object-fit: contain;
+        align-self: center;
+    }
+    .product-card__body {
+        display: flex;
+        flex-direction: column;
+        // height: 161px;
+        .card-text {
+            height: 50px;
+            flex: 0 0 42px;
+        }
+        .product-card__price-and-color {
+            padding: 0;
+            .product-card__price {
+                margin-bottom: 0;
+            }
+            .product-card__color {
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: red;
+                border: 1px solid rgba(0, 0, 0, 0.188);
+            }
+        }
+        .product-card__add-to-cart {
+            svg {
+                margin-bottom: 3px;
+                pointer-events: none;
+            }
+        }
+        button {
+            align-self: center;
+        }
+    }
+}
+
+.alert-enter {
+    opacity: 0;
+    transform: scale(0.9);
+}
+.alert-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+}
+.alert-exit {
+    opacity: 1;
+}
+.alert-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+}
